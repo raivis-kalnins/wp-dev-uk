@@ -1,12 +1,13 @@
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						
+			<footer class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							
+						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</div>
 		<?php wp_footer(); ?>
 	</body>
 </html>

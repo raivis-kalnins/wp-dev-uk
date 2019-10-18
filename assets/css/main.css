@@ -1,4 +1,5 @@
 @import url(bootstrap/bootstrap.min.css);
+@import url(fullpage/fullpage.min.css);
 @import url(fonts/font-awesome/font-awesome.min.css);
 @import url(owl/owl.carousel.min.css);
 @font-face {
@@ -85,9 +86,16 @@ a:hover {
       right: 0; }
   #root section {
     padding: 100px 0 100px; }
+    #root section.sec1 .about-img {
+      height: 60%;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     #root section.sec1 .smart-txt h1 {
       padding-top: 100px; }
     #root section.sec2 {
+      background: linear-gradient(to left top, #bdc1c7, white);
       text-align: center; }
       #root section.sec2 .learn-more .col {
         position: relative; }
@@ -269,6 +277,17 @@ h1, h2, h3 {
 
 h1 {
   font-size: 50px; }
+
+section h1,
+header h1 {
+  font-size: 64px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background: linear-gradient(to left, #87c7df, #648896);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 h2 {
   font-size: 40px; }

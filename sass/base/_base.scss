@@ -66,6 +66,13 @@ a:hover {
     section {
         padding: 100px 0 100px;
         &.sec1 {
+            .about-img {
+                height: 60%;
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
             .smart-txt {
                 h1 {
                     padding-top: 100px;
@@ -73,6 +80,7 @@ a:hover {
             }
         }
         &.sec2 {
+            background: linear-gradient(to left top, rgb(189, 193, 199), white);
             text-align: center;
             .learn-more {
                 .col {
