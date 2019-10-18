@@ -1,0 +1,39 @@
+html, body {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+}
+p, li, span, i, u, button {
+    font-family: $font-body;
+    font-size: 1em;
+}
+h1, h2, h3 {
+    font-family: $font-heading;
+    color: $color-grey;
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 50px;
+}
+h2 {
+    font-size: 40px;
+}
+h3 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 20px;
+}
+h5 {
+    font-size: 17px;
+}
+h6 {
+    font-size: 14px;
+}
+.menu a {
+    color: $color-grey;
+}
+@media only screen and (max-width: $breakpoint-phone-p) {
+    // p, li, span, b, i, u, button {
+    //     font-size: 14px;
+    // }
+}

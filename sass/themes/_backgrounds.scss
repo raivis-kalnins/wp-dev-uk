@@ -1,0 +1,14 @@
+[class*="background"] {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.background--blue {
+    background-color: $color-blue;
+    * {
+        color: $color-white;
+    }
+}
+.background--grey{
+    background-color: $color-l-grey;
+}

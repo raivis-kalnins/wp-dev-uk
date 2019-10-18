@@ -1,0 +1,132 @@
+﻿@mixin cover {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+@mixin close-button {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-image: url(../img/help/close.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@mixin shortTransition {
+    transition: all .2s ease-out;
+}
+@mixin close-menu-button {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/help/close.png);
+    background-repeat: no-repeat;
+    background-size: auto 20px;
+    background-position: 0 0;
+    cursor: pointer;
+}
+/// Background Horizontal left
+/// Example: @include background-horizontal-left($startColor: $white, $endColor: $transparent);
+@mixin background-horizontal-left-top-corner($startColor: #555, $endColor: #333) {
+    background-color: $endColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(90deg, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(90deg, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(90deg, $startColor, $endColor);
+    background-image:      -o-linear-gradient(90deg, $startColor, $endColor);
+    background-image:         linear-gradient(90deg, $startColor, $endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
+}
+/// Background Horizontal right
+@mixin background-horizontal-right-top-corner($startColor: #555, $endColor: #333) {
+    background-color: $endColor;
+    background-image: -webkit-gradient(linear, right top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(270deg, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(270deg, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(270deg, $startColor, $endColor);
+    background-image:      -o-linear-gradient(270deg, $startColor, $endColor);
+    background-image:         linear-gradient(270deg, $startColor, $endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
+}
+/// CENTER
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+/// ABSOLUTE CENTER
+/// /* .bar {  @include ctr(both); height: 100px; width: 50%; } */
+@mixin ctr($axis: "both") {
+    position:absolute;
+    @if $axis == "y"{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @if $axis == "x"{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $axis == "both"{
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+}
+/// BREAKPOINTS
+// $breakpoints: (
+//     "phone":        400px,
+//     "phone-wide":   480px,
+//     "phablet":      560px,
+//     "tablet-small": 640px,
+//     "tablet":       768px,
+//     "tablet-wide":  1024px,
+//     "desktop":      1248px,
+//     "desktop-wide": 1440px
+// );
+@mixin mq($width, $type: max) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+/// Keyframes
+/// @param {*} $animation-name - Animation name
+/// @content [Animation css]
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+/// Adds a browser prefix to the property
+/// @param {*} $property Property
+/// @param {*} $value Value
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}

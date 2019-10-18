@@ -1,0 +1,21 @@
+/*!
+ * Theme Name: WP Clean Responsive
+ * Theme URI: http://dev-co.uk
+ * Description: WP Clean Responsive WordPress Theme
+ * Version: 1.2 +
+ * Author: Raivis
+ * Author URI: http://dev-co.uk
+ * Tags: Blank, CSS3, SASS, Bootstrap4, Gulp(npm/NodeJS), JavaScript, jQuery, Ajax, PHP, WP-SCSS, ACF, CPT - next v.1.3 + (Webpack,ReactJS,VueJS)
+ * License: MIT http://dev-co.uk
+ * License URI: http://opensource.org/licenses/mit-license.php
+ */
+/*------------------------------------*\
+  SCSS BASE STYLE & MIXINS & FONTS
+\*------------------------------------*/
+@import url('assets/css/fonts.css');
+/* @import url('assets/css/base.css'); Imported by compilator */
+@import url('assets/css/custom.css');
+/*------------------------------------*\
+    MEDIA PRINT
+\*------------------------------------*/
+@import url('assets/css/print.css');
