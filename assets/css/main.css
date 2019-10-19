@@ -65,10 +65,20 @@ a:hover {
     overflow: hidden; }
     #root .container .row {
       position: relative; }
+    #root .container.full {
+      padding: 0;
+      max-width: none;
+      width: 100vw;
+      height: 100vh; }
   #root header {
-    background-color: #ffffff;
-    height: 100vh;
-    padding-top: 25px; }
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100px;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    z-index: 9;
+    top: 0; }
     #root header .nav {
       position: absolute;
       right: 200px; }
@@ -81,11 +91,20 @@ a:hover {
         transition: opacity .4s ease; }
         #root header .nav li:hover {
           opacity: .7; }
-    #root header button.btn.demo {
-      position: absolute;
-      right: 0; }
+    #root header .soc {
+      position: relative;
+      height: 100%; }
+      #root header .soc a {
+        display: block;
+        height: 40px;
+        position: absolute;
+        right: 5vw;
+        top: 50%;
+        margin-top: -20px; }
   #root section {
     padding: 100px 0 100px; }
+    #root section.full {
+      padding: 0; }
     #root section.sec1 .about-img {
       height: 60%;
       position: absolute;

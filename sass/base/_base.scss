@@ -38,11 +38,22 @@ a:hover {
         .row {
             position: relative;
         }
+        &.full {
+            padding: 0;
+            max-width: none;
+            width: 100vw;
+            height: 100vh;
+        }
     }
     header {
-        background-color: $color-white;
-        height: 100vh;
-        padding-top: 25px;
+        background-color: $color-black-op9;
+        width: 100vw;
+        height: 100px;
+        padding: 10px;
+        display: block;
+        position: absolute;
+        z-index: 9;
+        top: 0;
         .nav {
             position: absolute;
             right: 200px;
@@ -58,13 +69,24 @@ a:hover {
                 }
             }
         }
-        button.btn.demo {
-            position: absolute;
-            right: 0;
+        .soc {
+            position: relative;
+            height: 100%;
+            a {
+                display: block;
+                height: 40px;
+                position: absolute;
+                right: 5vw;
+                top: 50%;
+                margin-top: -20px;
+            }
         }
     }
     section {
         padding: 100px 0 100px;
+        &.full {
+            padding: 0;
+        }
         &.sec1 {
             .about-img {
                 height: 60%;

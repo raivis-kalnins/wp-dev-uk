@@ -18,7 +18,7 @@ function initialise() {
         });
     }, 500);
     $('.owl-carousel').owlCarousel({
-        items: 4,
+        items: 1,
         loop: true,
         center: false,
         lazyLoad: true,
@@ -28,22 +28,7 @@ function initialise() {
         autoplay: false,
         touchDrag: true,
         mouseDrag: true,
-        margin: 10,
-        responsiveClass:true,
-        responsive: {
-            0:{
-                items:1,
-                nav:true
-            },
-            600:{
-                items:2,
-                nav:true
-            },
-            1000:{
-                items:4,
-                nav:true
-            }
-        }
+        margin: 0
     });
     var year = moment().format('YYYY');
     $('footer .year').append(year);

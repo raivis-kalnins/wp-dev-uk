@@ -14,13 +14,9 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?> id="root">
-		<div id="fullpage">
-			<header <?php if ( has_header_image() ) { ?> class="custom-background section" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
-				<div class="container">
-					<div class="col-md-12">
-						<div class="logo"><a title="Logo" href="" aria-label="Logo"></a></div>
-						<div class="menu-main-menu-container"></div>
-						<div class="fb"><a href="#"><i class="fa fa-facebook fa-2x"></i></a></div>
-					</div>
-				</div>
-			</header>
+		<header>
+			<div class="logo"><a title="Logo" href="" aria-label="Logo"></a></div>
+			<div class="menu-main-menu-container"></div>
+			<div class="soc fb"><a href="#"><i class="fa fa-facebook fa-2x"></i></a></div>
+		</header>
+		<div id="fullpage"><?php //Full page Begin ?>

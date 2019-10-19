@@ -1,4 +1,15 @@
 <?php /* Template Name: Home Page TPL - PHP */ get_header(); ?>
+<section class="section full" id="home-slider">
+    <div class="container full" <?php if ( has_header_image() ) { ?> class="custom-background section" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
+        <div class="owl-carousel">
+            <?php
+                for ($i = 1; $i <= 20; $i++) {
+                    if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), "image0$i", NULL, "full"); endif;
+                }
+            ?>
+        </div>
+    </div>
+</section>
 <section class="section" id="sc1">
     <div class="container">
         <div class="row">
