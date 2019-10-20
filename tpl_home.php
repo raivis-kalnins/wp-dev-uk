@@ -1,6 +1,7 @@
 <?php /* Template Name: Home Page TPL - PHP */ get_header(); ?>
 <section class="section full" id="home-slider">
     <div class="container full" <?php if ( has_header_image() ) { ?> class="custom-background section" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
+        <h1><?php the_title(); ?></h1>
         <div class="owl-carousel">
             <?php
                 for ($i = 1; $i <= 20; $i++) {
@@ -15,7 +16,6 @@
         <div class="row">
             <div class="col-md-12">
                 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-                    <h1><?php the_title(); ?></h1>
                     <div class="description"><?php the_content(); ?></div>
                     <div class="about-img"></div>
                     <div class="about-img"></div>

@@ -30,40 +30,48 @@ function initialise() {
         mouseDrag: true,
         margin: 0
     });
+    $('h1').funnyText({
+		speed: 700,
+		borderColor: 'black',
+		activeColor: 'white',
+		color: 'black',
+		fontSize: '7em',
+		direction: 'both'
+	});
     var year = moment().format('YYYY');
     $('footer .year').append(year);
     $( "#calendar" ).datepicker({ firstDay: 1});
+    
+    TweenMax.defaultEase = Linear.easeOut;
+    $('#fullpage').fullpage({
+        licenseKey: '07081966-FF964CAE-AC397D8D-A0F229C5',
+        autoScrolling: true,
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['home', 'about', 'portfolio', 'contact', 'connect'],
+        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', '#333', '#000','#f2f2f2', '#4BBFC3',],
+        anchors: ['home', 'about', 'portfolio', 'contact', 'connect'],
+        menu: '#myMenu',
+        onLeave: (origin, destination, direction) => {
+            const description = document.querySelector(".description");
+            const tl = new TimelineMax({ delay: 0.5 });
+            tl.fromTo(description, .7, { y: "50", opacity: 0 }, { y: "0", opacity: 1 });
+            // if(index==1) {
+            //     const about_imgs = $(".about-img");
+            //     const description = $(".description");
+            //     tl.fromTo(about_imgs, 0.7, { x: "100%" }, { x: "-10%" })
+            //         .fromTo(description,0.5,{ opacity: 0, y: "50" },{ y: "0", opacity: 1 })
+            //         .fromTo(about_imgs[0], 1, { opacity: 1 }, { opacity: 1 })
+            //         .fromTo(about_imgs[1], 1, { opacity: 0 }, { opacity: 1 })
+            //         .fromTo(about_imgs[2], 1, { opacity: 0 }, { opacity: 1 });
+            // }
+        }
+    });
+
 	return false;
 };
 $(document).ready(function () {
     setTimeout(function () {
         initialise();
     }, 200);
-});
-TweenMax.defaultEase = Linear.easeOut;
-$('#fullpage').fullpage({
-    //options here
-    navigation: true,
-    navigationPosition: 'right',
-    navigationTooltips: ['home', 'about', 'portfolio', 'contact', 'connect'],
-    anchors: ['home', 'about', 'portfolio', 'contact', 'connect'],
-    menu: '#myMenu',
-    fitToSection: false,
-    parallax: false,
-	parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-    afterLoad: function ( anchorLink, index) {
-        var loadedSection = $(this);
-        const container = $(".container");
-        const tl = new TimelineMax({ delay: 0.5 });
-        tl.fromTo(container, 0.5, { y: "50", opacity: 0 }, { y: "0", opacity: 1 });
-        if(index==1) {
-            const about_imgs = $(".about-img");
-            const description = $(".description");
-            tl.fromTo(about_imgs, 0.7, { x: "100%" }, { x: "-10%" })
-                .fromTo(description,0.5,{ opacity: 0, y: "50" },{ y: "0", opacity: 1 })
-                .fromTo(about_imgs[0], 1, { opacity: 1 }, { opacity: 1 })
-                .fromTo(about_imgs[1], 1, { opacity: 0 }, { opacity: 1 })
-                .fromTo(about_imgs[2], 1, { opacity: 0 }, { opacity: 1 });
-        }
-    }
 });

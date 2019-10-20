@@ -16,6 +16,11 @@ select:active,
 select:hover,
 textarea:focus,
 button:focus,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 *:focus {
     outline: none !important;
 }
@@ -35,6 +40,8 @@ a:hover {
     padding: 0;
     .container {
         overflow: hidden;
+        height: 100vh;
+        padding-top: 70px;
         .row {
             position: relative;
         }
@@ -46,7 +53,7 @@ a:hover {
         }
     }
     header {
-        background-color: $color-black-op9;
+        background-color: $color-white-op9;
         width: 100vw;
         height: 100px;
         padding: 10px;
@@ -54,6 +61,14 @@ a:hover {
         position: absolute;
         z-index: 9;
         top: 0;
+        .logo {
+            width: 210px;
+            position: absolute;
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
         .nav {
             position: absolute;
             right: 200px;
@@ -73,12 +88,16 @@ a:hover {
             position: relative;
             height: 100%;
             a {
+                color: $color-blue;
                 display: block;
                 height: 40px;
                 position: absolute;
                 right: 5vw;
                 top: 50%;
                 margin-top: -20px;
+                &:hover {
+                    color: $color-blue-op9;
+                }
             }
         }
     }

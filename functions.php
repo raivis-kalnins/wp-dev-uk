@@ -36,6 +36,14 @@
     /*------------------------------------*\
         Functions
     \*------------------------------------*/
+    add_theme_support( 'custom-logo' );
+    add_theme_support( 'custom-logo', array(
+        'height'      => 70,
+        'width'       => 200,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    ));
     // devcouk Blank navigation
     function header_nav() {
         wp_nav_menu(

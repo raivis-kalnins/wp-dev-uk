@@ -1,4 +1,9 @@
-<?php  ini_set('display_errors', 1); // Insert this debug code before require statement. require_once 'assets/detectdevice/detect.php'; ?>
+<?php  	
+	ini_set('display_errors', 1); // Insert this debug code before require statement. require_once 'assets/detectdevice/detect.php'; 
+	$custom_logo_id = get_theme_mod('custom_logo'); 
+	$logo = wp_get_attachment_image_src($custom_logo_id,'full');
+	$logo_alt = get_bloginfo('name');
+?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
@@ -15,7 +20,7 @@
 	</head>
 	<body <?php body_class(); ?> id="root">
 		<header>
-			<div class="logo"><a title="Logo" href="" aria-label="Logo"></a></div>
+			<div class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></div>
 			<div class="menu-main-menu-container"></div>
 			<div class="soc fb"><a href="#"><i class="fa fa-facebook fa-2x"></i></a></div>
 		</header>

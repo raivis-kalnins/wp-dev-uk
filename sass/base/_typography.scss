@@ -13,19 +13,14 @@ h1, h2, h3 {
 }
 h1 {
     font-size: 50px;
-}
-section,
-header{
-    h1 {
-        font-size: 64px;
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -20%);
-        background: linear-gradient(to left, #87c7df, #648896);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+    color: $color-white;
+    position: absolute;
+    width: 50vw;
+    left: 50vw;
+    margin-left: -25vw;
+    text-align: center;
+    top: 50%;
+    z-index: 2;
 }
 h2 {
     font-size: 40px;
