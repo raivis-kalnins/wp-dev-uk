@@ -62,11 +62,15 @@ a:hover {
         z-index: 9;
         top: 0;
         .logo {
-            width: 210px;
             position: absolute;
-            display: block;
-            img {
-                width: 100%;
+            left: 5vw;
+            a {
+                width: 210px;
+                height: 100%;
+                display: block;
+                img {
+                    width: 100%;
+                }
             }
         }
         .nav {
@@ -84,17 +88,16 @@ a:hover {
                 }
             }
         }
-        .soc {
-            position: relative;
-            height: 100%;
+        .soc { 
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            width: 20px;
+            height: 40px;
+            right: 5vw;
+            display: block;
             a {
                 color: $color-blue;
-                display: block;
-                height: 40px;
-                position: absolute;
-                right: 5vw;
-                top: 50%;
-                margin-top: -20px;
                 &:hover {
                     color: $color-blue-op9;
                 }

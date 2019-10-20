@@ -45,7 +45,7 @@
         'header-text' => array( 'site-title', 'site-description' ),
     ));
     // devcouk Blank navigation
-    function header_nav() {
+    function main_nav() {
         wp_nav_menu(
         array(
             'theme_location'  => 'header-menu',
@@ -197,7 +197,7 @@
         ));
         // Define Sidebar Widget Area 3
         register_sidebar(array(
-            'name' => __('Post widgets', 'devcoukblank'),
+            'name' => __('Custom widgets', 'devcoukblank'),
             'description' => __('Widgets for single posts', 'devcoukblank'),
             'id' => 'widget-area-3',
             'before_widget' => '<div id="%1$s" class="%2$s">',

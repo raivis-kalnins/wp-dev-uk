@@ -20,8 +20,10 @@
 	</head>
 	<body <?php body_class(); ?> id="root">
 		<header>
-			<div class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></div>
-			<div class="menu-main-menu-container"></div>
+			<div class="mob-nav" style="display:none"></div>
+			<div class="logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a></div>
+			<div class="main-menu-container"><?php main_nav(); ?></div>
+			<div class="mob-menu-container" style="display:none"><?php main_nav(); ?></div>
 			<div class="soc fb"><a href="#"><i class="fa fa-facebook fa-2x"></i></a></div>
 		</header>
 		<div id="fullpage"><?php //Full page Begin ?>
