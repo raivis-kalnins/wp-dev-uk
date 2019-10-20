@@ -53,7 +53,7 @@ a:hover {
         }
     }
     header {
-        background-color: $color-white-op9;
+        background-color: $color-transp;
         width: 100vw;
         height: 100px;
         padding: 10px;
@@ -63,32 +63,83 @@ a:hover {
         top: 0;
         .logo {
             position: absolute;
+            display: block;
             left: 5vw;
-            a {
-                width: 210px;
+            width: 17vw;
+            max-width: 200px;
+            height: 60px;
+            top: 50%;
+            margin-top: -30px;
+            opacity: 0;
+            img {
                 height: 100%;
-                display: block;
-                img {
-                    width: 100%;
-                }
             }
         }
-        .nav {
-            position: absolute;
-            right: 200px;
-            li {
-                font-size: 1em;
-                margin-right: 2vw;
-                padding-top: 10px;
-                font-family: $font-nav;
-                cursor: pointer;
-                transition: opacity .4s ease;
-                &:hover {
-                    opacity: .7;
+        nav {
+            &.main-menu-container {
+                position: relative;
+                display: block;
+                top: 50%;
+                height: 40px;
+                margin-top: -20px;
+                ul {
+                    position: relative;
+                    margin: 0 auto;
+                    display: block;
+                    top: calc(50% - .9vw);
+                    width: calc(50vw - 1.7vw);
+                    li {
+                        float: left;
+                        margin-right: 1.7vw;
+                        position: relative;
+                        a {
+                            font-size: 1.8vw;
+                            line-height: 1.8vw;
+                            font-weight: 700;
+                            font-family: $font-nav;
+                            transition: opacity .1s ease;
+                            text-transform: capitalize;
+                            color: $color-white;
+                            &:hover {
+                                opacity: .9;
+                                color: $color-white-op9;
+                            }
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &:after {
+                            content: "";
+                            background-color: $color-orange-op9;
+                            position: absolute;
+                            width: 100%;
+                            max-width: 18px;
+                            height: 2px;
+                            top: .9vw;
+                            left: 0;
+                            margin-top: .9vw;
+                            opacity: 0;
+                            transform-origin: left bottom;
+                            transform: rotate(90deg);
+                            -webkit-animation-duration: 1s;
+                            animation-duration: 1s;
+                            -webkit-animation-fill-mode: both;
+                            animation-fill-mode: both;
+                        }
+                        &.active:after {
+                            -webkit-animation-name: rotateInUpLeft;
+                            animation-name: rotateInUpLeft;
+                            opacity: 1;
+                        }
+                    }
                 }
+            }
+            &.mob-menu-container {
+                display: none;
             }
         }
         .soc { 
+            color: $color-blue;
             position: absolute;
             top: 50%;
             margin-top: -20px;
@@ -96,12 +147,27 @@ a:hover {
             height: 40px;
             right: 5vw;
             display: block;
-            a {
+            opacity: 0;
+            &:hover {
+                color: $color-blue-op9;
+            }
+        }
+        &.n-fixed {
+            height: 70px; 
+            background-color: $color-white-op9;
+            .logo {
+                opacity: 1;
+            }
+            nav.main-menu-container ul li a {
                 color: $color-blue;
                 &:hover {
-                    color: $color-blue-op9;
+                    opacity: .9;
+                    color: $color-orange-op9;
                 }
             }
+            .soc {
+                opacity: 1;
+            } 
         }
     }
     section {
@@ -343,6 +409,10 @@ a:hover {
                     transform: translateY(-50%);
                 }
             }
+        }
+        #f-key {
+            font-size: 0;
+            display: none;
         }
     }
 }

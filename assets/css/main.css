@@ -79,7 +79,7 @@ a:hover {
       width: 100vw;
       height: 100vh; }
   #root header {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: transparent;
     width: 100vw;
     height: 100px;
     padding: 10px;
@@ -89,37 +89,92 @@ a:hover {
     top: 0; }
     #root header .logo {
       position: absolute;
-      left: 5vw; }
-      #root header .logo a {
-        width: 210px;
-        height: 100%;
-        display: block; }
-        #root header .logo a img {
-          width: 100%; }
-    #root header .nav {
-      position: absolute;
-      right: 200px; }
-      #root header .nav li {
-        font-size: 1em;
-        margin-right: 2vw;
-        padding-top: 10px;
-        font-family: "Roboto Light";
-        cursor: pointer;
-        transition: opacity .4s ease; }
-        #root header .nav li:hover {
-          opacity: .7; }
+      display: block;
+      left: 5vw;
+      width: 17vw;
+      max-width: 200px;
+      height: 60px;
+      top: 50%;
+      margin-top: -30px;
+      opacity: 0; }
+      #root header .logo img {
+        height: 100%; }
+    #root header nav.main-menu-container {
+      position: relative;
+      display: block;
+      top: 50%;
+      height: 40px;
+      margin-top: -20px; }
+      #root header nav.main-menu-container ul {
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        top: calc(50% - .9vw);
+        width: calc(50vw - 1.7vw); }
+        #root header nav.main-menu-container ul li {
+          float: left;
+          margin-right: 1.7vw;
+          position: relative; }
+          #root header nav.main-menu-container ul li a {
+            font-size: 1.8vw;
+            line-height: 1.8vw;
+            font-weight: 700;
+            font-family: "Roboto Thin";
+            transition: opacity .1s ease;
+            text-transform: capitalize;
+            color: #ffffff; }
+            #root header nav.main-menu-container ul li a:hover {
+              opacity: .9;
+              color: rgba(255, 255, 255, 0.9); }
+          #root header nav.main-menu-container ul li:last-child {
+            margin-right: 0; }
+          #root header nav.main-menu-container ul li:after {
+            content: "";
+            background-color: rgba(230, 63, 18, 0.9);
+            position: absolute;
+            width: 100%;
+            max-width: 18px;
+            height: 2px;
+            top: .9vw;
+            left: 0;
+            margin-top: .9vw;
+            opacity: 0;
+            transform-origin: left bottom;
+            transform: rotate(90deg);
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+          #root header nav.main-menu-container ul li.active:after {
+            -webkit-animation-name: rotateInUpLeft;
+            animation-name: rotateInUpLeft;
+            opacity: 1; }
+    #root header nav.mob-menu-container {
+      display: none; }
     #root header .soc {
+      color: #142d5d;
       position: absolute;
       top: 50%;
       margin-top: -20px;
       width: 20px;
       height: 40px;
       right: 5vw;
-      display: block; }
-      #root header .soc a {
+      display: block;
+      opacity: 0; }
+      #root header .soc:hover {
+        color: rgba(20, 45, 93, 0.9); }
+    #root header.n-fixed {
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.9); }
+      #root header.n-fixed .logo {
+        opacity: 1; }
+      #root header.n-fixed nav.main-menu-container ul li a {
         color: #142d5d; }
-        #root header .soc a:hover {
-          color: rgba(20, 45, 93, 0.9); }
+        #root header.n-fixed nav.main-menu-container ul li a:hover {
+          opacity: .9;
+          color: rgba(230, 63, 18, 0.9); }
+      #root header.n-fixed .soc {
+        opacity: 1; }
   #root section {
     padding: 100px 0 100px; }
     #root section.full {
@@ -152,7 +207,7 @@ a:hover {
           position: absolute;
           left: 125px;
           top: 85px;
-          font-family: "Roboto Light";
+          font-family: "Roboto Thin";
           color: #142d5d; }
       #root section.sec2 h3.learn-title {
         display: inline-block;
@@ -207,7 +262,7 @@ a:hover {
             background: transparent !important;
             border: #69c0ac solid 2px !important; }
     #root section.sec4 .cust-subtitle {
-      font-family: "Roboto Light";
+      font-family: "Roboto Thin";
       color: #65b9a7;
       width: 100%;
       text-align: center;
@@ -294,11 +349,38 @@ a:hover {
         position: relative;
         top: 50%;
         transform: translateY(-50%); }
+    #root footer #f-key {
+      font-size: 0;
+      display: none; }
 
 @media only screen and (max-width: 1120px) {
   .smart img,
   .laptop img {
     width: 100%; } }
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft; }
 
 html, body {
   font-family: "Roboto", Arial, sans-serif;
@@ -348,7 +430,7 @@ button, .btn {
   font-size: 1em;
   border-color: transparent;
   padding: 10px 20px;
-  font-family: "Roboto Light";
+  font-family: "Roboto Thin";
   letter-spacing: .1em; }
   button:focus, button:hover, .btn:focus, .btn:hover {
     opacity: .8;
@@ -362,6 +444,10 @@ button, .btn {
     background-color: #69c0ac; }
     button.btn-secondary:hover, .btn.btn-secondary:hover {
       background-color: #69c0ac !important; }
+  button#m-nav, .btn#m-nav {
+    display: none;
+    position: absolute;
+    top: 50%; }
 
 #fp-nav {
   position: fixed;
@@ -372,6 +458,10 @@ button, .btn {
   top: 50%;
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0); }
+
+@media only screen and (max-width: 812px) {
+  button#m-nav {
+    display: block; } }
 
 .video-holder {
   display: none;

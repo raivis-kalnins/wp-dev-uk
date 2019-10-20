@@ -1,5 +1,5 @@
 <?php  	
-	ini_set('display_errors', 1); // Insert this debug code before require statement. require_once 'assets/detectdevice/detect.php'; 
+	ini_set('display_errors', 1); // debug PHP
 	$custom_logo_id = get_theme_mod('custom_logo'); 
 	$logo = wp_get_attachment_image_src($custom_logo_id,'full');
 	$logo_alt = get_bloginfo('name');
@@ -20,10 +20,10 @@
 	</head>
 	<body <?php body_class(); ?> id="root">
 		<header>
-			<div class="mob-nav" style="display:none"></div>
-			<div class="logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a></div>
-			<div class="main-menu-container"><?php main_nav(); ?></div>
-			<div class="mob-menu-container" style="display:none"><?php main_nav(); ?></div>
-			<div class="soc fb"><a href="#"><i class="fa fa-facebook fa-2x"></i></a></div>
+			<button id="m-nav"></button>
+			<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
+			<nav class="main-menu-container"><?php main_nav(); ?></nav>
+			<nav class="mob-menu-container"><?php main_nav(); ?></nav>
+			<a href="#" class="soc fb"><i class="fa fa-facebook fa-2x"></i></a>
 		</header>
-		<div id="fullpage"><?php //Full page Begin ?>
+		<div id="fullpage"><?php //Start - Full page ?>

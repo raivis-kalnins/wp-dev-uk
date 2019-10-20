@@ -1,5 +1,15 @@
 var $ = jQuery.noConflict();
 function initialise() {
+    // Window Scroll
+    // function onScroll() {
+    //     /* Menu top */
+    //     if ($(window).scrollTop() > 30) {
+    //         $('header').addClass('n-fixed');
+    //     } else {
+    //         $('header').removeClass('n-fixed');
+    //     }
+    // }
+    // window.addEventListener('scroll', onScroll, false);
     setTimeout(function () {
         $(".owl-carousel img").each(function(i, elem) {
             var img = $(elem);
@@ -43,10 +53,11 @@ function initialise() {
     $( "#calendar" ).datepicker({ firstDay: 1});
     
     TweenMax.defaultEase = Linear.easeOut;
-    var key = $('#full-key').text();
     $('.main-menu-container ul').attr('id','MyMenu');
+    var key = $('#f-key .textwidget').text();
+    //console.log('full key: '+ key);
     $('#fullpage').fullpage({
-        licenseKey: '',
+        licenseKey: key,
         autoScrolling: true,
         navigation: true,
         lazyLoad: true,
@@ -60,8 +71,10 @@ function initialise() {
             const tl = new TimelineMax({ delay: 0.5 });
             tl.fromTo(description, .7, { y: "50", opacity: 0 }, { y: "0", opacity: 1 });
             $('#MyMenu li').removeClass('active');
+            $('header').addClass('n-fixed');
             if(destination.index == 0) {
                 $('#MyMenu li:nth-child(1)').addClass('active');
+                $('header').removeClass('n-fixed');
             } else if(destination.index == 1) {
                 $('#MyMenu li:nth-child(2)').addClass('active');
                 const about_imgs = $(".about-img");
@@ -85,7 +98,6 @@ function initialise() {
             }
         }
     });
-
 	return false;
 };
 $(document).ready(function () {
