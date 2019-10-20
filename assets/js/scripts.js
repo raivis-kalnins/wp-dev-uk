@@ -198,7 +198,7 @@ function initialise() {
     
     TweenMax.defaultEase = Linear.easeOut;
     $('#fullpage').fullpage({
-        licenseKey: '07081966-FF964CAE-AC397D8D-A0F229C5',
+        licenseKey: '',
         autoScrolling: true,
         navigation: true,
         navigationPosition: 'right',
