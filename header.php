@@ -19,6 +19,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?> id="root">
+		<div class="scroller_header"><div id="scroll-line"></div></div>
 		<header>
 			<button id="m-nav"></button>
 			<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>

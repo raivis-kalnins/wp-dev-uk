@@ -78,6 +78,20 @@ a:hover {
       max-width: none;
       width: 100vw;
       height: 100vh; }
+  #root .scroller_header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 0;
+    height: 2px;
+    width: 100%;
+    background: transparent;
+    z-index: 100; }
+    #root .scroller_header #scroll-line {
+      height: 2px;
+      margin-bottom: -2px;
+      background: rgba(230, 63, 18, 0.9);
+      width: 0%; }
   #root header {
     background-color: transparent;
     width: 100vw;
@@ -155,9 +169,9 @@ a:hover {
       color: #142d5d;
       position: absolute;
       top: 50%;
-      margin-top: -20px;
       width: 20px;
-      height: 40px;
+      height: 28px;
+      margin-top: -14px;
       right: 5vw;
       display: block;
       opacity: 0; }
@@ -165,7 +179,8 @@ a:hover {
         color: rgba(20, 45, 93, 0.9); }
     #root header.n-fixed {
       height: 70px;
-      background-color: rgba(255, 255, 255, 0.9); }
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 3px; }
       #root header.n-fixed .logo {
         opacity: 1; }
       #root header.n-fixed nav.main-menu-container ul li a {
@@ -177,14 +192,23 @@ a:hover {
         opacity: 1; }
   #root section {
     padding: 100px 0 100px; }
+    #root section .logo-c {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      position: absolute;
+      width: 200px;
+      left: 50vw;
+      margin-left: -100px;
+      text-align: center;
+      top: 25%;
+      z-index: 2; }
     #root section.full {
       padding: 0; }
     #root section.sec1 .about-img {
-      height: 60%;
       position: absolute;
-      top: 70%;
       left: 50%;
-      transform: translate(-50%, -50%); }
+      top: 15%;
+      z-index: 999; }
     #root section.sec1 .smart-txt h1 {
       padding-top: 100px; }
     #root section.sec2 {
@@ -352,6 +376,93 @@ a:hover {
     #root footer #f-key {
       font-size: 0;
       display: none; }
+  #root .owl-carousel .owl-wrapper {
+    display: none;
+    position: relative;
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  #root .owl-carousel .owl-wrapper-outer.autoHeight {
+    -webkit-transition: height 500ms ease-in-out;
+    -moz-transition: height 500ms ease-in-out;
+    -ms-transition: height 500ms ease-in-out;
+    -o-transition: height 500ms ease-in-out;
+    transition: height 500ms ease-in-out; }
+  #root .owl-carousel .owl-wrapper,
+  #root .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); }
+  #root .owl-carousel .owl-item {
+    float: left;
+    width: 100vw !important;
+    z-index: 1; }
+    #root .owl-carousel .owl-item .item {
+      background-position: 50% 25% !important;
+      background-size: cover !important;
+      width: 100vw !important;
+      min-height: 100vh; }
+      #root .owl-carousel .owl-item .item:after {
+        content: '';
+        z-index: 2;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        background-color: rgba(20, 45, 93, 0.9);
+        background-image: -webkit-gradient(linear, right top, left bottom, from(#142d5d), to(rgba(20, 45, 93, 0.9)));
+        background-image: -webkit-linear-gradient(to bottom, #142d5d, rgba(20, 45, 93, 0.9));
+        background-image: -moz-linear-gradient(to bottom, #142d5d, rgba(20, 45, 93, 0.9));
+        background-image: -ms-linear-gradient(to bottom, #142d5d, rgba(20, 45, 93, 0.9));
+        background-image: -o-linear-gradient(to bottom, #142d5d, rgba(20, 45, 93, 0.9));
+        background-image: linear-gradient(to bottom, #142d5d, rgba(20, 45, 93, 0.9));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#142d5d', endColorStr='rgba(20, 45, 93, 0.9)', gradientType='1'); }
+  #root .owl-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -21px;
+    color: #ffffff; }
+    #root .owl-carousel .owl-nav button span {
+      position: absolute;
+      display: block;
+      width: 25px;
+      height: 42px;
+      font-size: 0;
+      transition: opacity .5s ease;
+      opacity: .5; }
+      #root .owl-carousel .owl-nav button span:hover {
+        opacity: 1; }
+    #root .owl-carousel .owl-nav button.owl-prev span {
+      background: url(../img/i/w-prev.png) center/cover no-repeat;
+      left: 5vw; }
+    #root .owl-carousel .owl-nav button.owl-next span {
+      background: url(../img/i/w-next.png) center/cover no-repeat;
+      right: 5vw; }
+  #root .owl-carousel .owl-dots {
+    position: absolute;
+    z-index: 999;
+    right: 50%;
+    margin-right: -55px;
+    top: 90%; }
+    #root .owl-carousel .owl-dots .owl-dot {
+      display: block;
+      width: 30px;
+      height: 10px;
+      border-radius: 2px;
+      background-color: #ffffff;
+      border: #ffffff solid 2px;
+      float: left;
+      margin-right: 10px;
+      transition: opacity .5s ease;
+      opacity: .5; }
+      #root .owl-carousel .owl-dots .owl-dot.active {
+        opacity: 1;
+        background-color: #575756; }
 
 @media only screen and (max-width: 1120px) {
   .smart img,
@@ -456,8 +567,20 @@ button, .btn {
   left: inherit;
   right: 5px;
   top: 50%;
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0); }
+  opacity: 1; }
+  #fp-nav ul li a span {
+    background: #142d5d;
+    border: #ffffff solid 1px;
+    border-radius: 100%; }
+  #fp-nav ul li a.active span {
+    background: #e63f12;
+    border: 0; }
+  #fp-nav ul li .fp-tooltip {
+    text-transform: capitalize;
+    color: #b2b2b2;
+    font-family: "Roboto Thin";
+    font-weight: 700;
+    letter-spacing: .1em; }
 
 @media only screen and (max-width: 812px) {
   button#m-nav {

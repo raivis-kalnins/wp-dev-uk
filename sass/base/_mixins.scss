@@ -52,6 +52,17 @@
     background-image:         linear-gradient(270deg, $startColor, $endColor);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
 }
+/// Background Vertical top bottomt
+@mixin background-vertical-to-bottom($startColor: #555, $endColor: #333) {
+    background-color: $endColor;
+    background-image: -webkit-gradient(linear, right top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(to bottom, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(to bottom, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(to bottom, $startColor, $endColor);
+    background-image:      -o-linear-gradient(to bottom, $startColor, $endColor);
+    background-image:         linear-gradient(to bottom, $startColor, $endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
+}
 /// CENTER
 @mixin push--auto {
     margin: {

@@ -37,7 +37,28 @@ button, .btn {
     right: 5px;
     top: 50%;
     opacity: 1;
-    -webkit-transform: translate3d(0,0,0);
+    ul li {
+        a {
+            span {
+                background: $color-blue;
+                border: $color-white solid 1px;
+                border-radius: 100%;
+            }
+            &.active {
+                span {
+                    background: $color-orange;
+                    border: 0;
+                }
+            }
+        }
+        .fp-tooltip {
+            text-transform: capitalize;
+            color: $color-l-grey;
+            font-family: $font-nav;
+            font-weight: 700;
+            letter-spacing: .1em;
+        }
+    }
 }
 @media only screen and (max-width: $breakpoint-phone-l) {
     button#m-nav {

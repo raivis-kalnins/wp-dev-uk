@@ -1,6 +1,11 @@
-<?php /* Template Name: Home Page TPL - PHP */ get_header(); ?>
+<?php /* Template Name: Home Page TPL - PHP */ get_header();
+    $custom_logo_id = get_theme_mod('custom_logo'); 
+    $logo = wp_get_attachment_image_src($custom_logo_id,'full');
+    $logo_alt = get_bloginfo('name');
+?>
 <section class="section full" id="home-slider">
     <div class="container full" <?php if ( has_header_image() ) { ?> class="custom-background section" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
+        <img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c" />    
         <h1><?php the_title(); ?></h1>
         <div class="owl-carousel">
             <?php
