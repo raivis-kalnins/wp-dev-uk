@@ -19,25 +19,42 @@
 <section class="section" id="sc1">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
                     <div class="description"><?php the_content(); ?></div>
-                    <div class="about-img"></div>
-                    <div class="about-img"></div>
-                    <div class="about-img"></div>
                 <?php endwhile; ?>
                 <?php else: ?><h1><?php _e( 'Sorry, nothing to display.', 'devcoukblank' ); ?></h1><?php endif; ?>
+            </div>
+            <div class="col-md-6">
+                <div class="about-img animated fadeIn"><img src="<?php if ( wp_is_mobile() ) { echo the_post_thumbnail_url(null, "small"); } else { echo the_post_thumbnail_url(null, "full"); } ?>" alt="" /></div>
             </div>
         </div>
     </div>
 </section>
 <section class="section" id="sc2">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                
+        <?php if( have_rows('services') ): ?>
+            <div class="row">
+                <h2><?php the_field('about_title'); ?></h2>
+                <?php while( have_rows('services') ): the_row(); 
+                    // vars
+                    $image = get_sub_field('image');
+                    $title = get_sub_field('title');
+                    $link = get_sub_field('link');
+                    ?>
+                    <div class="col-md-4">
+                        <?php if( $link ): ?>
+                            <a href="<?php echo $link; ?>">
+                        <?php endif; ?>
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                        <?php if( $link ): ?>
+                            </a>
+                        <?php endif; ?>
+                        <?php echo $title; ?>
+                    </div>
+                <?php endwhile; ?>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>
 <section class="section" id="sc3">

@@ -26,6 +26,21 @@ function initialise() {
             div.addClass("item top-img");
             img.replaceWith(div);
         });
+        $(".about-img img").each(function(i, elem) {
+            var img = $(elem);
+            var div = $("<div />").css({
+                background: "url(" + img.attr("src") + ") no-repeat",
+                "background-position": "center center",
+                "background-attachment": "inherit",
+                "width": "100%",
+                "height": "100%",
+                "background-size": "cover",
+                "display": "block"
+            });
+            div.html(img.attr("alt"));
+            div.addClass("item top-img");
+            img.replaceWith(div);
+        });
     }, 500);
     $('.owl-carousel').owlCarousel({
         items: 1,
@@ -68,8 +83,9 @@ function initialise() {
         sectionsColor: ['#333', '#fff', '#333', '#fff', '#333','#fff', '#333'],
         onLeave: (origin, destination, direction) => {
             const description = document.querySelector(".description");
+            const sec = document.querySelector("#sc1");
             const tl = new TimelineMax({ delay: 0.5 });
-            tl.fromTo(description, .7, { y: "50", opacity: 0 }, { y: "0", opacity: 1 });
+            tl.fromTo(sec, .7, { y: "50", opacity: 0 }, { y: "0", opacity: 1 });
             $('#MyMenu li').removeClass('active');
             $('header').addClass('n-fixed');
             $('#fp-nav.fp-right').fadeIn();
@@ -81,13 +97,9 @@ function initialise() {
                 s_width = 0;
             } else if(destination.index == 1) {
                 $('#MyMenu li:nth-child(2)').addClass('active');
-                const about_imgs = $(".about-img");
+                const about_img = $(".about-img");
                 s_width = 16.6;
-                // tl.fromTo(about_imgs, 0.7, { x: "100%" }, { x: "-10%" })
-                //     .fromTo(description,0.5,{ opacity: 0, y: "50" },{ y: "0", opacity: 1 })
-                //     .fromTo(about_imgs[0], 1, { opacity: 1 }, { opacity: 1 })
-                //     .fromTo(about_imgs[1], 1, { opacity: 0 }, { opacity: 1 })
-                //     .fromTo(about_imgs[2], 1, { opacity: 0 }, { opacity: 1 });
+                tl.fromTo(about_img, 0.7, { x:"200%" }, { x:"-50%" });
             } else if(destination.index == 2) {
                 $('#MyMenu li:nth-child(3)').addClass('active');
                 s_width = 33.2;

@@ -68,11 +68,13 @@ a:hover {
   overflow-y: auto;
   padding: 0; }
   #root .container {
-    overflow: hidden;
-    height: 100vh;
-    padding-top: 70px; }
+    margin-top: 0;
+    position: relative;
+    height: 100%;
+    top: 0; }
     #root .container .row {
-      position: relative; }
+      position: relative;
+      padding-top: 100px; }
     #root .container.full {
       padding: 0;
       max-width: none;
@@ -110,7 +112,8 @@ a:hover {
       height: 60px;
       top: 50%;
       margin-top: -30px;
-      opacity: 0; }
+      opacity: 0;
+      z-index: 2; }
       #root header .logo img {
         height: 100%; }
     #root header nav.main-menu-container {
@@ -191,7 +194,7 @@ a:hover {
       #root header.n-fixed .soc {
         opacity: 1; }
   #root section {
-    padding: 100px 0 100px; }
+    padding: 0; }
     #root section .logo-c {
       background-color: rgba(255, 255, 255, 0.3);
       border-radius: 5px;
@@ -204,124 +207,54 @@ a:hover {
       z-index: 2; }
     #root section.full {
       padding: 0; }
-    #root section.sec1 .about-img {
-      position: absolute;
-      left: 50%;
-      top: 15%;
-      z-index: 999; }
-    #root section.sec1 .smart-txt h1 {
-      padding-top: 100px; }
-    #root section.sec2 {
-      background: linear-gradient(to left top, #bdc1c7, white);
-      text-align: center; }
-      #root section.sec2 .learn-more .col {
-        position: relative; }
-        #root section.sec2 .learn-more .col img {
-          width: 100px;
+    #root section#sc1 {
+      background-color: #b2b2b2;
+      background-image: -webkit-gradient(linear, right top, left bottom, from(transparent), to(#b2b2b2));
+      background-image: -webkit-linear-gradient(to bottom, transparent, #b2b2b2);
+      background-image: -moz-linear-gradient(to bottom, transparent, #b2b2b2);
+      background-image: -ms-linear-gradient(to bottom, transparent, #b2b2b2);
+      background-image: -o-linear-gradient(to bottom, transparent, #b2b2b2);
+      background-image: linear-gradient(to bottom, transparent, #b2b2b2);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='transparent', endColorStr='#b2b2b2', gradientType='1'); }
+      #root section#sc1 .container {
+        transform: translate(0, 100px); }
+        #root section#sc1 .container .description h2 {
+          text-align: left; }
+        #root section#sc1 .container .description p {
+          font-size: 1.4em;
+          line-height: 1.4em; }
+        #root section#sc1 .container .about-img {
+          border-radius: 5%;
+          width: 100%;
+          max-width: 400px;
+          height: 100%;
+          max-height: 270px;
           display: block;
-          float: left; }
-        #root section.sec2 .learn-more .col p {
-          float: left;
-          position: relative;
-          max-width: 180px;
-          padding-left: 10px;
-          color: #575756;
-          text-align: left; }
-        #root section.sec2 .learn-more .col a.more {
+          overflow: hidden;
+          margin: 0 auto;
           position: absolute;
-          left: 125px;
-          top: 85px;
-          font-family: "Roboto Thin";
-          color: #142d5d; }
-      #root section.sec2 h3.learn-title {
-        display: inline-block;
-        margin-top: 90px;
-        color: #142d5d; }
-      #root section.sec2 .learn-p {
-        display: inline-block;
-        margin-bottom: 40px;
-        line-height: 2em; }
-      #root section.sec2 .laptop {
-        margin: 120px auto 120px;
-        text-align: center; }
-      #root section.sec2 .owl-carousel {
-        padding-left: 0; }
-        #root section.sec2 .owl-carousel h5 {
-          text-align: left;
-          font-weight: bold;
-          margin-bottom: 20px; }
-        #root section.sec2 .owl-carousel p {
-          text-align: left; }
-      #root section.sec2 .btn.btn-primary {
-        margin-right: 10px; }
-    #root section.sec3 .row + .row .col > div {
-      background-color: #ffffff;
-      border-radius: 10px;
-      min-height: 360px;
-      margin-bottom: 20px; }
-      #root section.sec3 .row + .row .col > div img {
-        width: 100%; }
-      #root section.sec3 .row + .row .col > div span {
-        margin: 30px;
-        display: inline-block; }
-        #root section.sec3 .row + .row .col > div span h3 {
-          color: #65b9a7;
-          font-family: "Roboto Regular";
-          font-size: 1em;
-          margin-bottom: 10px; }
-        #root section.sec3 .row + .row .col > div span p {
-          font-family: "Roboto Bold";
-          font-size: 1.3em;
-          margin-bottom: 30px; }
-        #root section.sec3 .row + .row .col > div span a {
-          background: #ffffff;
-          color: #65b9a7;
-          border: #69c0ac solid 2px;
-          border-radius: 25px;
-          padding: 10px 20px;
-          text-align: center;
-          position: absolute;
-          top: 285px; }
-          #root section.sec3 .row + .row .col > div span a:hover {
-            background: transparent !important;
-            border: #69c0ac solid 2px !important; }
-    #root section.sec4 .cust-subtitle {
-      font-family: "Roboto Thin";
-      color: #65b9a7;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-      display: inline-block; }
-    #root section.sec4 h3 {
-      color: #142d5d;
-      text-align: center;
-      width: 100%;
-      display: inline-block;
-      margin-bottom: 40px; }
-    #root section.sec4 .customers-list .col {
-      text-align: center;
-      display: block;
-      margin-bottom: 20px; }
-    #root section.sec5 .row {
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+          #root section#sc1 .container .about-img img {
+            width: 100%;
+            height: auto; }
+    #root section#sc2 {
       text-align: center; }
-      #root section.sec5 .row h2 {
-        width: 100%;
-        display: inline-block;
-        font-family: "Roboto Regular"; }
-        #root section.sec5 .row h2 b {
-          font-family: "Roboto Bold"; }
-      #root section.sec5 .row .btn {
-        display: block;
-        margin: 20px auto; }
+      #root section#sc2 .row {
+        display: inline-block; }
+        #root section#sc2 .row h2 {
+          margin-bottom: 70px;
+          color: #ffffff; }
+        #root section#sc2 .row div {
+          float: left;
+          color: #ffffff; }
+          #root section#sc2 .row div img {
+            width: 90%;
+            border-radius: 5%;
+            margin-bottom: 10px; }
   #root footer {
-    background-color: #ffffff;
-    position: relative;
-    width: 100vw;
-    float: left;
-    margin: 2.5rem 0 0;
-    padding: 3rem 0 3rem;
-    border: 0;
-    text-align: center; }
+    position: relative; }
     #root footer span {
       color: #ffffff;
       margin-right: 5px; }
@@ -346,33 +279,6 @@ a:hover {
           transition: opacity .4s ease; }
           #root footer .foo-nav li a:hover {
             opacity: .7; }
-    #root footer .social li {
-      float: left;
-      width: 32px;
-      height: 32px;
-      margin-right: 10px;
-      display: block;
-      overflow: hidden;
-      background: url("../img/i/soc.png") left center/cover no-repeat;
-      cursor: pointer;
-      transition: opacity .4s ease; }
-      #root footer .social li.tw {
-        background-position-x: 0; }
-      #root footer .social li.ln {
-        background-position-x: -42px; }
-      #root footer .social li.in {
-        background-position-x: -84px; }
-      #root footer .social li:hover {
-        opacity: .7; }
-    #root footer .foo-logos a {
-      float: right;
-      margin-left: 20px;
-      position: relative;
-      height: 70px; }
-      #root footer .foo-logos a img {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%); }
     #root footer #f-key {
       font-size: 0;
       display: none; }
@@ -518,7 +424,9 @@ h1 {
   z-index: 2; }
 
 h2 {
-  font-size: 40px; }
+  font-size: 40px;
+  letter-spacing: .1em;
+  text-transform: uppercase; }
 
 h3 {
   font-size: 30px; }
