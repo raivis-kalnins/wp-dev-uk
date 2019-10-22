@@ -23,8 +23,7 @@
 		<header>
 			<button id="m-nav"></button>
 			<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
-			<nav class="main-menu-container"><?php main_nav(); ?></nav>
-			<nav class="mob-menu-container"><?php main_nav(); ?></nav>
+			<nav class="main-menu-container"><?php main_nav(); // .mob-menu class respons ?></nav>
 			<a href="#" class="soc fb"><i class="fa fa-facebook fa-2x"></i></a>
 		</header>
 		<div id="fullpage"><?php //Start - Full page ?>

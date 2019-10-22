@@ -1,32 +1,44 @@
-button, .btn {
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1em;
-    border-color: transparent;
-    padding: 10px 20px;
-    font-family: $font-nav;
-    letter-spacing: .1em;
+[class*="button"] {
+    text-align: center;
+}
+.button--white {
+    border-color: $color-white;
+    color: $color-white;
     &:focus, &:hover {
-        opacity: .8;
-        border-color: transparent !important;
-        box-shadow: none !important;
+        color: $color-white;
     }
-    &.btn-primary {
-        background-color: $color-blue;
-        &:hover {
-            background-color: $color-blue !important;
-        }
-    }
-    &.btn-secondary {
-        background-color: $color-green;
-        &:hover {
-            background-color: $color-green !important;
-        }
+}
+button, .btn {
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: $font-body;
+    font-size: 1em;
+    padding: 10px 20px;
+    font-family: $font-body;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    &:focus, &:hover {
+        box-shadow: none;
+        background-color: $color-white-op3;
+        font-weight: bold;
     }
     &#m-nav {
         display: none;
         position: absolute;
         top: 50%;
+    }
+    &.btn-more {
+        position: absolute;
+        width: 200px;
+        margin-left: -100px;
+        left: 50%;
+        bottom: 10%;
+        z-index: 2;
+        &.btn-sl {
+            bottom: 25%;
+        }
     }
 }
 #fp-nav {
@@ -36,7 +48,7 @@ button, .btn {
     left: inherit;
     right: 5px;
     top: 50%;
-    opacity: 1;
+    display: none;
     ul li {
         a {
             span {

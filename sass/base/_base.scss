@@ -24,6 +24,9 @@ button:focus,
 *:focus {
     outline: none !important;
 }
+img {
+    @include object-fit(contain);
+}
 input:focus {
     outline: 0;
 }
@@ -45,7 +48,7 @@ a:hover {
         top: 0;
         .row {
             position: relative;
-            padding-top: 100px;
+            padding-top: 150px;
         }
         &.full {
             padding: 0;
@@ -68,6 +71,8 @@ a:hover {
             margin-bottom: -2px;
             background: $color-orange-op9;
             width: 0%;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
         }
     }
     header {
@@ -90,6 +95,8 @@ a:hover {
             margin-top: -30px;
             opacity: 0;
             z-index: 2;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
             img {
                 height: 100%;
             }
@@ -104,16 +111,15 @@ a:hover {
                 ul {
                     position: relative;
                     margin: 0 auto;
-                    display: block;
-                    top: calc(50% - .9vw);
-                    width: calc(50vw - 1.7vw);
+                    top: calc(50% - 1.2em);
+                    display: table;
                     li {
                         float: left;
-                        margin-right: 1.7vw;
+                        margin-right: 2em;
                         position: relative;
                         a {
-                            font-size: 1.8vw;
-                            line-height: 1.8vw;
+                            font-size: 1.6em;
+                            line-height: 1.6em;
                             font-weight: 700;
                             font-family: $font-nav;
                             transition: opacity .1s ease;
@@ -134,9 +140,9 @@ a:hover {
                             width: 100%;
                             max-width: 18px;
                             height: 2px;
-                            top: .9vw;
                             left: 0;
-                            margin-top: .9vw;
+                            top: 1.6em;
+                            margin-top: .8em;
                             opacity: 0;
                             transform-origin: left bottom;
                             transform: rotate(90deg);
@@ -196,12 +202,14 @@ a:hover {
             background-color: $color-white-op3;
             border-radius: 5px;
             position: absolute;
-            width: 200px;
+            width: 24vw;
             left: 50vw;
-            margin-left: -100px;
+            margin-left: -12vw;
             text-align: center;
             top: 25%;
             z-index: 2;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
         }
         &.full {
             padding: 0;
@@ -209,7 +217,6 @@ a:hover {
         &#sc1 {
             @include background-vertical-to-bottom($startColor: $color-transp, $endColor: $color-l-grey);
             .container {
-                transform: translate(0, 100px);
                 .description {
                     h2 {
                         text-align: left;
@@ -222,19 +229,17 @@ a:hover {
                 .about-img {
                     border-radius: 5%;
                     width: 100%;
-                    max-width: 400px;
                     height: 100%;
-                    max-height: 270px;
                     display: block;
                     overflow: hidden;
                     margin: 0 auto;
                     position: absolute;
                     top: 55%;
-                    left: 50%;
+                    left: 70%;
                     transform: translate(-50%, -50%);
                     img {
-                        width: 100%;
-                        height: auto;
+                        height: 100%;
+                        border-radius: 5%;
                     }
                 }
             }
@@ -327,7 +332,8 @@ a:hover {
             width: 100vw !important;
             z-index: 1;
             .item {
-                background-position: 50% 25% !important;
+                background-position: center center;
+                background-attachment: inherit;
                 background-size: cover !important;
                 width: 100vw !important;
                 min-height: 100vh;
@@ -355,7 +361,7 @@ a:hover {
                 span {
                     position: absolute;
                     display: block;
-                    width: 25px;
+                    width: 28px;
                     height: 42px;
                     font-size: 0;
                     transition: opacity .5s ease;
@@ -365,11 +371,11 @@ a:hover {
                     }
                 }
                 &.owl-prev span {
-                    background: url(../img/i/w-prev.png) center / cover no-repeat;
+                    background: url(../img/i/arr-left.png) center / cover no-repeat;
                     left: 5vw;
                 }
                 &.owl-next span {
-                    background: url(../img/i/w-next.png) center / cover no-repeat;
+                    background: url(../img/i/arr-right.png) center / cover no-repeat;
                     right: 5vw;
                 }
             }
@@ -384,24 +390,57 @@ a:hover {
                 display: block;
                 width: 30px;
                 height: 10px;
-                border-radius: 2px;
-                background-color: $color-white;
-                border: $color-white solid 2px;
+                border-radius: 1px;
+                background-color: $color-white-op3;
+                border: $color-white solid 1px;
                 float: left;
                 margin-right: 10px;
                 transition: opacity .5s ease;
                 opacity: .5;
                 &.active {
                     opacity: 1;
-                    background-color: $color-grey;
+                    background-color: $color-orange-op9;
                 }
             }
         }
     }
 }
 @media only screen and (max-width: $breakpoint-tablet-l) {
+    #root header {
+        height: 50px;
+        .logo {
+            height: 40px;
+            margin-top: -20px;
+        }
+        nav.main-menu-container ul#MyMenu li {
+            margin-right: 1em;
+            a {
+                font-size: 1.2em;
+                line-height: 1.2em;
+            }
+            &:after {
+                top: 1.2em;
+                margin-top: .3em;
+            }
+        }
+    }
     .smart img,
     .laptop img {
         width: 100%;
+    }
+}
+@media only screen and (max-width: $breakpoint-phone-l) {
+    #root {
+        header nav.main-menu-container {
+            display: none;
+        }
+        section .logo-c {
+            width: 200px;
+            margin-left: -100px;
+        }
+        h1 {
+            font-size: 2em;
+            line-height: 1.2;
+        }
     }
 }

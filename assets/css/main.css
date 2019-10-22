@@ -3,6 +3,12 @@
 @import url(vendor/fullpage.min.css);
 @import url(vendor/owl.carousel.min.css);
 @import url(vendor/funnyText.css);
+/*
+This mixin can be used to set the object-fit:
+    @include object-fit(contain);
+or object-fit and object-position:
+    @include object-fit(cover, top);
+*/
 @font-face {
   font-family: "Roboto Regular";
   src: url("./fonts/Roboto/Roboto-Regular.woff2") format("woff2"), url("./fonts/Roboto/Roboto-Regular.woff") format("woff"), url("./fonts/Roboto/Roboto-Regular.ttf") format("truetype");
@@ -53,6 +59,11 @@ button:focus,
 *:focus {
   outline: none !important; }
 
+img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  font-family: "object-fit: contain"; }
+
 input:focus {
   outline: 0; }
 
@@ -74,7 +85,7 @@ a:hover {
     top: 0; }
     #root .container .row {
       position: relative;
-      padding-top: 100px; }
+      padding-top: 150px; }
     #root .container.full {
       padding: 0;
       max-width: none;
@@ -93,7 +104,9 @@ a:hover {
       height: 2px;
       margin-bottom: -2px;
       background: rgba(230, 63, 18, 0.9);
-      width: 0%; }
+      width: 0%;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out; }
   #root header {
     background-color: transparent;
     width: 100vw;
@@ -113,7 +126,9 @@ a:hover {
       top: 50%;
       margin-top: -30px;
       opacity: 0;
-      z-index: 2; }
+      z-index: 2;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out; }
       #root header .logo img {
         height: 100%; }
     #root header nav.main-menu-container {
@@ -125,16 +140,15 @@ a:hover {
       #root header nav.main-menu-container ul {
         position: relative;
         margin: 0 auto;
-        display: block;
-        top: calc(50% - .9vw);
-        width: calc(50vw - 1.7vw); }
+        top: calc(50% - 1.2em);
+        display: table; }
         #root header nav.main-menu-container ul li {
           float: left;
-          margin-right: 1.7vw;
+          margin-right: 2em;
           position: relative; }
           #root header nav.main-menu-container ul li a {
-            font-size: 1.8vw;
-            line-height: 1.8vw;
+            font-size: 1.6em;
+            line-height: 1.6em;
             font-weight: 700;
             font-family: "Roboto Thin";
             transition: opacity .1s ease;
@@ -152,9 +166,9 @@ a:hover {
             width: 100%;
             max-width: 18px;
             height: 2px;
-            top: .9vw;
             left: 0;
-            margin-top: .9vw;
+            top: 1.6em;
+            margin-top: .8em;
             opacity: 0;
             transform-origin: left bottom;
             transform: rotate(90deg);
@@ -199,12 +213,14 @@ a:hover {
       background-color: rgba(255, 255, 255, 0.3);
       border-radius: 5px;
       position: absolute;
-      width: 200px;
+      width: 24vw;
       left: 50vw;
-      margin-left: -100px;
+      margin-left: -12vw;
       text-align: center;
       top: 25%;
-      z-index: 2; }
+      z-index: 2;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out; }
     #root section.full {
       padding: 0; }
     #root section#sc1 {
@@ -216,29 +232,25 @@ a:hover {
       background-image: -o-linear-gradient(to bottom, transparent, #b2b2b2);
       background-image: linear-gradient(to bottom, transparent, #b2b2b2);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='transparent', endColorStr='#b2b2b2', gradientType='1'); }
-      #root section#sc1 .container {
-        transform: translate(0, 100px); }
-        #root section#sc1 .container .description h2 {
-          text-align: left; }
-        #root section#sc1 .container .description p {
-          font-size: 1.4em;
-          line-height: 1.4em; }
-        #root section#sc1 .container .about-img {
-          border-radius: 5%;
-          width: 100%;
-          max-width: 400px;
+      #root section#sc1 .container .description h2 {
+        text-align: left; }
+      #root section#sc1 .container .description p {
+        font-size: 1.4em;
+        line-height: 1.4em; }
+      #root section#sc1 .container .about-img {
+        border-radius: 5%;
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        margin: 0 auto;
+        position: absolute;
+        top: 55%;
+        left: 70%;
+        transform: translate(-50%, -50%); }
+        #root section#sc1 .container .about-img img {
           height: 100%;
-          max-height: 270px;
-          display: block;
-          overflow: hidden;
-          margin: 0 auto;
-          position: absolute;
-          top: 55%;
-          left: 50%;
-          transform: translate(-50%, -50%); }
-          #root section#sc1 .container .about-img img {
-            width: 100%;
-            height: auto; }
+          border-radius: 5%; }
     #root section#sc2 {
       text-align: center; }
       #root section#sc2 .row {
@@ -305,7 +317,8 @@ a:hover {
     width: 100vw !important;
     z-index: 1; }
     #root .owl-carousel .owl-item .item {
-      background-position: 50% 25% !important;
+      background-position: center center;
+      background-attachment: inherit;
       background-size: cover !important;
       width: 100vw !important;
       min-height: 100vh; }
@@ -336,7 +349,7 @@ a:hover {
     #root .owl-carousel .owl-nav button span {
       position: absolute;
       display: block;
-      width: 25px;
+      width: 28px;
       height: 42px;
       font-size: 0;
       transition: opacity .5s ease;
@@ -344,10 +357,10 @@ a:hover {
       #root .owl-carousel .owl-nav button span:hover {
         opacity: 1; }
     #root .owl-carousel .owl-nav button.owl-prev span {
-      background: url(../img/i/w-prev.png) center/cover no-repeat;
+      background: url(../img/i/arr-left.png) center/cover no-repeat;
       left: 5vw; }
     #root .owl-carousel .owl-nav button.owl-next span {
-      background: url(../img/i/w-next.png) center/cover no-repeat;
+      background: url(../img/i/arr-right.png) center/cover no-repeat;
       right: 5vw; }
   #root .owl-carousel .owl-dots {
     position: absolute;
@@ -359,21 +372,44 @@ a:hover {
       display: block;
       width: 30px;
       height: 10px;
-      border-radius: 2px;
-      background-color: #ffffff;
-      border: #ffffff solid 2px;
+      border-radius: 1px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border: #ffffff solid 1px;
       float: left;
       margin-right: 10px;
       transition: opacity .5s ease;
       opacity: .5; }
       #root .owl-carousel .owl-dots .owl-dot.active {
         opacity: 1;
-        background-color: #575756; }
+        background-color: rgba(230, 63, 18, 0.9); }
 
 @media only screen and (max-width: 1120px) {
+  #root header {
+    height: 50px; }
+    #root header .logo {
+      height: 40px;
+      margin-top: -20px; }
+    #root header nav.main-menu-container ul#MyMenu li {
+      margin-right: 1em; }
+      #root header nav.main-menu-container ul#MyMenu li a {
+        font-size: 1.2em;
+        line-height: 1.2em; }
+      #root header nav.main-menu-container ul#MyMenu li:after {
+        top: 1.2em;
+        margin-top: .3em; }
   .smart img,
   .laptop img {
     width: 100%; } }
+
+@media only screen and (max-width: 812px) {
+  #root header nav.main-menu-container {
+    display: none; }
+  #root section .logo-c {
+    width: 200px;
+    margin-left: -100px; }
+  #root h1 {
+    font-size: 2em;
+    line-height: 1.2; } }
 
 @-webkit-keyframes rotateInUpLeft {
   0% {
@@ -443,30 +479,43 @@ h6 {
 .menu a {
   color: #575756; }
 
+[class*="button"] {
+  text-align: center; }
+
+.button--white {
+  border-color: #ffffff;
+  color: #ffffff; }
+  .button--white:focus, .button--white:hover {
+    color: #ffffff; }
+
 button, .btn {
-  border-radius: 25px;
+  border-radius: 5px;
   cursor: pointer;
+  font-family: "Roboto Regular";
   font-size: 1em;
-  border-color: transparent;
   padding: 10px 20px;
-  font-family: "Roboto Thin";
-  letter-spacing: .1em; }
+  font-family: "Roboto Regular";
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
   button:focus, button:hover, .btn:focus, .btn:hover {
-    opacity: .8;
-    border-color: transparent !important;
-    box-shadow: none !important; }
-  button.btn-primary, .btn.btn-primary {
-    background-color: #142d5d; }
-    button.btn-primary:hover, .btn.btn-primary:hover {
-      background-color: #142d5d !important; }
-  button.btn-secondary, .btn.btn-secondary {
-    background-color: #69c0ac; }
-    button.btn-secondary:hover, .btn.btn-secondary:hover {
-      background-color: #69c0ac !important; }
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: bold; }
   button#m-nav, .btn#m-nav {
     display: none;
     position: absolute;
     top: 50%; }
+  button.btn-more, .btn.btn-more {
+    position: absolute;
+    width: 200px;
+    margin-left: -100px;
+    left: 50%;
+    bottom: 10%;
+    z-index: 2; }
+    button.btn-more.btn-sl, .btn.btn-more.btn-sl {
+      bottom: 25%; }
 
 #fp-nav {
   position: fixed;
@@ -475,7 +524,7 @@ button, .btn {
   left: inherit;
   right: 5px;
   top: 50%;
-  opacity: 1; }
+  display: none; }
   #fp-nav ul li a span {
     background: #142d5d;
     border: #ffffff solid 1px;
@@ -521,7 +570,7 @@ button, .btn {
     color: #ffffff; }
 
 .background--grey {
-  background-color: #b2b2b2; }
+  background-color: #575756; }
 
 /* ================================
 ----------- Keyframes -------------  

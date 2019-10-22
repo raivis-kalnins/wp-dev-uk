@@ -301,12 +301,6 @@
     remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
     // Shortcodes above would be nested like this -
     // [devcouk_shortcode_demo] [devcouk_shortcode_demo_2] Here's the page title! [/devcouk_shortcode_demo_2] [/devcouk_shortcode_demo]
-    // Add Photo Gallery image
-    if (class_exists('MultiPostThumbnails')) {
-        new MultiPostThumbnails(array('label' => 'Image 01','id' => 'image01','class' => 'image-01','post_type' => 'page'));
-        new MultiPostThumbnails(array('label' => 'Image 02','id' => 'image02','class' => 'image-02','post_type' => 'page'));
-        new MultiPostThumbnails(array('label' => 'Image 03','id' => 'image03','class' => 'image-03','post_type' => 'page'));
-    }
     /*------------------------------------*\
         Custom Post Types
     \*------------------------------------*/
@@ -384,8 +378,13 @@
     }
     // Add Photo Gallery image
     if (class_exists('MultiPostThumbnails')) {
-        new MultiPostThumbnails(array('label' => 'Image 02','id' => 'image02','class' => 'image-02','post_type' => 'page'));
-        new MultiPostThumbnails(array('label' => 'Image 03','id' => 'image03','class' => 'image-03','post_type' => 'page'));
+        new MultiPostThumbnails(array('label' => 'Image1','id' => 'image1','class' => 'image1','post_type' => 'page'));
+        new MultiPostThumbnails(array('label' => 'Image2','id' => 'image2','class' => 'image2','post_type' => 'page'));
+        new MultiPostThumbnails(array('label' => 'Image3','id' => 'image3','class' => 'image3','post_type' => 'page'));
+        new MultiPostThumbnails(array('label' => 'Image4','id' => 'image4','class' => 'image4','post_type' => 'page'));
+        new MultiPostThumbnails(array('label' => 'Image5','id' => 'image5','class' => 'image5','post_type' => 'page'));
+        new MultiPostThumbnails(array('label' => 'Image6','id' => 'image6','class' => 'image6','post_type' => 'page'));
+        new MultiPostThumbnails(array('label' => 'Image7','id' => 'image7','class' => 'image7','post_type' => 'page'));
     }
     // REMOVE WP EMOJI
     remove_action('wp_head', 'print_emoji_detection_script', 7);
