@@ -30,7 +30,8 @@ function initialise() {
 	});
     var year = moment().format('YYYY');
     $('footer .year').append(year);
-    $( "#calendar" ).datepicker({ firstDay: 1});
+    $("#calendar").datepicker({ firstDay: 1});
+    $("img.logo-c").fadeIn(300);
     
     TweenMax.defaultEase = Linear.easeOut;
     $('.main-menu-container ul').attr('id','MyMenu');

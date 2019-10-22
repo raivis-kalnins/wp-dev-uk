@@ -213,6 +213,7 @@ a:hover {
       background-color: rgba(255, 255, 255, 0.3);
       border-radius: 5px;
       position: absolute;
+      display: none;
       width: 24vw;
       left: 50vw;
       margin-left: -12vw;
@@ -238,19 +239,25 @@ a:hover {
         font-size: 1.4em;
         line-height: 1.4em; }
       #root section#sc1 .container .about-img {
-        border-radius: 5%;
-        width: 100%;
+        transform: translate(-50%, -50%);
+        border: rgba(230, 63, 18, 0.9) solid 1px;
         height: 100%;
         display: block;
         overflow: hidden;
         margin: 0 auto;
         position: absolute;
         top: 55%;
-        left: 70%;
-        transform: translate(-50%, -50%); }
+        left: 70%; }
         #root section#sc1 .container .about-img img {
           height: 100%;
-          border-radius: 5%; }
+          cursor: zoom-in;
+          -webkit-transition: all 0.5s cubic-bezier(0, 0, 0.21, 0.99);
+          transition: all 0.5s cubic-bezier(0, 0, 0.21, 0.99); }
+          #root section#sc1 .container .about-img img:hover {
+            vertical-align: bottom;
+            text-align: left;
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
     #root section#sc2 {
       text-align: center; }
       #root section#sc2 .row {
@@ -489,20 +496,19 @@ h6 {
     color: #ffffff; }
 
 button, .btn {
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 0;
   font-family: "Roboto Regular";
   font-size: 1em;
   padding: 10px 20px;
   font-family: "Roboto Regular";
-  letter-spacing: .1em;
+  letter-spacing: .2em;
   text-transform: uppercase;
   -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; }
+  transition: all 0.3s ease-out;
+  cursor: pointer; }
   button:focus, button:hover, .btn:focus, .btn:hover {
     box-shadow: none;
-    background-color: rgba(255, 255, 255, 0.3);
-    font-weight: bold; }
+    background-color: rgba(255, 255, 255, 0.3); }
   button#m-nav, .btn#m-nav {
     display: none;
     position: absolute;

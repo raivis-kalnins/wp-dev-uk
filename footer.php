@@ -1,4 +1,4 @@
-			<footer class="section background--grey">
+			<footer class="section fp-auto-height background--grey">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
