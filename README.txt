@@ -8,7 +8,7 @@ CPT (Custom Post Types) added functions.php
 
 For landing page added template Home Page TPL
 
-Bootstrap4, fullPage.js(parallax), TweenMax, jQuery, OWL, Slick, lazyload and other JS libraries included directory vendor JS & SASS by Gulp
+Bootstrap4, fullPage.js(parallax), TweenMax, jQuery, OWL, Slick, Lazy Loading and other JS libraries included directory vendor JS & SASS by Gulp
 
 Install node.js
 https://nodejs.org/en/download/

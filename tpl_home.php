@@ -7,7 +7,7 @@
 ?>
 <section class="section full" id="home-slider">
     <div class="container full" <?php if ( has_header_image() ) { ?> class="custom-background section" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
-        <img src="data:image/png+xml;base64,<?php echo $data; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c lazyload" />
+        <img data-src="data:image/png+xml;base64,<?php echo $data; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c lazyload" />
         <h1><?php the_title(); ?></h1>
         <div class="owl-carousel">
             <?php
@@ -29,7 +29,7 @@
                 <?php else: ?><h1><?php _e( 'Sorry, nothing to display.', 'devcoukblank' ); ?></h1><?php endif; ?>
             </div>
             <div class="col-md-6">
-                <div class="about-img animated fadeIn"><img src="<?php if ( wp_is_mobile() ) { echo the_post_thumbnail_url(null, "small"); } else { echo the_post_thumbnail_url(null, "full"); } ?>" alt=""  class="lazyload" /></div>
+                <div class="about-img animated fadeIn"><img data-src="<?php if ( wp_is_mobile() ) { echo the_post_thumbnail_url(null, "small"); } else { echo the_post_thumbnail_url(null, "full"); } ?>" alt=""  class="lazyload" /></div>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
                         <?php if( $link ): ?>
                             <a href="<?php echo $link; ?>">
                         <?php endif; ?>
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="lazyload" />
+                            <img data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="lazyload" />
                         <?php if( $link ): ?>
                             </a>
                         <?php endif; ?>
