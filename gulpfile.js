@@ -18,6 +18,7 @@ gulp.task('scripts', function () {
         "scripts/vendor/jquery.ui.touch-punch.min.js",
         "scripts/vendor/bootstrap.min.js",
         "scripts/vendor/jquery.lazy.min.js",
+        "scripts/vendor/jquery.zoom.min.js",
         "scripts/vendor/moment.min.js",
         "scripts/vendor/TimelineMax.min.js",
         "scripts/vendor/TweenMax.min.js",

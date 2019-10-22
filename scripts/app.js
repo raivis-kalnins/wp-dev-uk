@@ -34,7 +34,8 @@ function initialise() {
     $('footer .year').append(year);
     $("#calendar").datepicker({ firstDay: 1});
     $("img.logo-c").fadeIn(300);
-    
+    //$(".about-img img").parent().zoom();
+
     TweenMax.defaultEase = Linear.easeOut;
     $('.main-menu-container ul').attr('id','MyMenu');
     $('#MyMenu li:nth-child(1)').addClass('active');
@@ -67,7 +68,7 @@ function initialise() {
                 const about_img = $(".about-img");
                 const sec1 = document.querySelector("#sc1");
                 tl.fromTo(sec1, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
-                tl.fromTo(about_img, 0.7, { x:"200%" }, { x:"-50%" });
+                tl.fromTo(about_img, 0.7, { x:"120%", y:"120%" }, { x:"-50%", y:"-20%" });
                 s_width = 16.6;
             } else if(destination.index == 2) {
                 $('#MyMenu li:nth-child(3)').addClass('active');

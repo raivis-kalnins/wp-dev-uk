@@ -272,7 +272,7 @@
     add_action('wp_enqueue_scripts', 'devcoukblank_styles'); // Add Theme Stylesheet
     add_action('init', 'register_devcouk_menu'); // Add devcouk Blank Menu
     add_action('init', 'create_post_type_service'); // Add our finance Blank Custom Post Type
-    add_action('init', 'create_post_type_testimonials'); // Add our testimonials Blank Custom Post Type
+    add_action('init', 'create_post_type_clients'); // Add our clients Blank Custom Post Type
     add_action('init', 'devcoukwp_pagination'); // Add our devcouk Pagination
     // Remove Actions
     remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -340,25 +340,25 @@
             ) // Add Category and Post Tags support
         ));
     }
-    // Create 2 Custom Post type Testimonials
-    function create_post_type_testimonials() {
-        register_taxonomy_for_object_type('category', 'testimonials'); // Register Taxonomies for Category
-        register_taxonomy_for_object_type('post_tag', 'testimonials');
-        register_post_type('testimonials', // Register Custom Post Type
+    // Create 2 Custom Post type Clients
+    function create_post_type_clients() {
+        register_taxonomy_for_object_type('category', 'clients'); // Register Taxonomies for Category
+        register_taxonomy_for_object_type('post_tag', 'clients');
+        register_post_type('clients', // Register Custom Post Type
             array(
             'labels' => array(
-                'name' => __('Testimonials', 'devcoukblank'), // Rename these to suit
-                'singular_name' => __('Testimonials', 'devcoukblank'),
+                'name' => __('Clients', 'devcoukblank'), // Rename these to suit
+                'singular_name' => __('Clients', 'devcoukblank'),
                 'add_new' => __('Add New', 'devcoukblank'),
-                'add_new_item' => __('Add New Testimonials Post', 'devcoukblank'),
+                'add_new_item' => __('Add New Clients Post', 'devcoukblank'),
                 'edit' => __('Edit', 'devcoukblank'),
-                'edit_item' => __('Edit Testimonials Post', 'devcoukblank'),
-                'new_item' => __('New Testimonials Post', 'devcoukblank'),
-                'view' => __('View Testimonials Post', 'devcoukblank'),
-                'view_item' => __('View Testimonials Post', 'devcoukblank'),
-                'search_items' => __('Search Testimonials Post', 'devcoukblank'),
-                'not_found' => __('No Testimonials Posts found', 'devcoukblank'),
-                'not_found_in_trash' => __('No Testimonials Posts found in Trash', 'devcoukblank')
+                'edit_item' => __('Edit Clients Post', 'devcoukblank'),
+                'new_item' => __('New Clients Post', 'devcoukblank'),
+                'view' => __('View Clients Post', 'devcoukblank'),
+                'view_item' => __('View Clients Post', 'devcoukblank'),
+                'search_items' => __('Search Clients Post', 'devcoukblank'),
+                'not_found' => __('No Clients Posts found', 'devcoukblank'),
+                'not_found_in_trash' => __('No Clients Posts found in Trash', 'devcoukblank')
             ),
             'public' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages

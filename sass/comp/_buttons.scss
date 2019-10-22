@@ -1,19 +1,11 @@
 [class*="button"] {
     text-align: center;
 }
-.button--white {
-    border-color: $color-white;
-    color: $color-white;
-    &:focus, &:hover {
-        color: $color-white;
-    }
-}
 button, .btn {
     border-radius: 0;
-    font-family: $font-body;
+    font-family: $font-btn;
     font-size: 1em;
     padding: 10px 20px;
-    font-family: $font-body;
     letter-spacing: .2em;
     text-transform: uppercase;
     -webkit-transition: all 0.3s ease-out;
@@ -22,6 +14,22 @@ button, .btn {
     &:focus, &:hover {
         box-shadow: none;
         background-color: $color-white-op3;
+    }
+    &.button--white {
+        border-color: $color-white;
+        color: $color-white;
+        &:focus, &:hover {
+            color: $color-white;
+        }
+    }
+    &.button--orange {
+        border-color: $color-orange;
+        color: $color-orange;
+        font-family: $font-body;
+        &:focus, &:hover {
+            color: $color-orange;
+            background-color: $color-orange-op3;
+        }
     }
     &#m-nav {
         display: none;
@@ -33,7 +41,7 @@ button, .btn {
         width: 200px;
         margin-left: -100px;
         left: 50%;
-        bottom: 10%;
+        bottom: 5%;
         z-index: 2;
         &.btn-sl {
             bottom: 25%;
@@ -50,6 +58,7 @@ button, .btn {
     display: none;
     ul li {
         a {
+            color: transparent;
             span {
                 background: $color-blue;
                 border: $color-white solid 1px;
@@ -64,10 +73,9 @@ button, .btn {
         }
         .fp-tooltip {
             text-transform: capitalize;
-            color: $color-l-grey;
-            font-family: $font-nav;
-            font-weight: 700;
-            letter-spacing: .1em;
+            color: $color-orange;
+            font-family: $font-body;
+            letter-spacing: .2em;
         }
     }
 }

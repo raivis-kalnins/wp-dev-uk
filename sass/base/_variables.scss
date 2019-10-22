@@ -33,11 +33,13 @@ font-style: normal;
 $font-heading: 'Roboto Bold';
 $font-body: 'Roboto Regular';
 $font-nav: 'Roboto Thin';
+$font-btn: 'Roboto Light';
 
 // Brand Colors
 $color-green: #69c0ac;
 $color-d-green: #65b9a7;
 $color-blue: #142d5d;
+$color-blue-op3: rgba(20,45,93,.3);
 $color-blue-op9: rgba(20,45,93,.9);
 $color-l-blue: #4789b8;
 $color-white: #ffffff;
@@ -45,8 +47,11 @@ $color-white-op9: rgba(255,255,255,.9);
 $color-white-op3: rgba(255,255,255,.3);
 $color-pink: #dc4e7b;
 $color-orange: #e63f12;
+$color-orange-op3: rgba(230,63,18,.3);
 $color-orange-op9: rgba(230,63,18,.9);
 $color-black: #000000;
+$color-black-op2: rgba(0,0,0,0.2);
+$color-black-op5: rgba(0,0,0,0.2);
 $color-black-op9: rgba(0,0,0,.9);
 $color-grey:#575756;
 $color-l-grey: #b2b2b2;
