@@ -166,17 +166,19 @@ function initialise() {
         img.replaceWith(div);
     });
     $('.owl-carousel').owlCarousel({
+        animateIn: 'slideInDown',
+        animateOut: 'slideOutDown',
         items: 1,
         loop: true,
         center: true,
         margin: 0,
         lazyLoad: true,
-        animateIn: true,
         navSpeed: 20,
         nav: true,
         autoplay: true,
         touchDrag: true,
-        mouseDrag: true
+        mouseDrag: true,
+        smartSpeed: 450
     });
     $('h1').funnyText({
 		speed: 700,

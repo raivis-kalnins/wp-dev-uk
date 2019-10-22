@@ -32,6 +32,7 @@
                 <div class="about-img animated fadeIn"><img data-src="<?php if ( wp_is_mobile() ) { echo the_post_thumbnail_url(null, "small"); } else { echo the_post_thumbnail_url(null, "full"); } ?>" alt=""  class="lazyload" /></div>
             </div>
         </div>
+        <a class="btn button--white btn-more btn-sl" href="#about" title="About">Read more</a>
     </div>
 </section>
 <section class="section" id="sc2">
@@ -58,6 +59,7 @@
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>
+        <a class="btn button--white btn-more btn-sl" href="#about" title="About">Read more</a>
     </div>
 </section>
 <section class="section" id="sc3">
@@ -67,6 +69,7 @@
                 
             </div>
         </div>
+        <a class="btn button--white btn-more btn-sl" href="#about" title="About">Read more</a>
     </div>
 </section>
 <section class="section" id="sc4">
@@ -76,6 +79,7 @@
                 
             </div>
         </div>
+        <a class="btn button--white btn-more btn-sl" href="#about" title="About">Read more</a>
     </div>
 </section>
 <section class="section" id="sc5">
@@ -85,6 +89,7 @@
                 
             </div>
         </div>
+        <a class="btn button--white btn-more btn-sl" href="#about" title="About">Read more</a>
     </div>
 </section>
 <?php get_footer(); ?>
