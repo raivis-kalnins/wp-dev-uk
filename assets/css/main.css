@@ -282,7 +282,7 @@ a:hover {
       #root section#sc2 .row {
         display: inline-block; }
         #root section#sc2 .row div {
-          margin-bottom: 2.5%; }
+          padding: 5px; }
           #root section#sc2 .row div a {
             width: 100%;
             height: 100%;
@@ -291,10 +291,17 @@ a:hover {
             background-color: #ffffff;
             box-shadow: 2px 2px 7px rgba(255, 255, 255, 0.3);
             padding: 5px; }
-          #root section#sc2 .row div img {
-            width: 65%;
-            display: block;
-            margin: 0 auto; }
+            #root section#sc2 .row div a div {
+              display: block;
+              width: 80px;
+              height: 80px;
+              margin: 10px auto;
+              margin-bottom: 2.5%; }
+            #root section#sc2 .row div a h3 {
+              font-size: 1.2em;
+              margin-top: 10px;
+              display: inline-block;
+              color: #000000; }
   #root footer {
     position: relative;
     min-height: 100px; }

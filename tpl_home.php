@@ -50,8 +50,12 @@
                         <?php if( $link ): ?>
                             <a href="<?php echo $link; ?>">
                         <?php endif; ?>
-                            <img data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="lazyload" />
-                            <?php echo $title; ?>
+                        <?php 
+                            $img_i = file_get_contents($image['url']);
+                            $data_i = base64_encode($img_i);
+                        ?>
+                            <div style="background: url('data:image/svg+xml;base64,<?php echo $data_i; ?>') center / cover no-repeat"></div>
+                            <h3><?php echo $title; ?></h3>
                         <?php if( $link ): ?>
                             </a>
                         <?php endif; ?>
