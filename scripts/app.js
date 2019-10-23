@@ -35,6 +35,7 @@ function initialise() {
     $("#calendar").datepicker({ firstDay: 1});
     $("img.logo-c").fadeIn(300);
     //$(".about-img img").parent().zoom();
+    $('section#sc2 .row div a').attr('href','#');
 
     TweenMax.defaultEase = Linear.easeOut;
     $('.main-menu-container ul').attr('id','MyMenu');

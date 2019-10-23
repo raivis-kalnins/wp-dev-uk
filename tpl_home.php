@@ -16,7 +16,7 @@
                 }
             ?>
         </div>
-        <a class="btn button--white btn-more btn-sl" href="#about" title="About">Read more</a>
+        <a class="btn button--white btn-more btn-sl fadeIn delay-025" href="#about" title="About">Read more</a>
     </div>
 </section>
 <section class="section white" id="sc1">
@@ -32,7 +32,7 @@
                 <div class="about-img animated fadeIn" style=""><img data-src="<?php if ( wp_is_mobile() ) { echo the_post_thumbnail_url(null, "small"); } else { echo the_post_thumbnail_url(null, "full"); } ?>" alt=""  class="lazyload" /></div>
             </div>
         </div>
-        <a class="btn button--orange btn-more" href="#services" title="Services">Read more</a>
+        <a class="btn button--orange btn-more btn-about" href="#services" title="Services">Read more</a>
     </div>
 </section>
 <section class="section grey" id="sc2">

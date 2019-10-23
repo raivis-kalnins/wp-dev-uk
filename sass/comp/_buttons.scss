@@ -37,14 +37,16 @@ button, .btn {
         top: 50%;
     }
     &.btn-more {
-        position: absolute;
+        position: relative;
+        display: block;
         width: 200px;
-        margin-left: -100px;
-        left: 50%;
-        bottom: 5%;
+        margin: 40px auto;
         z-index: 2;
         &.btn-sl {
-            bottom: 25%;
+            bottom: 35%;
+        }
+        &.btn-about {
+            left: -25%;
         }
     }
 }
@@ -72,6 +74,11 @@ button, .btn {
             }
         }
         .fp-tooltip {
+            text-transform: capitalize;
+            background-color: $color-white-op9;
+            padding: 0 7px;
+            margin-top: -5px;
+            border-radius: 5px;
             text-transform: capitalize;
             color: $color-orange;
             font-family: $font-body;

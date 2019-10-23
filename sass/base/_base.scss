@@ -219,6 +219,8 @@ a:hover {
             display: inline-block;
             margin-top: 120px;
             margin-bottom: 3%;
+            width: 100%;
+            text-align: center;
         }
         &.white {
             h2 {
@@ -344,8 +346,8 @@ a:hover {
                                     left: 50%;
                                     -webkit-transform: translateX(-50%);
                                     transform: translateX(-50%);
-                                    -webkit-transition-delay: .5s;
-                                    transition-delay: .5s;
+                                    -webkit-transition-delay: .3s;
+                                    transition-delay: .3s;
                                 }
                             }
                         }
@@ -360,6 +362,7 @@ a:hover {
     footer {
         position: relative;
         min-height: 100px;
+        color: $color-white;
         span {
             color: $color-white;
             margin-right: 5px;
@@ -394,105 +397,6 @@ a:hover {
         #f-key {
             font-size: 0;
             display: none;
-        }
-    }
-    .owl-carousel {
-        .owl-wrapper{
-            display: none;
-            position: relative;
-            -webkit-transform: translate3d(0px, 0px, 0px);
-        }
-        .owl-wrapper-outer.autoHeight {
-            -webkit-transition: height 500ms ease-in-out;
-            -moz-transition: height 500ms ease-in-out;
-            -ms-transition: height 500ms ease-in-out;
-            -o-transition: height 500ms ease-in-out;
-            transition: height 500ms ease-in-out;
-        }
-        .owl-wrapper,
-        .owl-item {
-            -webkit-backface-visibility: hidden;
-            -moz-backface-visibility:    hidden;
-            -ms-backface-visibility:     hidden;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-        }
-        .owl-item {
-            float: left;
-            width: 100vw !important;
-            z-index: 1;
-            .item {
-                background-position: center center;
-                background-attachment: inherit;
-                background-size: cover !important;
-                width: 100vw !important;
-                min-height: 100vh;
-                &:after {
-                    content:'';
-                    z-index: 2;
-                    position: absolute;
-                    display: block;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    opacity: 0.5;
-                    @include background-vertical-to-bottom($startColor: $color-blue, $endColor: $color-blue-op9);
-                }
-            }
-        }
-        .owl-nav {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            margin-top: -21px;
-            color: $color-white;
-            button {
-                span {
-                    position: absolute;
-                    display: block;
-                    width: 28px;
-                    height: 42px;
-                    font-size: 0;
-                    transition: opacity .5s ease;
-                    opacity: .5;
-                    &:hover {
-                        opacity: 1; 
-                    }
-                }
-                &.owl-prev span {
-                    background: url(../img/i/arr-left.png) center / cover no-repeat;
-                    left: 5vw;
-                }
-                &.owl-next span {
-                    background: url(../img/i/arr-right.png) center / cover no-repeat;
-                    right: 5vw;
-                }
-            }
-        }
-        .owl-dots {
-            position: absolute;
-            z-index: 999;
-            right: 50%;
-            margin-right: -55px;
-            top: 90%;
-            .owl-dot {
-                display: block;
-                width: 30px;
-                height: 10px;
-                border-radius: 1px;
-                background-color: $color-white-op3;
-                border: $color-white solid 1px;
-                float: left;
-                margin-right: 10px;
-                transition: opacity .5s ease;
-                opacity: .5;
-                &.active {
-                    opacity: 1;
-                    background-color: $color-orange-op9;
-                }
-            }
         }
     }
 }

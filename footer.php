@@ -2,6 +2,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col">
+							<span class="copyright">&copy; 2015 - <?php echo date('Y'); ?> O&J cars</span>
 							<i id="f-key"><?php echo do_shortcode('[do_widget id=custom_html-2]');?></i>
 						</div>
 					</div>
