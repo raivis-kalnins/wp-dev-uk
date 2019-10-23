@@ -24,6 +24,7 @@
 				<div id="scroll-top"><a href="#hello" title="Scroll to top"><i class="fa fa-arrow-circle-o-up fa-3x" aria-hidden="true"></i></a></div>
 			</footer>
 		</div>
+		<?php echo do_shortcode('[do_widget id=custom_html-3]');?>
 		<?php wp_footer(); ?>
 	</body>
 </html>
