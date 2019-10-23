@@ -4,10 +4,10 @@ function initialise() {
         var win = $(window);
         if (win.width() < 1199) {
             setTimeout(function(){
-                $('nav.main-menu-container').addClass('mob-menu');
+                $('nav.main-menu-container').addClass('mob-menu drawer');
             }, 500);
         } else {
-            $('nav.main-menu-container').removeClass('mob-menu');
+            $('nav.main-menu-container').removeClass('mob-menu drawer');
         }
     }
     mob_menu();
@@ -16,13 +16,13 @@ function initialise() {
     }, true);
 	$('body').on('click','#m-nav', function() {
 		$(this).addClass('clicked');
-		$(".mob-menu").addClass("on-toggle").css("visibility", "show");
+		$(".mob-menu").addClass("on-toggle");
 	});
-	$('body').on('click','#m-nav.clicked', function() {
-		$(this).removeClass('clicked');
-		$(".mob-menu").removeClass("on-toggle").css("visibility", "hide");
+	$('body').on('click','#m-nav.clicked, .mob-menu', function() {
+		$('#m-nav').removeClass('clicked');
+		$(".mob-menu").removeClass("on-toggle");
     });
-    $(".owl-carousel img").each(function(i, elem) {
+    $(".owl-carousel img, #posts-list article img").each(function(i, elem) {
         var img = $(elem);
         var div = $("<div />").css({"background-image": "url(" + img.attr("src") + ")"});
         div.html(img.attr("alt"));
@@ -64,6 +64,15 @@ function initialise() {
     var key = $('#f-key .textwidget').text();
     $('#m-nav, .soc').removeClass('blue');
     //console.log('full key: '+ key);
+    // Email protect
+	$('.getemail').each(function() {
+		$(this).off('click').click(function() {
+			var that = $(this);
+			var email = that.data('part1') + '@' + that.data('part2') + '.' + that.data('part3');
+            that.html('<a href="mailto:' + email + '">' + email + '</a>');
+            that.parent().addClass('clicked');
+		});
+    });
     $('#fullpage').fullpage({
         licenseKey: key,
         autoScrolling: true,
@@ -134,3 +143,34 @@ $(document).ready(function () {
         initialise();
     }, 200);
 });
+
+// Google maps
+function initGoogleMaps() {
+    var mapOptions = {
+            zoom: 15,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            center: new google.maps.LatLng(52.4158983,-1.4851309), // area location
+            styles:[{"stylers":[{"saturation":-100},{"gamma":1}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"saturation":50},{"gamma":0},{"hue":"#50a5d1"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#333333"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"weight":0.5},{"color":"#333333"}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"gamma":1},{"saturation":50}]}]};
+    var mapElement = document.getElementById('gmap_ojcars');
+    var map = new google.maps.Map(mapElement, mapOptions);
+    var image = {
+        url: 'wp-content/themes/wp-dev-uk/assets/img/i/map-marker.png',
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34)
+    };
+    var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(52.4158983,-1.4851309),
+            map: map,
+            title: 'O&Jcars - 50 Barras Green, Coventry, CV2 4LY',
+            icon: image
+    });
+    jQuery('.su-tabs-nav span').click(function() {
+        setTimeout(function(){
+            lastCenter=map.getCenter();
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(lastCenter);
+        }, 200);
+    });
+}
+initGoogleMaps();

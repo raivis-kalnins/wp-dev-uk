@@ -113,38 +113,38 @@ button#m-nav {
     }
     &.clicked:before,
     .top-close button:before {
-        top: 10px;
+        top: 8px;
         width: 30px;
         left: 0;
         -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
         transition: transform 0.4s;
-        background: rgba(0,0,0,0.7);
+        background: $color-blue;
     }
     &.clicked:after,
     .top-close button:after {
-        top: 3px;
+        top: 2px;
         width: 30px;
         left: 0;
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
         transition: transform 0.4s;
-        background: rgba(0, 0, 0, 0.7);
+        background: $color-blue;
     }
     &.nav-fixed span, 
     &.nav-fixed:before, 
     &.nav-fixed:after {
-        background: #fff;
+        background: $color-white;
     }
     &.clicked span,
     &.clicked:before,
     &.clicked:after {
-        background: rgba(0,0,0,0.7);
+        background: $color-blue;
     }
 }
 #fp-nav {
     position: fixed;
-    z-index: 100;
+    z-index: 8;
     margin-top: -32px;
     left: inherit;
     right: 5px;

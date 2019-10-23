@@ -127,6 +127,9 @@
     function devcoukblank_footer_scripts() {
         if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
             if (devcouk_DEBUG) {
+                wp_register_script('gmaps','https://maps.googleapis.com/maps/api/js?key=AIzaSyAIzn4jDmtS-gvSR3TwREr6mmVAkF-NwvQ&region=GB');
+                wp_enqueue_script('gmaps'); // Enqueue it!
+
                 wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.2'); // Gulp scripts
                 wp_enqueue_script('scripts'); // Enqueue it!
             }

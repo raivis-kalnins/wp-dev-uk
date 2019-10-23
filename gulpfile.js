@@ -31,6 +31,7 @@ gulp.task('scripts', function () {
         //"scripts/vendor/foundation.min.js",
         "scripts/vendor/owl.carousel.min.js",
         "scripts/vendor/slick.min.js",
+        //"scripts/vendor/google.maps.js",
         //"scripts/vendor/video.min.js",
         //"scripts/vendor/soundmanager2-jsmin.js",
         //"scripts/vendor/dom-to-image.min.js",

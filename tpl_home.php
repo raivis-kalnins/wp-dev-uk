@@ -80,10 +80,21 @@
 <section class="section grey" id="sc4">
     <div class="container">
         <h2><?php the_field('news_title'); ?></h2>
-        <div class="row">
-            <div class="col">
-                
-            </div>
+        <div class="row" id="posts-list">
+            <?php /*
+            //add_action('pre_get_posts', 'filter_category_orderby');
+            function wpdocs_custom_excerpt_length( $length ) { return 10; }
+            add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 32 );
+            $args = array('post_type'=>'post','cat'=>'');
+            $loop = new WP_Query($args); 
+            while ($loop->have_posts()): $loop->the_post(); ?>
+                <div class="post-item col-4">
+                    <article>
+                        <?php the_post_thumbnail(); ?>
+                        <a href="<?php the_permalink(); ?>"><h3><?php the_title();?></h3></a>
+                    </article>
+                </div>
+            <?php endwhile; wp_reset_query(); */ ?>
         </div>
         <a class="btn button--white btn-more" href="#location" title="Location">Read more</a>
     </div>
@@ -93,7 +104,8 @@
         <h2><?php the_field('location_title'); ?></h2>
         <div class="row">
             <div class="col">
-                
+            <div id="gmap_ojcars"></div>
+            <div id="address_ojcars"><?php the_field('address'); ?></div>
             </div>
         </div>
         <a class="btn button--orange btn-more" href="#contact" title="Contact">Read more</a>
