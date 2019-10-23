@@ -50,6 +50,98 @@ button, .btn {
         }
     }
 }
+button#m-nav {
+    position: fixed;
+    border: none;
+    display: none;
+    top: 55px;
+    left: 25px;
+    width: 30px;
+    height: 15px;
+    padding: 5px;
+    background: transparent;
+    outline: none;
+    float: left;
+    margin-top: -25px;
+    margin-right: 5px;
+    z-index: 9;
+    & span {
+        top: 0;
+        bottom: 0;
+        -webkit-transition: all 800ms ease;
+        transition: all 800ms ease;
+    }
+    & span,
+    &:before,
+    &:after {
+        height: 3px;
+        width: 30px;
+        background: $color-white;
+        display: block;
+        position: absolute;
+        left: 0;
+        content: '';
+        margin: auto;
+        -webkit-transition: all 400ms ease;
+        transition: all 400ms ease;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    &.blue {
+        & span,
+        &:before,
+        &:after {
+            background: $color-blue;
+        }
+    }
+    &:before {
+        top: 0;
+    }
+    &:after {
+        bottom: 0;
+    }
+    /*&.clicked,*/
+    &.clicked {
+        margin-top: -28px;
+    }
+    &.clicked span,
+    .top-close button span {
+        opacity: 0;
+    }
+    &.clicked:before,
+    .top-close button:before {
+        top: 10px;
+        width: 30px;
+        left: 0;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        transition: transform 0.4s;
+        background: rgba(0,0,0,0.7);
+    }
+    &.clicked:after,
+    .top-close button:after {
+        top: 3px;
+        width: 30px;
+        left: 0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transition: transform 0.4s;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    &.nav-fixed span, 
+    &.nav-fixed:before, 
+    &.nav-fixed:after {
+        background: #fff;
+    }
+    &.clicked span,
+    &.clicked:before,
+    &.clicked:after {
+        background: rgba(0,0,0,0.7);
+    }
+}
 #fp-nav {
     position: fixed;
     z-index: 100;
@@ -89,5 +181,14 @@ button, .btn {
 @media only screen and (max-width: $breakpoint-phone-l) {
     button#m-nav {
         display: block;
+    }
+    .btn.btn-more {
+        margin-top: 15px;
+        &.btn-about {
+            left: auto;
+        }
+    }
+    #fp-nav.fp-right {
+        right: 0;
     }
 }

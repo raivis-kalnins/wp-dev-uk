@@ -161,7 +161,7 @@ a:hover {
             }
         }
         .soc { 
-            color: $color-blue;
+            color: $color-white;
             position: absolute;
             top: 50%;
             width: 20px;
@@ -170,8 +170,14 @@ a:hover {
             right: 5vw;
             display: block;
             opacity: 0;
+            &.blue {
+                color: $color-blue;
+            }
             &:hover {
-                color: $color-blue-op9;
+                color: $color-white-op9;
+                &.blue {
+                    color: $color-blue-op9;
+                }
             }
         }
         &.n-fixed {
@@ -401,21 +407,37 @@ a:hover {
     }
 }
 @media only screen and (max-width: $breakpoint-tablet-l) {
-    #root header {
-        height: 50px;
-        .logo {
-            height: 40px;
-            margin-top: -20px;
-        }
-        nav.main-menu-container ul#MyMenu li {
-            margin-right: 1em;
-            a {
-                font-size: 1.2em;
-                line-height: 1.2em;
+    #root {
+        header {
+            height: 50px;
+            .logo {
+                max-height: 50px;
+                margin: -25px auto;
+                left: 50%;
+                margin-left: -72px;
             }
-            &:after {
-                top: 1.2em;
-                margin-top: .3em;
+            nav.main-menu-container ul#MyMenu li {
+                margin-right: 1em;
+                a {
+                    font-size: 1.2em;
+                    line-height: 1.2em;
+                }
+                &:after {
+                    top: 1.2em;
+                    margin-top: .3em;
+                }
+            }
+            .soc {
+                opacity: 1;
+            }
+        }
+        section {
+            h2 {
+                margin-top: 100px;
+            }
+            .logo-c {
+                width: 200px;
+                margin-left: -100px;
             }
         }
     }
@@ -429,9 +451,38 @@ a:hover {
         header nav.main-menu-container {
             display: none;
         }
-        section .logo-c {
-            width: 200px;
-            margin-left: -100px;
+        section {
+            h2 {
+                font-size: 1.6em;
+            }
+            &#sc1 {
+                .container .description {
+                    h2 {
+                        text-align: center;
+                    }
+                    p {
+                        text-align: center;
+                        font-size: 1em;
+                        line-height: 1.4em;
+                        max-width: 80vw;
+                        margin: 20px auto;
+                    }
+                }
+                .about-img {
+                    display: none !important;
+                }
+            }
+            &#sc2 .row {
+                max-height: 200px;
+                overflow: hidden;
+                div {
+                    max-width: 200px;
+                    height: 200px;
+                    a div {
+                        margin-top: 20px;
+                    }
+                }
+            }
         }
         h1 {
             font-size: 2em;
