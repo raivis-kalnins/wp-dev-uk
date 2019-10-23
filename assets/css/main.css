@@ -396,7 +396,10 @@ a:hover {
         top: 1.2em;
         margin-top: .3em; }
     #root header .soc {
-      opacity: 1; }
+      opacity: 1;
+      margin-top: 0; }
+      #root header .soc.blue {
+        margin-top: -14px; }
   #root section h2 {
     margin-top: 100px; }
   #root section .logo-c {
@@ -953,21 +956,24 @@ button#m-nav {
 
 .owl-carousel .owl-dots {
   position: absolute;
+  width: 110px;
+  height: 10px;
   z-index: 999;
-  right: 50%;
-  margin-right: -55px;
+  left: 50%;
+  margin-left: -55px;
   top: 90%; }
   .owl-carousel .owl-dots .owl-dot {
-    display: block;
+    display: inline-flex;
     width: 30px;
     height: 10px;
     border-radius: 1px;
     background-color: rgba(255, 255, 255, 0.3);
     border: #ffffff solid 1px;
-    float: left;
     margin-right: 10px;
     transition: opacity .5s ease;
     opacity: .5; }
+    .owl-carousel .owl-dots .owl-dot:last-child {
+      margin-right: 0; }
     .owl-carousel .owl-dots .owl-dot.active {
       opacity: 1;
       background-color: rgba(230, 63, 18, 0.9); }

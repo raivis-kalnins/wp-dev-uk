@@ -89,21 +89,25 @@
     }
     .owl-dots {
         position: absolute;
+        width: 110px;
+        height: 10px;
         z-index: 999;
-        right: 50%;
-        margin-right: -55px;
+        left: 50%;
+        margin-left: -55px;
         top: 90%;
         .owl-dot {
-            display: block;
+            display: inline-flex;
             width: 30px;
             height: 10px;
             border-radius: 1px;
             background-color: $color-white-op3;
             border: $color-white solid 1px;
-            float: left;
             margin-right: 10px;
             transition: opacity .5s ease;
             opacity: .5;
+            &:last-child {
+                margin-right: 0;
+            }
             &.active {
                 opacity: 1;
                 background-color: $color-orange-op9;

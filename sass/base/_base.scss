@@ -429,6 +429,10 @@ a:hover {
             }
             .soc {
                 opacity: 1;
+                margin-top: 0;
+                &.blue {
+                    margin-top: -14px;
+                }
             }
         }
         section {

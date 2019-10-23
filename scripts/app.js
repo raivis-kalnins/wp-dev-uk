@@ -21,7 +21,7 @@ function initialise() {
 	$('body').on('click','#m-nav.clicked', function() {
 		$(this).removeClass('clicked');
 		$(".mob-menu").removeClass("on-toggle").css("visibility", "hide");
-	});
+    });
     $(".owl-carousel img").each(function(i, elem) {
         var img = $(elem);
         var div = $("<div />").css({"background-image": "url(" + img.attr("src") + ")"});
