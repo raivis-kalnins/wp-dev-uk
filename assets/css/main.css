@@ -286,6 +286,7 @@ a:hover {
           #root section#sc2 .row div a {
             width: 100%;
             height: 100%;
+            position: relative;
             display: block;
             color: #000000;
             background-color: #ffffff;
@@ -302,6 +303,44 @@ a:hover {
               margin-top: 10px;
               display: inline-block;
               color: #000000; }
+              #root section#sc2 .row div a h3:after {
+                content: '';
+                width: 0;
+                -webkit-transition: all .5s ease-out;
+                transition: all .5s ease-out; }
+            #root section#sc2 .row div a:hover {
+              border: 2px solid #b2b2b2;
+              -webkit-animation: border 1s ease-out 1;
+              animation: border 1s ease-out 1; }
+              #root section#sc2 .row div a:hover:after {
+                content: '';
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0; }
+              #root section#sc2 .row div a:hover h3 {
+                color: #ffffff;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                text-align: center;
+                top: 60%;
+                z-index: 2; }
+                #root section#sc2 .row div a:hover h3:after {
+                  height: 2px;
+                  width: 7em;
+                  position: absolute;
+                  bottom: -10px;
+                  left: 0;
+                  background: rgba(255, 255, 255, 0.9);
+                  left: 50%;
+                  -webkit-transform: translateX(-50%);
+                  transform: translateX(-50%);
+                  -webkit-transition-delay: .5s;
+                  transition-delay: .5s; }
   #root footer {
     position: relative;
     min-height: 100px; }
@@ -505,6 +544,166 @@ a:hover {
     opacity: 1; }
   100% {
     opacity: 0; } }
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1; }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0; } }
+
+@-webkit-keyframes border {
+  0%, 24% {
+    border-color: transparent; }
+  25% {
+    border-top-color: #b2b2b2; }
+  49% {
+    border-right-color: transparent; }
+  50% {
+    border-right-color: #b2b2b2; }
+  74% {
+    border-bottom-color: transparent; }
+  75% {
+    border-bottom-color: #b2b2b2; }
+  99% {
+    border-left-color: transparent; }
+  100% {
+    border-color: #b2b2b2; } }
+
+@keyframes border {
+  0%, 24% {
+    border-color: transparent; }
+  25% {
+    border-top-color: #b2b2b2; }
+  49% {
+    border-right-color: transparent; }
+  50% {
+    border-right-color: #b2b2b2; }
+  74% {
+    border-bottom-color: transparent; }
+  75% {
+    border-bottom-color: #b2b2b2; }
+  99% {
+    border-left-color: transparent; }
+  100% {
+    border-color: #b2b2b2; } }
+
+@-webkit-keyframes border-after {
+  0% {
+    height: 5px;
+    width: 0;
+    top: -5px;
+    left: -5px;
+    right: auto;
+    bottom: auto; }
+  24.99% {
+    width: calc(100% + 10px);
+    height: 5px;
+    top: -5px;
+    left: -5px;
+    right: auto;
+    bottom: auto; }
+  25% {
+    width: 5px;
+    height: 0;
+    top: -5px;
+    right: -5px;
+    left: auto;
+    bottom: auto; }
+  49.99% {
+    width: 5px;
+    height: calc(100% + 10px);
+    top: -5px;
+    right: -5px;
+    left: auto;
+    bottom: auto; }
+  50% {
+    width: 0;
+    height: 5px;
+    bottom: -5px;
+    right: -5px;
+    top: auto;
+    left: auto; }
+  74.99% {
+    width: calc(100% + 10px);
+    height: 5px;
+    bottom: -5px;
+    right: -5px;
+    top: auto;
+    left: auto; }
+  75% {
+    width: 5px;
+    height: 0;
+    bottom: -5px;
+    left: -5px;
+    right: auto;
+    top: auto; }
+  100% {
+    width: 5px;
+    height: calc(100% + 10px);
+    bottom: -5px;
+    left: -5px;
+    right: auto;
+    top: auto; } }
+
+@keyframes border-after {
+  0% {
+    height: 5px;
+    width: 0;
+    top: -5px;
+    left: -5px;
+    right: auto;
+    bottom: auto; }
+  24.99% {
+    width: calc(100% + 10px);
+    height: 5px;
+    top: -5px;
+    left: -5px;
+    right: auto;
+    bottom: auto; }
+  25% {
+    width: 5px;
+    height: 0;
+    top: -5px;
+    right: -5px;
+    left: auto;
+    bottom: auto; }
+  49.99% {
+    width: 5px;
+    height: calc(100% + 10px);
+    top: -5px;
+    right: -5px;
+    left: auto;
+    bottom: auto; }
+  50% {
+    width: 0;
+    height: 5px;
+    bottom: -5px;
+    right: -5px;
+    top: auto;
+    left: auto; }
+  74.99% {
+    width: calc(100% + 10px);
+    height: 5px;
+    bottom: -5px;
+    right: -5px;
+    top: auto;
+    left: auto; }
+  75% {
+    width: 5px;
+    height: 0;
+    bottom: -5px;
+    left: -5px;
+    right: auto;
+    top: auto; }
+  100% {
+    width: 5px;
+    height: calc(100% + 10px);
+    bottom: -5px;
+    left: -5px;
+    right: auto;
+    top: auto; } }
 
 html, body {
   font-family: "Roboto", Arial, sans-serif;
