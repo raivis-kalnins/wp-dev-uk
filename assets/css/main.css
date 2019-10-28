@@ -487,11 +487,6 @@ a:hover {
 @media only screen and (max-width: 1120px) {
   #root header {
     height: 50px; }
-    #root header .logo {
-      max-height: 50px;
-      margin: -25px auto;
-      left: 50%;
-      margin-left: -72px; }
     #root header nav.main-menu-container ul#MyMenu li {
       margin-right: 1em; }
       #root header nav.main-menu-container ul#MyMenu li a {
@@ -515,6 +510,11 @@ a:hover {
     width: 100%; } }
 
 @media only screen and (max-width: 812px) {
+  #root header .logo {
+    max-height: 50px;
+    margin: -25px auto;
+    left: 50%;
+    margin-left: -72px; }
   #root header nav.main-menu-container {
     display: none; }
   #root .section h1 {

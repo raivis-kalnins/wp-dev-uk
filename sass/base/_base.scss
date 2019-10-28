@@ -546,12 +546,6 @@ a:hover {
     #root {
         header {
             height: 50px;
-            .logo {
-                max-height: 50px;
-                margin: -25px auto;
-                left: 50%;
-                margin-left: -72px;
-            }
             nav.main-menu-container ul#MyMenu li {
                 margin-right: 1em;
                 a {
@@ -588,8 +582,16 @@ a:hover {
 }
 @media only screen and (max-width: $breakpoint-phone-l) {
     #root {
-        header nav.main-menu-container {
-            display: none;
+        header {
+            .logo {
+                max-height: 50px;
+                margin: -25px auto;
+                left: 50%;
+                margin-left: -72px;
+            }
+            nav.main-menu-container {
+                display: none;
+            }
         }
         .section {
             h1 {
