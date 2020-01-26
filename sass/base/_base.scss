@@ -246,6 +246,9 @@ a:hover {
         }
         .row {
             position: relative;
+            @media only screen and (min-width: $breakpoint-laptop) {
+                top: 5vh;
+            }
         }
         h2 {
             display: inline-block;
