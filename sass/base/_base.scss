@@ -353,6 +353,9 @@ a:hover {
                             border: 2px solid $color-l-grey;
                             -webkit-animation: border 1s ease-out 1;
                             animation: border 1s ease-out 1;
+                            &>div {
+                                display: none;
+                            }
                             &:after {
                                 content:'';
                                 background-color: $color-black-op9;
@@ -369,7 +372,7 @@ a:hover {
                                 width: 100%;
                                 left: 0;
                                 text-align: center;
-                                top: 60%;
+                                top: 30%;
                                 z-index: 2;
                                 &:after {
                                     height: 2px;

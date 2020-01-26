@@ -343,6 +343,8 @@ a:hover {
               border: 2px solid #b2b2b2;
               -webkit-animation: border 1s ease-out 1;
               animation: border 1s ease-out 1; }
+              #root section#sc2 .row div a:hover > div {
+                display: none; }
               #root section#sc2 .row div a:hover:after {
                 content: '';
                 background-color: rgba(0, 0, 0, 0.9);
@@ -358,7 +360,7 @@ a:hover {
                 width: 100%;
                 left: 0;
                 text-align: center;
-                top: 60%;
+                top: 30%;
                 z-index: 2; }
                 #root section#sc2 .row div a:hover h3:after {
                   height: 2px;

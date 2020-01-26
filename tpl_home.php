@@ -68,7 +68,7 @@
 </section>
 <section class="section white" id="sc3">
     <div class="container">
-        <h2><?php the_field('clients_title'); ?></h2>
+        <h2><?php the_field('shop_title'); ?></h2>
         <div class="row">
             <div class="col">
                 
@@ -78,6 +78,17 @@
     </div>
 </section>
 <section class="section grey" id="sc4">
+    <div class="container">
+        <h2><?php the_field('clients_title'); ?></h2>
+        <div class="row">
+            <div class="col">
+                
+            </div>
+        </div>
+        <a class="btn button--orange btn-more" href="#news" title="News">Read more</a>
+    </div>
+</section>
+<section class="section white" id="sc5">
     <div class="container">
         <h2><?php the_field('news_title'); ?></h2>
         <div class="row" id="posts-list">
@@ -99,7 +110,18 @@
         <a class="btn button--white btn-more" href="#location" title="Location">Read more</a>
     </div>
 </section>
-<section class="section white" id="sc5">
+<section class="section grey" id="sc6">
+    <div class="container">
+        <h2><?php the_field('gallery_title'); ?></h2>
+        <div class="row">
+            <div class="col">
+                
+            </div>
+        </div>
+        <a class="btn button--orange btn-more" href="#news" title="News">Read more</a>
+    </div>
+</section>
+<section class="section white" id="sc7">
     <div class="container">
         <h2><?php the_field('location_title'); ?></h2>
         <div class="row">

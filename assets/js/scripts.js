@@ -243,9 +243,9 @@ function initialise() {
         navigation: true,
         lazyLoad: true,
         navigationPosition: 'right',
-        anchors: ['hello', 'about', 'services', 'clients', 'news', 'location', 'contact'],
+        anchors: ['hello', 'about', 'services', 'shop', 'clients', 'news', 'gallery', 'location', 'contact'],
         menu: '#myMenu',
-        navigationTooltips: ['hello', 'about', 'services', 'clients', 'news', 'location', 'contact'],
+        navigationTooltips: ['hello', 'about', 'services', 'shop', 'clients', 'news', 'gallery', 'location', 'contact'],
         sectionsColor: ['#333', '#fff', '#333', '#fff', '#333','#fff', '#333'],
         onLeave: (origin, destination, direction) => {
             const tl = new TimelineMax({ delay: 0.5 });

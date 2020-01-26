@@ -274,6 +274,7 @@
     add_action('wp_footer', 'devcoukblank_footer_scripts'); // Add Custom Scripts to wp_footer
     add_action('wp_enqueue_scripts', 'devcoukblank_styles'); // Add Theme Stylesheet
     add_action('init', 'register_devcouk_menu'); // Add devcouk Blank Menu
+    add_action('init', 'create_post_type_shop'); // Add our finance Blank Custom Post Type
     add_action('init', 'create_post_type_service'); // Add our finance Blank Custom Post Type
     add_action('init', 'create_post_type_clients'); // Add our clients Blank Custom Post Type
     add_action('init', 'devcoukwp_pagination'); // Add our devcouk Pagination
@@ -307,7 +308,43 @@
     /*------------------------------------*\
         Custom Post Types
     \*------------------------------------*/
-    // Create 1 Custom Post type Service
+    // Create 1 Custom Post type Shop
+    function create_post_type_shop() {
+        register_taxonomy_for_object_type('category', 'shop'); // Register Taxonomies for Category
+        register_taxonomy_for_object_type('post_tag', 'shop');
+        register_post_type('shop', // Register Custom Post Type
+            array(
+                'labels' => array(
+                'name' => __('Shop', 'devcoukblank'), // Rename these to suit
+                'singular_name' => __('Product', 'devcoukblank'),
+                'add_new' => __('Add New product', 'devcoukblank'),
+                'add_new_item' => __('Add New shop Product', 'devcoukblank'),
+                'edit' => __('Edit', 'devcoukblank'),
+                'edit_item' => __('Edit shop Product', 'devcoukblank'),
+                'new_item' => __('New shop Product', 'devcoukblank'),
+                'view' => __('View shop Product', 'devcoukblank'),
+                'view_item' => __('View shop Product', 'devcoukblank'),
+                'search_items' => __('Search shop Product', 'devcoukblank'),
+                'not_found' => __('No shop Posts found', 'devcoukblank'),
+                'not_found_in_trash' => __('No shop Posts found in Trash', 'devcoukblank')
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ), // Go to Dashboard Custom devcouk Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array(
+                'post_tag',
+                'category'
+            ) // Add Category and Post Tags support
+        ));
+    }
+    // Create 2 Custom Post type Service
     function create_post_type_service() {
         register_taxonomy_for_object_type('category', 'service'); // Register Taxonomies for Category
         register_taxonomy_for_object_type('post_tag', 'service');
@@ -343,7 +380,7 @@
             ) // Add Category and Post Tags support
         ));
     }
-    // Create 2 Custom Post type Clients
+    // Create 3 Custom Post type Clients
     function create_post_type_clients() {
         register_taxonomy_for_object_type('category', 'clients'); // Register Taxonomies for Category
         register_taxonomy_for_object_type('post_tag', 'clients');
