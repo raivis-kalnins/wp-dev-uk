@@ -79,10 +79,10 @@ function initialise() {
         navigation: true,
         lazyLoad: true,
         navigationPosition: 'right',
-        anchors: ['hello', 'about', 'services', 'clients', 'news', 'location', 'contact'],
+        anchors: ['hello', 'about', 'services', 'shop', 'clients', 'news', 'image-gallery', 'location', 'contact'],
         menu: '#myMenu',
-        navigationTooltips: ['hello', 'about', 'services', 'clients', 'news', 'location', 'contact'],
-        sectionsColor: ['#333', '#fff', '#333', '#fff', '#333','#fff', '#333'],
+        navigationTooltips: ['hello', 'about', 'services', 'shop', 'clients', 'news', 'gallery', 'location', 'contact'],
+        sectionsColor: ['#333', '#fff', '#333', '#fff', '#333','#fff', '#333', '#fff', '#333'],
         onLeave: (origin, destination, direction) => {
             const tl = new TimelineMax({ delay: 0.5 });
             const container = $(".container h2, .container .row>div");
@@ -103,29 +103,39 @@ function initialise() {
                 const sec1 = document.querySelector("#sc1");
                 tl.fromTo(sec1, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
                 tl.fromTo(about_img, 0.7, { x:"120%", y:"120%" }, { x:"-50%", y:"-20%" });
-                s_width = 16.6;
+                s_width = 29.1;
             } else if(destination.index == 2) {
                 $('#MyMenu li:nth-child(3)').addClass('active');
                 $('#m-nav, .soc').addClass('blue');
                 tl.fromTo(container, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
-                s_width = 33.2;
+                s_width = 39.1;
             } else if(destination.index == 3) {
                 $('#MyMenu li:nth-child(4)').addClass('active');
                 $('#m-nav, .soc').addClass('blue');
                 tl.fromTo(container, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
-                s_width = 49.8;
+                s_width = 49.1;
             } else if(destination.index == 4) {
                 $('#MyMenu li:nth-child(5)').addClass('active');
                 $('#m-nav, .soc').addClass('blue');
                 tl.fromTo(container, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
-                s_width = 66.4;
+                s_width = 59.1;
             } else if(destination.index == 5) {
                 $('#MyMenu li:nth-child(6)').addClass('active');
                 $('#m-nav, .soc').addClass('blue');
                 tl.fromTo(container, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
-                s_width = 83;
+                s_width = 69.1;
             } else if(destination.index == 6) {
                 $('#MyMenu li:nth-child(7)').addClass('active');
+                $('#m-nav, .soc').addClass('blue');
+                tl.fromTo(container, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
+                s_width = 79.1;
+            } else if(destination.index == 7) {
+                $('#MyMenu li:nth-child(8)').addClass('active');
+                $('#m-nav, .soc').addClass('blue');
+                tl.fromTo(container, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
+                s_width = 89.1;
+            } else if(destination.index == 8) {
+                $('#MyMenu li:nth-child(9)').addClass('active');
                 $('#m-nav, .soc').addClass('blue');
                 tl.fromTo(container, .7, { y: "0", opacity: 0 }, { y: "0", opacity: 1 });
                 s_width = 100;

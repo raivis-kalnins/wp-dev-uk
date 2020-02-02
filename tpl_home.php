@@ -1,4 +1,5 @@
-<?php /* Template Name: Home Page TPL - PHP */ get_header();
+<?php /* Template Name: Home Page TPL - PHP */ 
+    get_header();
     $custom_logo_id = get_theme_mod('custom_logo'); 
     $logo = wp_get_attachment_image_src($custom_logo_id,'full');
     $logo_alt = get_bloginfo('name');
@@ -63,7 +64,7 @@
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>
-        <a class="btn button--white btn-more" href="#clients" title="Clients">Read more</a>
+        <a class="btn button--white btn-more" href="#shop" title="Shop">Read more</a>
     </div>
 </section>
 <section class="section white" id="sc3">
@@ -74,7 +75,7 @@
                 
             </div>
         </div>
-        <a class="btn button--orange btn-more" href="#news" title="News">Read more</a>
+        <a class="btn button--orange btn-more" href="#clients" title="Clients">Read more</a>
     </div>
 </section>
 <section class="section grey" id="sc4">
@@ -82,7 +83,7 @@
         <h2><?php the_field('clients_title'); ?></h2>
         <div class="row">
             <div class="col">
-                
+
             </div>
         </div>
         <a class="btn button--orange btn-more" href="#news" title="News">Read more</a>
@@ -107,18 +108,27 @@
                 </div>
             <?php endwhile; wp_reset_query(); */ ?>
         </div>
-        <a class="btn button--white btn-more" href="#location" title="Location">Read more</a>
+        <a class="btn button--orange btn-more" href="#image-gallery" title="Gallery">Read more</a>
     </div>
 </section>
 <section class="section grey" id="sc6">
     <div class="container">
         <h2><?php the_field('gallery_title'); ?></h2>
-        <div class="row">
-            <div class="col">
-                
-            </div>
+        <div id="photo-gallery" class="row">
+            <?php 
+                $images = get_field('gallery');
+                if( $images ): ?>
+                    <?php foreach( $images as $image ): ?>
+                        <div class="col col-2">
+                            <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="gallery">
+                                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            </a>
+                            <p><?php echo esc_html($image['caption']); ?></p>
+                    </div>
+                        <?php endforeach; ?>
+                <?php endif; ?>
         </div>
-        <a class="btn button--orange btn-more" href="#news" title="News">Read more</a>
+        <a class="btn button--white btn-more" href="#location" title="Location">Read more</a>
     </div>
 </section>
 <section class="section white" id="sc7">
