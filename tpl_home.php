@@ -119,7 +119,7 @@
                 $images = get_field('gallery');
                 if( $images ): ?>
                     <?php foreach( $images as $image ): ?>
-                        <div class="col col-2">
+                        <div class="col">
                             <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="gallery">
                                 <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                             </a>

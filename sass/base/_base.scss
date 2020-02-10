@@ -317,6 +317,9 @@ a:hover {
         }
         &#sc2 {
             text-align: center;
+            h2 {
+                margin-bottom: 0;
+            }
             .row {
                 display: inline-block;
                 div {
@@ -447,6 +450,24 @@ a:hover {
             }
         }
         &#sc5 {
+        }
+        &#sc6 {
+            #photo-gallery {
+                flex-wrap: wrap;
+                div {
+                    display: inline-flex;
+                    text-align: center;
+                    flex-direction: column;
+                    img {
+                        -o-object-fit: none;
+                        object-fit: none;
+                        font-family: inherit;
+                        position: relative;
+                    }
+                }
+            }
+        }
+        &#sc7 {
             #address_ojcars {
                 text-align: center;
                 color: $color-blue;

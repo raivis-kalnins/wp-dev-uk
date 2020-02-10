@@ -311,6 +311,8 @@ a:hover {
             transform: scale(1.1); }
     #root section#sc2 {
       text-align: center; }
+      #root section#sc2 h2 {
+        margin-bottom: 0; }
       #root section#sc2 .row {
         display: inline-block; }
         #root section#sc2 .row div {
@@ -416,7 +418,18 @@ a:hover {
             font-weight: bold;
             font-size: 20px;
             line-height: 1.5em; }
-    #root section#sc5 #address_ojcars {
+    #root section#sc6 #photo-gallery {
+      flex-wrap: wrap; }
+      #root section#sc6 #photo-gallery div {
+        display: inline-flex;
+        text-align: center;
+        flex-direction: column; }
+        #root section#sc6 #photo-gallery div img {
+          -o-object-fit: none;
+          object-fit: none;
+          font-family: inherit;
+          position: relative; }
+    #root section#sc7 #address_ojcars {
       text-align: center;
       color: #142d5d;
       font-size: 1.4em; }
