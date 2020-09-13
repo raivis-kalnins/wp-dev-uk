@@ -4,6 +4,7 @@
 @import url(vendor/animate.min.css);
 @import url(vendor/owl.carousel.min.css);
 @import url(vendor/funnyText.css);
+@import url(vendor/fancybox.min.css);
 /*
 This mixin can be used to set the object-fit:
     @include object-fit(contain);
@@ -957,6 +958,9 @@ button#m-nav {
     color: #e63f12;
     font-family: "Roboto Regular";
     letter-spacing: .2em; }
+
+.fancybox-show-nav .fancybox-arrow[disabled] {
+  opacity: 0; }
 
 @media only screen and (max-width: 812px) {
   button#m-nav {

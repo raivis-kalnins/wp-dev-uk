@@ -181,6 +181,9 @@ button#m-nav {
         }
     }
 }
+.fancybox-show-nav .fancybox-arrow[disabled] {
+  opacity: 0;
+}
 @media only screen and (max-width: $breakpoint-phone-l) {
     button#m-nav {
         display: block;

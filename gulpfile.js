@@ -30,6 +30,7 @@ gulp.task('scripts', function () {
         //"scripts/vendor/jquery.googlecalreader.min.js",
         //"scripts/vendor/foundation.min.js",
         "scripts/vendor/owl.carousel.min.js",
+        "scripts/vendor/jquery.fancybox.min.js",
         "scripts/vendor/slick.min.js",
         //"scripts/vendor/google.maps.js",
         //"scripts/vendor/video.min.js",
