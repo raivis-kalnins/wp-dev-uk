@@ -93,7 +93,7 @@
     <div class="container">
         <h2><?php the_field('news_title'); ?></h2>
         <div class="row" id="posts-list">
-            <?php /*
+            <?php
             //add_action('pre_get_posts', 'filter_category_orderby');
             function wpdocs_custom_excerpt_length( $length ) { return 10; }
             add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 32 );
@@ -106,7 +106,7 @@
                         <a href="<?php the_permalink(); ?>"><h3><?php the_title();?></h3></a>
                     </article>
                 </div>
-            <?php endwhile; wp_reset_query(); */ ?>
+            <?php endwhile; wp_reset_query(); ?>
         </div>
         <a class="btn button--orange btn-more" href="#image-gallery" title="Gallery">Read more</a>
     </div>
@@ -119,11 +119,7 @@
                 $images = get_field('gallery');
                 if( $images ): ?>
                     <?php foreach( $images as $image ): ?>
-<<<<<<< HEAD
-                        <div class="col col-2">
-=======
                         <div class="col">
->>>>>>> 17c694e5fd14a29b2ac9f311b9f45579d833ae2a
                             <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="gallery">
                                 <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                             </a>
