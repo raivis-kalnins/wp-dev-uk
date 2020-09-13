@@ -239,7 +239,9 @@ function initialise() {
     $('#MyMenu li:nth-child(1)').addClass('active');
     var key = $('#f-key .textwidget').text();
     $('#m-nav, .soc').removeClass('blue');
+
     //console.log('full key: '+ key);
+
     // Email protect
 	$('.getemail').each(function() {
 		$(this).off('click').click(function() {
@@ -249,6 +251,7 @@ function initialise() {
             that.parent().addClass('clicked');
 		});
     });
+
     $('#fullpage').fullpage({
         licenseKey: key,
         autoScrolling: true,
@@ -322,6 +325,14 @@ function initialise() {
             $('#scroll-line').css('width', (s_width + '%'));
         }
     });
+
+    $.fancybox.defaults.animationEffect = "fade";
+
+    $('[data-fancybox]').fancybox({
+        fullScreen: false,
+        slideShow: false
+    });
+
 	return false;
 };
 $(document).ready(function () {
