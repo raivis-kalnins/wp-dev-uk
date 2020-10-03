@@ -84,7 +84,6 @@ a:hover {
     margin-top: 0;
     position: relative;
     max-width: 1199.98px;
-    height: 100%;
     top: 0; }
     #root .container.full {
       padding: 0;
@@ -277,10 +276,10 @@ a:hover {
       #root section#sc1 .container .description h2 {
         text-align: left; }
       #root section#sc1 .container .description p {
-        font-size: 1.2em;
+        font-size: 1.5em;
         line-height: 1.8em; }
       #root section#sc1 .container .about-img {
-        transform: translate(-50%, -50%);
+        transform: translate(-100%, -100%);
         border: rgba(230, 63, 18, 0.9) solid 1px;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
@@ -291,6 +290,7 @@ a:hover {
         max-height: 50vh;
         display: block;
         overflow: hidden;
+        border: 0;
         margin: 0 auto;
         position: absolute;
         top: 55%;
@@ -418,6 +418,13 @@ a:hover {
             font-weight: bold;
             font-size: 20px;
             line-height: 1.5em; }
+    #root section#sc4 .btn-center {
+      text-align: center; }
+      #root section#sc4 .btn-center .btn {
+        padding: 5px 10px;
+        font-size: 0.8em; }
+        #root section#sc4 .btn-center .btn:first-child {
+          margin-right: 20px; }
     #root section#sc6 #photo-gallery {
       flex-wrap: wrap; }
       #root section#sc6 #photo-gallery div {
