@@ -36,13 +36,11 @@
     }
     .owl-item {
         float: left;
-        width: 100vw !important;
         z-index: 1;
         .item {
             background-position: center center;
             background-attachment: inherit;
             background-size: cover !important;
-            width: 100vw !important;
             min-height: 100vh;
             &:after {
                 content:'';

@@ -10,7 +10,7 @@
 	<div class="container full" <?php if ( has_header_image() ) { ?> class="custom-background section" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
 		<img data-src="data:image/png+xml;base64,<?php echo $data; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c lazyload fadeIn delay-025" />
 		<h1><?php the_title(); ?></h1>
-		<div class="owl-carousel">
+		<div class="owl-carousel owl-intro">
 			<?php
 				for ($i = 1; $i <= 7; $i++) {
 					if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), "image0$i", NULL, "full"); endif;
@@ -33,7 +33,7 @@
 				<div class="about-img animated fadeIn" style=""><img data-src="<?php if ( wp_is_mobile() ) { echo the_post_thumbnail_url(null, "small"); } else { echo the_post_thumbnail_url(null, "full"); } ?>" alt=""  class="lazyload" /></div>
 			</div>
 		</div>
-		<a class="btn button--orange btn-more btn-about" href="#services" title="Services">Read more</a>
+		<a class="btn button--orange btn-more btn-about" href="#services" title="Services">Services</a>
 	</div>
 </section>
 <section class="section grey" id="sc2">
@@ -64,7 +64,7 @@
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
-		<a class="btn button--white btn-more" href="#shop" title="Shop">Read more</a>
+		<a class="btn button--white btn-more" href="#shop" title="Shop">Store</a>
 	</div>
 </section>
 <section class="section white" id="sc3">
@@ -75,22 +75,29 @@
 				
 			</div>
 		</div>
-		<a class="btn button--orange btn-more" href="#clients" title="Clients">Read more</a>
+		<a class="btn button--orange btn-more" href="#clients" title="Clients">Clients</a>
 	</div>
 </section>
 <section class="section grey" id="sc4">
 	<div class="container">
 		<h2><?php the_field('clients_title'); ?></h2>
-		<div class="row owl-carousel-clients">
+		<div class="btn-center">
+			<a href="https://search.google.com/local/writereview?placeid=ChIJSxhKTWFLd0gR-uE29aMpzGU" target="_blank" class="btn button--white">write review</a>
+			<a href="https://search.google.com/local/reviews?placeid=ChIJSxhKTWFLd0gR-uE29aMpzGU" target="_blank" class="btn button--white">more reviews</a>
+		</div>
+		<div class="row owl-carousel owl-clients">
 			<?php
 				$args_clients = array( 'post_type' => 'clients', 'posts_per_page' => 3 );
 				$loop_clients = new WP_Query( $args_clients );
 				if ( have_posts() ) :
 					while ( $loop_clients->have_posts() ) : $loop_clients->the_post();
 			?>
-			<div class="post-item col">
-				<h3 class="is-12"><?php esc_html_e( get_the_title(), 55 ); ?></h3>
-				<div class="card-desc"><?php the_content(); ?></div>
+			<div class="post-item col-12">
+				<div class="quote">
+					<i class="fa fa-quote-right" aria-hidden="true"></i>
+					<?php the_content(); ?>
+					<p class="cust">&nbsp;<?php esc_html_e( get_the_title(), 55 ); ?></p>
+				</div>
 			</div>
 			<?php 
 				endwhile;
@@ -98,34 +105,32 @@
 				endif;
 			?>
 		</div>
-		<a href="https://search.google.com/local/writereview?placeid=ChIJSxhKTWFLd0gR-uE29aMpzGU" target="_blank" class="btn button--white">write review</a>
-		<a href="https://search.google.com/local/reviews?placeid=ChIJSxhKTWFLd0gR-uE29aMpzGU" target="_blank" class="btn button--white">more reviews</a>
-		<a class="btn button--white btn-more" href="#news" title="News">Read more</a>
+		<a class="btn button--white btn-more" href="#news" title="News">News</a>
 	</div>
 </section>
 <section class="section white" id="sc5">
 	<div class="container">
 		<h2><?php the_field('news_title'); ?></h2>
-		<div class="row owl-carousel-posts">
+		<div class="row owl-carousel owl-carousel-posts">
 			<?php
 			function wpdocs_custom_excerpt_length( $length ) { return 10; }
 			add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 32 );
 			$args = array( 'post_type' => 'post' );
 			$loop = new WP_Query($args); 
 			while ($loop->have_posts()): $loop->the_post(); ?>
-				<div class="post-item col">
+				<div class="post-item col-4">
 					<?php the_post_thumbnail(); ?>
 					<a href="<?php the_permalink(); ?>"><h3><?php the_title();?></h3></a>
 				</div>
 			<?php endwhile; wp_reset_query(); ?>
 		</div>
-		<a class="btn button--orange btn-more" href="#image-gallery" title="Gallery">Read more</a>
+		<a class="btn button--orange btn-more" href="#image-gallery" title="Gallery">Gallery</a>
 	</div>
 </section>
 <section class="section grey" id="sc6">
 	<div class="container">
 		<h2><?php the_field('gallery_title'); ?></h2>
-		<div id="photo-gallery" class="row owl-carousel-gallery">
+		<div id="photo-gallery" class="row owl-carousel owl-carousel-gallery">
 			<?php 
 				$images = get_field('gallery');
 				if( $images ): ?>
@@ -139,7 +144,7 @@
 						<?php endforeach; ?>
 				<?php endif; ?>
 		</div>
-		<a class="btn button--white btn-more" href="#location" title="Location">Read more</a>
+		<a class="btn button--white btn-more" href="#location" title="Location">Find Us</a>
 	</div>
 </section>
 <section class="section white" id="sc7">
@@ -151,7 +156,7 @@
 			<div id="address_ojcars"><?php the_field('address'); ?></div>
 			</div>
 		</div>
-		<a class="btn button--orange btn-more" href="#contact" title="Contact">Read more</a>
+		<a class="btn button--orange btn-more" href="#contact" title="Contact">Contact Us</a>
 	</div>
 </section>
 <?php get_footer(); ?>

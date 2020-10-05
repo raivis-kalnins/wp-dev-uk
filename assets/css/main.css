@@ -35,6 +35,12 @@ or object-fit and object-position:
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: "Condensed";
+  src: url("./fonts/Open_Sans_Condensed/OpenSansCondensed-LightItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 ::-webkit-scrollbar {
   width: 9px; }
 
@@ -309,6 +315,9 @@ a:hover {
             text-align: left;
             -webkit-transform: scale(1.1);
             transform: scale(1.1); }
+      #root section#sc1 .container .btn.btn-more.btn-about {
+        left: inherit !important;
+        float: left !important; }
     #root section#sc2 {
       text-align: center; }
       #root section#sc2 h2 {
@@ -418,6 +427,36 @@ a:hover {
             font-weight: bold;
             font-size: 20px;
             line-height: 1.5em; }
+    #root section#sc4 .row {
+      top: 30px;
+      margin-left: 0; }
+    #root section#sc4 .owl-clients {
+      max-height: 300px;
+      overflow: hidden; }
+      #root section#sc4 .owl-clients .post-item {
+        text-align: center; }
+        #root section#sc4 .owl-clients .post-item .fa {
+          font-size: 3em;
+          color: white; }
+          @media only screen and (max-width: 1120px) {
+            #root section#sc4 .owl-clients .post-item .fa {
+              display: none; } }
+        #root section#sc4 .owl-clients .post-item p {
+          font-family: "Condensed";
+          font-size: 1.4em;
+          letter-spacing: 0.07em;
+          color: white;
+          width: 70%;
+          margin: 20px auto 7px auto; }
+          @media only screen and (max-width: 1120px) {
+            #root section#sc4 .owl-clients .post-item p {
+              margin-top: 0;
+              font-size: 1em; } }
+          #root section#sc4 .owl-clients .post-item p.cust {
+            font-family: "Roboto Thin"; }
+            @media only screen and (max-width: 1120px) {
+              #root section#sc4 .owl-clients .post-item p.cust {
+                margin-bottom: 20px; } }
     #root section#sc4 .btn-center {
       text-align: center; }
       #root section#sc4 .btn-center .btn {
@@ -1044,13 +1083,11 @@ button#m-nav {
 
 .owl-carousel .owl-item {
   float: left;
-  width: 100vw !important;
   z-index: 1; }
   .owl-carousel .owl-item .item {
     background-position: center center;
     background-attachment: inherit;
     background-size: cover !important;
-    width: 100vw !important;
     min-height: 100vh; }
     .owl-carousel .owl-item .item:after {
       content: '';

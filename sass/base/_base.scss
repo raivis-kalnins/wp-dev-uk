@@ -314,6 +314,10 @@ a:hover {
 						}
 					}
 				}
+				.btn.btn-more.btn-about {
+					left: inherit !important;
+					float: left !important;
+				}
 			}
 		}
 		&#sc2 {
@@ -444,6 +448,46 @@ a:hover {
 								font-weight: bold;
 								font-size: 20px;
 								line-height: 1.5em;
+							}
+						}
+					}
+				}
+			}
+			.row {
+				top: 30px;
+				margin-left: 0;
+			}
+			.owl-clients {
+				max-height: 300px;
+				overflow: hidden;
+				.post-item {
+					text-align: center;
+					.fa {
+						font-size: 3em;
+						color: white;
+
+						@media only screen and (max-width: $breakpoint-tablet-l) {
+							display: none;
+						}
+					}
+					p {
+						font-family: $font-clients;
+						font-size: 1.4em;
+						letter-spacing: 0.07em;
+						color: white;
+						width: 70%;
+						margin: 20px auto 7px auto;
+
+						@media only screen and (max-width: $breakpoint-tablet-l) {
+							margin-top: 0;
+							font-size: 1em;
+						}
+
+						&.cust {
+							font-family: $font-nav;
+
+							@media only screen and (max-width: $breakpoint-tablet-l) {
+								margin-bottom: 20px;
 							}
 						}
 					}
