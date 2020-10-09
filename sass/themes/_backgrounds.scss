@@ -1,131 +1,131 @@
 [class*="background"] {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 .background--blue {
-    background-color: $color-blue;
-    * {
-        color: $color-white;
-    }
+	background-color: $color-blue;
+	* {
+		color: $color-white;
+	}
 }
 .background--grey{
-    background-color: $color-grey;
+	background-color: $color-grey;
 }
 .owl-carousel {
-    .owl-wrapper{
-        display: none;
-        position: relative;
-        -webkit-transform: translate3d(0px, 0px, 0px);
-    }
-    .owl-wrapper-outer.autoHeight {
-        -webkit-transition: height 500ms ease-in-out;
-        -moz-transition: height 500ms ease-in-out;
-        -ms-transition: height 500ms ease-in-out;
-        -o-transition: height 500ms ease-in-out;
-        transition: height 500ms ease-in-out;
-    }
-    .owl-wrapper,
-    .owl-item {
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility:    hidden;
-        -ms-backface-visibility:     hidden;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-    }
-    .owl-item {
-        float: left;
-        z-index: 1;
-        .item {
-            background-position: center center;
-            background-attachment: inherit;
-            background-size: cover !important;
-            min-height: 100vh;
-            &:after {
-                content:'';
-                z-index: 2;
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0.5;
-                @include background-vertical-to-bottom($startColor: $color-blue, $endColor: $color-blue-op9);
-            }
-        }
-    }
-    .owl-nav {
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        margin-top: -21px;
-        color: $color-white;
-        button {
-            span {
-                position: absolute;
-                display: block;
-                width: 28px;
-                height: 42px;
-                font-size: 0;
-                transition: opacity .5s ease;
-                opacity: 1;
-                &:hover {
-                    opacity: .5; 
-                }
-            }
-            &.owl-prev span {
-                background: url(../img/i/arr-left.png) center / cover no-repeat;
-                left: 5vw;
-            }
-            &.owl-next span {
-                background: url(../img/i/arr-right.png) center / cover no-repeat;
-                right: 5vw;
-            }
-        }
-    }
-    .owl-dots {
-        position: absolute;
-        width: 110px;
-        height: 10px;
-        z-index: 999;
-        left: 50%;
-        margin-left: -55px;
-        top: 90%;
-        .owl-dot {
-            display: inline-flex;
-            width: 30px;
-            height: 10px;
-            border-radius: 1px;
-            background-color: $color-white-op3;
-            border: $color-white solid 1px;
-            margin-right: 10px;
-            transition: opacity .5s ease;
-            opacity: .5;
-            &:last-child {
-                margin-right: 0;
-            }
-            &.active {
-                opacity: 1;
-                background-color: $color-orange-op9;
-            }
-        }
-    }
+	.owl-wrapper {
+		display: none;
+		position: relative;
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	.owl-wrapper-outer.autoHeight {
+		-webkit-transition: height 500ms ease-in-out;
+		-moz-transition: height 500ms ease-in-out;
+		-ms-transition: height 500ms ease-in-out;
+		-o-transition: height 500ms ease-in-out;
+		transition: height 500ms ease-in-out;
+	}
+	.owl-wrapper,
+	.owl-item {
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility:    hidden;
+		-ms-backface-visibility:     hidden;
+		-webkit-transform: translate3d(0,0,0);
+		-moz-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+	}
+	.owl-item {
+		float: left;
+		z-index: 1;
+		.item {
+			background-position: center center;
+			background-attachment: inherit;
+			background-size: cover !important;
+			min-height: 100vh;
+			&:after {
+				content:'';
+				z-index: 2;
+				position: absolute;
+				display: block;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0.5;
+				@include background-vertical-to-bottom($startColor: $color-blue, $endColor: $color-blue-op9);
+			}
+		}
+	}
+	.owl-nav {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		margin-top: -21px;
+		color: $color-white;
+		button {
+			span {
+				position: absolute;
+				display: block;
+				width: 28px;
+				height: 42px;
+				font-size: 0;
+				transition: opacity .5s ease;
+				opacity: 1;
+				&:hover {
+					opacity: .5; 
+				}
+			}
+			&.owl-prev span {
+				background: url(../img/i/arr-left.png) center / cover no-repeat;
+				left: 5vw;
+			}
+			&.owl-next span {
+				background: url(../img/i/arr-right.png) center / cover no-repeat;
+				right: 5vw;
+			}
+		}
+	}
+	.owl-dots {
+		position: absolute;
+		width: 110px;
+		height: 10px;
+		z-index: 999;
+		left: 50%;
+		margin-left: -55px;
+		top: 90%;
+		.owl-dot {
+			display: inline-flex;
+			width: 30px;
+			height: 10px;
+			border-radius: 1px;
+			background-color: $color-white-op3;
+			border: $color-white solid 1px;
+			margin-right: 10px;
+			transition: opacity .5s ease;
+			opacity: .5;
+			&:last-child {
+				margin-right: 0;
+			}
+			&.active {
+				opacity: 1;
+				background-color: $color-orange-op9;
+			}
+		}
+	}
 }
 #gmap_ojcars {
-    width: 100%;
-    height: 40vh;
-    max-width: 80vw;
-    border: #ccc solid 1px;
-    margin: 0 auto 7px;
-    img {
-        max-width: inherit !important;
-    }
+	width: 100%;
+	height: 40vh;
+	max-width: 80vw;
+	border: #ccc solid 1px;
+	margin: 0 auto 7px;
+	img {
+		max-width: inherit !important;
+	}
 }
 @media only screen and (max-width: $breakpoint-phone-l) {
-    #root section#sc5 #address_ojcars {
-        font-size: 1em;
-        line-height: 1.2em;
-    }
+	#root section#sc5 #address_ojcars {
+		font-size: 1em;
+		line-height: 1.2em;
+	}
 }

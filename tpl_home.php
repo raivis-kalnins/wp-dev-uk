@@ -108,7 +108,7 @@
 		<a class="btn button--white btn-more" href="#news" title="News">News</a>
 	</div>
 </section>
-<section class="section white" id="sc5">
+<section class="section grey-light" id="sc5">
 	<div class="container">
 		<h2><?php the_field('news_title'); ?></h2>
 		<div class="row owl-carousel owl-carousel-posts">
@@ -118,9 +118,9 @@
 			$args = array( 'post_type' => 'post' );
 			$loop = new WP_Query($args); 
 			while ($loop->have_posts()): $loop->the_post(); ?>
-				<div class="post-item col-4">
-					<?php the_post_thumbnail(); ?>
-					<a href="<?php the_permalink(); ?>"><h3><?php the_title();?></h3></a>
+				<div class="post-item col">
+					<a href="<?php the_permalink(); ?>" class="item--img"><?php the_post_thumbnail(); ?></a>
+					<a href="<?php the_permalink(); ?>" class="item--title"><h3><?php the_title();?></h3></a>
 				</div>
 			<?php endwhile; wp_reset_query(); ?>
 		</div>
@@ -135,7 +135,7 @@
 				$images = get_field('gallery');
 				if( $images ): ?>
 					<?php foreach( $images as $image ): ?>
-						<div class="col">
+						<div class="col item">
 							<a href="<?php echo esc_url($image['url']); ?>" data-fancybox="gallery">
 								<img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 							</a>

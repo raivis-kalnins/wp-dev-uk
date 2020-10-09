@@ -22,7 +22,7 @@ function initialise() {
 		$('#m-nav').removeClass('clicked');
 		$(".mob-menu").removeClass("on-toggle");
 	});
-	$(".owl-carousel img, #posts-list article img").each(function(i, elem) {
+	$(".owl-intro img, .owl-carousel-posts img, #posts-list article img").each(function(i, elem) {
 		var img = $(elem);
 		var div = $("<div />").css({"background-image": "url(" + img.attr("src") + ")"});
 		div.html(img.attr("alt"));
@@ -57,18 +57,43 @@ function initialise() {
 		mouseDrag: true,
 		smartSpeed: 450
 	});
-	$('.owl-carousel-posts, .owl-carousel-gallery').owlCarousel({
-		items: 3,
+	$('.owl-carousel-posts').owlCarousel({
 		loop: true,
 		lazyLoad: true,
 		navSpeed: 20,
 		nav: true,
 		dots: false,
-		autoHeight: false,
 		autoplay: false,
 		touchDrag: true,
 		mouseDrag: true,
-		smartSpeed: 450
+		smartSpeed: 450,
+		responsive:{
+			0:{
+				items:1
+			},
+			812:{
+				items:2
+			}
+		}
+	});
+	$('.owl-carousel-gallery').owlCarousel({
+		loop: false,
+		lazyLoad: true,
+		navSpeed: 20,
+		nav: true,
+		dots: false,
+		autoplay: false,
+		touchDrag: true,
+		mouseDrag: true,
+		smartSpeed: 450,
+		responsive:{
+			0:{
+				items: 2
+			},
+			812:{
+				items: 5
+			}
+		}
 	});
 	$('h1').funnyText({
 		speed: 700,

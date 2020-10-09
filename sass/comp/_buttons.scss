@@ -189,12 +189,13 @@ button#m-nav {
         display: block;
     }
     .btn.btn-more {
-        margin-top: 15px;
+        margin-top: 50px;
         &.btn-about {
             left: auto;
         }
     }
     #fp-nav.fp-right {
-        right: 0;
+        //right: 0;
+        display: none !important;
     }
 }
