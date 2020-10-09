@@ -23,7 +23,11 @@
 		<header>
 			<button id="m-nav"></button>
 			<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
-			<nav class="main-menu-container"><?php main_nav(); // .mob-menu class respons ?></nav>
+			<?php if(is_front_page()) : ?>
+				<nav class="main-menu-container"><?php main_nav(); // .mob-menu class respons ?></nav>
+			<?php endif; ?>
 			<a href="https://www.facebook.com/pg/OJ-Cars-1844906585770684/about/?ref=page_internal" class="soc fb" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 		</header>
-		<div id="fullpage"><?php //Start - Full page ?>
+		<?php if(is_front_page()) : ?>
+			<div id="fullpage"><?php //Start - Full page ?>
+		<?php endif; ?>

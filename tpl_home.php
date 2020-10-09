@@ -9,7 +9,7 @@
 <section class="section full" id="home-slider">
 	<div class="container full" <?php if ( has_header_image() ) { ?> class="custom-background section" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
 		<img data-src="data:image/png+xml;base64,<?php echo $data; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c lazyload fadeIn delay-025" />
-		<h1><?php the_title(); ?></h1>
+		<h1 class="h1-home"><?php the_title(); ?></h1>
 		<div class="owl-carousel owl-intro">
 			<?php
 				for ($i = 1; $i <= 7; $i++) {

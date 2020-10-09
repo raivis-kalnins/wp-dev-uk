@@ -1,6 +1,6 @@
 			<footer class="section fp-auto-height grey background--grey">
 				<div class="container">
-					<h2><?php the_field('contact_title'); ?></h2>
+					<h2>Contact us</h2>
 					<div class="row">
 						<div class="col">
 							<div class="email fa fa-envelope">
@@ -23,16 +23,18 @@
 				</div>
 				<div id="scroll-top"><a href="#hello" title="Scroll to top"><i class="fa fa-arrow-circle-o-up fa-3x" aria-hidden="true"></i></a></div>
 			</footer>
-		</div>
+		<?php if(is_front_page()) : ?>
+			</div>
+		<?php endif; ?>
 		<?php echo do_shortcode('[do_widget id=custom_html-3]');?>
 		<?php wp_footer(); ?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151333821-1"></script>
 		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-151333821-1');
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-151333821-1');
 		</script>
 	</body>
 </html>

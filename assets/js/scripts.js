@@ -271,7 +271,7 @@ function initialise() {
 			}
 		}
 	});
-	$('h1').funnyText({
+	$('h1.h1-home').funnyText({
 		speed: 700,
 		borderColor: 'black',
 		activeColor: 'white',
