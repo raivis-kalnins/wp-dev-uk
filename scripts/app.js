@@ -57,7 +57,7 @@ function initialise() {
 		mouseDrag: true,
 		smartSpeed: 450
 	});
-	$('.owl-carousel-posts').owlCarousel({
+	$('.owl-carousel-posts, .owl-carousel-store').owlCarousel({
 		loop: true,
 		lazyLoad: true,
 		navSpeed: 20,

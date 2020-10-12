@@ -70,10 +70,17 @@
 <section class="section white" id="sc3">
 	<div class="container">
 		<h2><?php the_field('shop_title'); ?></h2>
-		<div class="row">
-			<div class="col">
-				
-			</div>
+		<div class="row owl-carousel owl-carousel-store">
+			<?php
+			add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 32 );
+			$args = array( 'post_type' => 'shop', 'posts_per_page' => 3 );
+			$loop = new WP_Query($args); 
+			while ($loop->have_posts()): $loop->the_post(); ?>
+				<div class="post-item col">
+					<a href="<?php the_permalink(); ?>" class="item--img"><?php the_post_thumbnail(); ?></a>
+					<a href="<?php the_permalink(); ?>" class="item--title"><h3><?php the_title();?></h3></a>
+				</div>
+			<?php endwhile; wp_reset_query(); ?>
 		</div>
 		<a class="btn button--orange btn-more" href="#clients" title="Clients">Clients</a>
 	</div>

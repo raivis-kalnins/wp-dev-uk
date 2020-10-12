@@ -209,6 +209,16 @@ a:hover {
             margin-left: -9px; }
           #root header nav.mob-menu.on-toggle ul#MyMenu li a {
             color: #142d5d; }
+    #root header nav ul#MyMenu li:first-child a:before {
+      content: "\f015";
+      position: absolute;
+      vertical-align: middle;
+      margin-left: -10px;
+      margin-top: -1px;
+      font-size: 2em;
+      font-family: 'FontAwesome';
+      font-size: 24px;
+      font-weight: 900; }
     #root header .soc {
       color: #ffffff;
       position: absolute;
@@ -525,6 +535,9 @@ a:hover {
             z-index: 2;
             bottom: 0;
             padding: 5%; }
+            @media only screen and (max-width: 812px) {
+              #root section#sc5 .owl-carousel.owl-carousel-posts .owl-item .post-item .item--title {
+                margin-left: -15px; } }
             #root section#sc5 .owl-carousel.owl-carousel-posts .owl-item .post-item .item--title h3 {
               width: 100%;
               color: white;
@@ -660,6 +673,13 @@ body.single#root header {
     position: relative;
     margin: -30px auto;
     left: inherit; }
+    @media only screen and (max-width: 812px) {
+      body.single#root header .logo img {
+        position: absolute;
+        left: 50%;
+        width: 140px;
+        margin-top: 15px;
+        margin-left: -70px; } }
 
 body.single#root main.container {
   top: 20px;
@@ -669,7 +689,8 @@ body.single#root main.container {
     color: #e63f12; }
   body.single#root main.container img {
     border-radius: 25px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    width: 100%; }
   body.single#root main.container p {
     padding: 0 20%; }
   body.single#root main.container ul li {
@@ -740,7 +761,7 @@ body.single#root footer {
   #root .section#sc2 .row {
     max-width: 90vw;
     max-height: 180px;
-    margin: 0 auto;
+    margin: 20px auto;
     overflow: hidden; }
     #root .section#sc2 .row > div {
       max-width: 200px;
@@ -1164,6 +1185,8 @@ button#m-nav {
 @media only screen and (max-width: 812px) {
   button#m-nav {
     display: block; }
+  body.single button#m-nav {
+    display: none; }
   .btn.btn-more {
     margin-top: 50px; }
     .btn.btn-more.btn-about {

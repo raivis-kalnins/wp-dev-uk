@@ -1,201 +1,207 @@
 [class*="button"] {
-    text-align: center;
+	text-align: center;
 }
 button, .btn {
-    border-radius: 0;
-    font-family: $font-btn;
-    font-size: 1em;
-    padding: 10px 20px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-    cursor: pointer;
-    &:focus, &:hover {
-        box-shadow: none;
-        background-color: $color-white-op3;
-    }
-    &.button--white {
-        border-color: $color-white;
-        color: $color-white;
-        &:focus, &:hover {
-            color: $color-white;
-        }
-    }
-    &.button--orange {
-        border-color: $color-orange;
-        color: $color-orange;
-        font-family: $font-body;
-        &:focus, &:hover {
-            color: $color-orange;
-            background-color: $color-orange-op3;
-        }
-    }
-    &#m-nav {
-        display: none;
-        position: absolute;
-        top: 50%;
-    }
-    &.btn-more {
-        position: relative;
-        display: block;
-        width: 200px;
-        margin: 40px auto;
-        z-index: 2;
-        @media only screen and (min-width: $breakpoint-laptop) {
-            margin-top: 10vh;
-        }
-        &.btn-sl {
-            bottom: 35%;
-        }
-        &.btn-about {
-            left: -25%;
-        }
-    }
+	border-radius: 0;
+	font-family: $font-btn;
+	font-size: 1em;
+	padding: 10px 20px;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	cursor: pointer;
+	&:focus, &:hover {
+		box-shadow: none;
+		background-color: $color-white-op3;
+	}
+	&.button--white {
+		border-color: $color-white;
+		color: $color-white;
+		&:focus, &:hover {
+			color: $color-white;
+		}
+	}
+	&.button--orange {
+		border-color: $color-orange;
+		color: $color-orange;
+		font-family: $font-body;
+		&:focus, &:hover {
+			color: $color-orange;
+			background-color: $color-orange-op3;
+		}
+	}
+	&#m-nav {
+		display: none;
+		position: absolute;
+		top: 50%;
+	}
+	&.btn-more {
+		position: relative;
+		display: block;
+		width: 200px;
+		margin: 40px auto;
+		z-index: 2;
+		@media only screen and (min-width: $breakpoint-laptop) {
+			margin-top: 10vh;
+		}
+		&.btn-sl {
+			bottom: 35%;
+		}
+		&.btn-about {
+			left: -25%;
+		}
+	}
 }
 button#m-nav {
-    position: fixed;
-    border: none;
-    display: none;
-    top: 55px;
-    left: 25px;
-    width: 30px;
-    height: 15px;
-    padding: 5px;
-    background: transparent;
-    outline: none;
-    float: left;
-    margin-top: -25px;
-    margin-right: 5px;
-    z-index: 9;
-    & span {
-        top: 0;
-        bottom: 0;
-        -webkit-transition: all 800ms ease;
-        transition: all 800ms ease;
-    }
-    & span,
-    &:before,
-    &:after {
-        height: 3px;
-        width: 30px;
-        background: $color-white;
-        display: block;
-        position: absolute;
-        left: 0;
-        content: '';
-        margin: auto;
-        -webkit-transition: all 400ms ease;
-        transition: all 400ms ease;
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        -ms-border-radius: 0;
-        -o-border-radius: 0;
-        border-radius: 0;
-    }
-    &.blue {
-        & span,
-        &:before,
-        &:after {
-            background: $color-blue;
-        }
-    }
-    &:before {
-        top: 0;
-    }
-    &:after {
-        bottom: 0;
-    }
-    /*&.clicked,*/
-    &.clicked {
-        margin-top: -28px;
-    }
-    &.clicked span,
-    .top-close button span {
-        opacity: 0;
-    }
-    &.clicked:before,
-    .top-close button:before {
-        top: 8px;
-        width: 30px;
-        left: 0;
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        transition: transform 0.4s;
-        background: $color-blue;
-    }
-    &.clicked:after,
-    .top-close button:after {
-        top: 2px;
-        width: 30px;
-        left: 0;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        transition: transform 0.4s;
-        background: $color-blue;
-    }
-    &.nav-fixed span, 
-    &.nav-fixed:before, 
-    &.nav-fixed:after {
-        background: $color-white;
-    }
-    &.clicked span,
-    &.clicked:before,
-    &.clicked:after {
-        background: $color-blue;
-    }
+	position: fixed;
+	border: none;
+	display: none;
+	top: 55px;
+	left: 25px;
+	width: 30px;
+	height: 15px;
+	padding: 5px;
+	background: transparent;
+	outline: none;
+	float: left;
+	margin-top: -25px;
+	margin-right: 5px;
+	z-index: 9;
+	& span {
+		top: 0;
+		bottom: 0;
+		-webkit-transition: all 800ms ease;
+		transition: all 800ms ease;
+	}
+	& span,
+	&:before,
+	&:after {
+		height: 3px;
+		width: 30px;
+		background: $color-white;
+		display: block;
+		position: absolute;
+		left: 0;
+		content: '';
+		margin: auto;
+		-webkit-transition: all 400ms ease;
+		transition: all 400ms ease;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-ms-border-radius: 0;
+		-o-border-radius: 0;
+		border-radius: 0;
+	}
+	&.blue {
+		& span,
+		&:before,
+		&:after {
+			background: $color-blue;
+		}
+	}
+	&:before {
+		top: 0;
+	}
+	&:after {
+		bottom: 0;
+	}
+	/*&.clicked,*/
+	&.clicked {
+		margin-top: -28px;
+	}
+	&.clicked span,
+	.top-close button span {
+		opacity: 0;
+	}
+	&.clicked:before,
+	.top-close button:before {
+		top: 8px;
+		width: 30px;
+		left: 0;
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		transition: transform 0.4s;
+		background: $color-blue;
+	}
+	&.clicked:after,
+	.top-close button:after {
+		top: 2px;
+		width: 30px;
+		left: 0;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		transition: transform 0.4s;
+		background: $color-blue;
+	}
+	&.nav-fixed span, 
+	&.nav-fixed:before, 
+	&.nav-fixed:after {
+		background: $color-white;
+	}
+	&.clicked span,
+	&.clicked:before,
+	&.clicked:after {
+		background: $color-blue;
+	}
 }
 #fp-nav {
-    position: fixed;
-    z-index: 8;
-    margin-top: -32px !important;
-    left: inherit;
-    right: 5px;
-    top: 50%;
-    display: none;
-    ul li {
-        a {
-            color: transparent;
-            span {
-                background: $color-blue;
-                border: $color-white solid 1px;
-                border-radius: 100%;
-            }
-            &.active {
-                span {
-                    background: $color-orange;
-                    border: 0;
-                }
-            }
-        }
-        .fp-tooltip {
-            text-transform: capitalize;
-            background-color: $color-white-op9;
-            padding: 0 7px;
-            margin-top: -5px;
-            border-radius: 5px;
-            text-transform: capitalize;
-            color: $color-orange;
-            font-family: $font-body;
-            letter-spacing: .2em;
-        }
-    }
+	position: fixed;
+	z-index: 8;
+	margin-top: -32px !important;
+	left: inherit;
+	right: 5px;
+	top: 50%;
+	display: none;
+	ul li {
+		a {
+			color: transparent;
+			span {
+				background: $color-blue;
+				border: $color-white solid 1px;
+				border-radius: 100%;
+			}
+			&.active {
+				span {
+					background: $color-orange;
+					border: 0;
+				}
+			}
+		}
+		.fp-tooltip {
+			text-transform: capitalize;
+			background-color: $color-white-op9;
+			padding: 0 7px;
+			margin-top: -5px;
+			border-radius: 5px;
+			text-transform: capitalize;
+			color: $color-orange;
+			font-family: $font-body;
+			letter-spacing: .2em;
+		}
+	}
 }
 .fancybox-show-nav .fancybox-arrow[disabled] {
   opacity: 0;
 }
 @media only screen and (max-width: $breakpoint-phone-l) {
-    button#m-nav {
-        display: block;
-    }
-    .btn.btn-more {
-        margin-top: 50px;
-        &.btn-about {
-            left: auto;
-        }
-    }
-    #fp-nav.fp-right {
-        //right: 0;
-        display: none !important;
-    }
+	button#m-nav {
+		display: block;
+	}
+	body.single {
+
+		button#m-nav {
+			display: none;
+		}
+	}
+	.btn.btn-more {
+		margin-top: 50px;
+		&.btn-about {
+			left: auto;
+		}
+	}
+	#fp-nav.fp-right {
+		//right: 0;
+		display: none !important;
+	}
 }

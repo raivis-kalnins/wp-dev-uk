@@ -185,6 +185,27 @@ a:hover {
 					}
 				}
 			}
+			ul#MyMenu {
+
+				li:first-child {
+
+					a {
+
+						&:before {
+							content: "\f015";
+							position: absolute;
+							vertical-align: middle;
+							margin-left: -10px;
+    						margin-top: -1px;
+							font-size: 2em;
+							font-family: 'FontAwesome';
+							font-size: 24px;
+							font-weight: 900;
+						}
+
+					}
+				}
+			}
 		}
 		.soc { 
 			color: $color-white;
@@ -594,6 +615,10 @@ a:hover {
 								bottom: 0;
 								padding: 5%;
 
+								@media only screen and (max-width: $breakpoint-phone-l) {
+									margin-left: -15px;
+								}
+
 								h3 {
 									width: 100%;
 									color: white;
@@ -804,6 +829,17 @@ body.single#root {
 			position: relative;
 			margin: -30px auto;
 			left: inherit;
+
+			img {
+				
+				@media only screen and (max-width: $breakpoint-phone-l) {
+					position: absolute;
+					left: 50%;
+					width: 140px;
+					margin-top: 15px;
+					margin-left: -70px;
+				}
+			}
 		}
 	}
 
@@ -819,6 +855,7 @@ body.single#root {
 		img {
 			border-radius: 25px;
 			margin-bottom: 30px;
+			width: 100%;
 		}
 
 		p {
@@ -931,7 +968,7 @@ body.single#root {
 				.row {
 					max-width: 90vw;
 					max-height: 180px;
-					margin: 0 auto;
+					margin: 20px auto;
 					overflow: hidden;
 					& > div {
 						max-width: 200px;
