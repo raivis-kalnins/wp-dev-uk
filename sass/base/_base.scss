@@ -42,7 +42,8 @@ a:hover {
 	overflow-y: auto;
 	padding: 0;
 	.container {
-		margin-top: 0;
+		margin: 0 auto;
+    	text-align: center;
 		position: relative;
 		max-width: 1199.98px;
 		//height: 100%;
@@ -292,12 +293,14 @@ a:hover {
 			@include background-vertical-to-bottom($startColor: $color-transp, $endColor: $color-l-grey);
 			.container {
 				.description {
+
 					h2 {
 						text-align: left;
 					}
 					p {
 						font-size: 1.5em;
 						line-height: 1.8em;
+						text-align: left;
 					}
 				}
 				.about-img {

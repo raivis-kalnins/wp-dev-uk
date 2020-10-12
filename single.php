@@ -6,7 +6,7 @@
 ?>
 
 <?php get_header(); ?>
-	<main role="main" aria-label="Content" class="container" class="row">
+	<main role="main" aria-label="Content" class="container row">
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" class="col-12">
 				<h1><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
