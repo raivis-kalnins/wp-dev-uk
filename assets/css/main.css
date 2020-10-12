@@ -668,47 +668,91 @@ a:hover {
       #root footer #scroll-top a:visited {
         color: rgba(255, 255, 255, 0.3); }
 
-body.single#root header {
+body.single#root header,
+body.archive#root header,
+#root .blog-news-list header,
+body.error404#root header {
   position: relative; }
-  body.single#root header .logo {
+  body.single#root header .logo,
+  body.archive#root header .logo,
+  #root .blog-news-list header .logo,
+  body.error404#root header .logo {
     opacity: 1;
     position: relative;
     margin: -30px auto;
     left: inherit; }
     @media only screen and (max-width: 812px) {
-      body.single#root header .logo img {
+      body.single#root header .logo img,
+      body.archive#root header .logo img,
+      #root .blog-news-list header .logo img,
+      body.error404#root header .logo img {
         position: absolute;
         left: 50%;
         width: 140px;
         margin-top: 15px;
         margin-left: -70px; } }
 
-body.single#root main.container {
+body.single#root main.container,
+body.archive#root main.container,
+#root .blog-news-list main.container,
+body.error404#root main.container {
   top: 20px;
   text-align: center;
   margin-bottom: 20px; }
-  body.single#root main.container a {
+  body.single#root main.container a,
+  body.archive#root main.container a,
+  #root .blog-news-list main.container a,
+  body.error404#root main.container a {
     color: #e63f12; }
-  body.single#root main.container img {
+    body.single#root main.container a.view-article,
+    body.archive#root main.container a.view-article,
+    #root .blog-news-list main.container a.view-article,
+    body.error404#root main.container a.view-article {
+      display: inline-block;
+      width: 100%;
+      margin-top: 10px; }
+  body.single#root main.container img,
+  body.archive#root main.container img,
+  #root .blog-news-list main.container img,
+  body.error404#root main.container img {
     border-radius: 25px;
     margin-bottom: 30px;
-    width: 100%; }
-  body.single#root main.container p {
+    width: 100%;
+    max-height: 250px; }
+  body.single#root main.container p,
+  body.archive#root main.container p,
+  #root .blog-news-list main.container p,
+  body.error404#root main.container p {
     padding: 0 20%; }
-  body.single#root main.container ul li {
+  body.single#root main.container ul li,
+  body.archive#root main.container ul li,
+  #root .blog-news-list main.container ul li,
+  body.error404#root main.container ul li {
     position: relative;
     width: 100%; }
-    body.single#root main.container ul li:before {
+    body.single#root main.container ul li:before,
+    body.archive#root main.container ul li:before,
+    #root .blog-news-list main.container ul li:before,
+    body.error404#root main.container ul li:before {
       content: '- ';
       left: -5px; }
-  body.single#root main.container #posts-pagination {
+  body.single#root main.container #posts-pagination,
+  body.archive#root main.container #posts-pagination,
+  #root .blog-news-list main.container #posts-pagination,
+  body.error404#root main.container #posts-pagination {
     margin-top: 40px; }
-    body.single#root main.container #posts-pagination div {
+    body.single#root main.container #posts-pagination div,
+    body.archive#root main.container #posts-pagination div,
+    #root .blog-news-list main.container #posts-pagination div,
+    body.error404#root main.container #posts-pagination div {
       margin-top: 10px;
       margin-bottom: 10px;
       width: 100%; }
 
-body.single#root footer {
+body.single#root footer,
+body.archive#root footer,
+#root .blog-news-list footer,
+body.error404#root footer {
   padding-top: 10px;
   border-top: white solid 30px; }
 
@@ -1035,6 +1079,12 @@ h6 {
 
 .menu a {
   color: #575756; }
+
+.bt404 {
+  color: #e63f12;
+  width: 100%;
+  min-height: 55vh;
+  display: inline-block; }
 
 [class*="button"] {
   text-align: center; }

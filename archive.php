@@ -7,10 +7,8 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 64 );
 ?>
 <main role="main" aria-label="Content" class="container row">
 	<div class="col-12">
-	<hr />
-	<h1>View all</h1>
-	<hr />
 	<?php $i = 0; if (have_posts()): while (have_posts()) : the_post(); $nr = $i++; ?>
+			<hr />
 			<article id="list-item-<?php echo $nr; ?> wow slideInUp" data-wow-duration="1s" data-wow-offset="200">
 				<div class="article-bl-content">
 					<a class="view-article" href="<?php the_permalink(); ?>">

@@ -47,8 +47,9 @@ h6 {
 .menu a {
     color: $color-grey;
 }
-@media only screen and (max-width: $breakpoint-phone-p) {
-    // p, li, span, b, i, u, button {
-    //     font-size: 14px;
-    // }
+.bt404 {
+    color: $color-orange;
+    width: 100%;
+    min-height: 55vh;
+    display: inline-block;
 }

@@ -822,7 +822,10 @@ a:hover {
 		}
 	}
 }
-body.single#root {
+body.single#root,
+body.archive#root,
+#root .blog-news-list,
+body.error404#root {
 
 	header {
 		position: relative;
@@ -853,12 +856,19 @@ body.single#root {
 
 		a {
 			color: #e63f12;
+
+			&.view-article {
+				display: inline-block;
+				width: 100%;
+				margin-top: 10px;
+			}
 		}
 
 		img {
 			border-radius: 25px;
 			margin-bottom: 30px;
 			width: 100%;
+			max-height: 250px;
 		}
 
 		p {
