@@ -587,6 +587,10 @@ a:hover {
 		&#sc5 {
 			background-color: $color-l-grey !important;
 
+			.row {
+				text-align: left;
+			}
+
 			h2 {
 				color: $color-orange;
 			}
