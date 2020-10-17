@@ -1314,6 +1314,25 @@ button#m-nav {
         font-size: 0.9em;
         border-radius: 100%; }
 
+#l-btn {
+  position: fixed;
+  left: 0;
+  top: 25%;
+  width: 40px;
+  z-index: 99; }
+  #l-btn ul li {
+    padding: 10px;
+    width: 40px;
+    background-color: palette(pink, base);
+    margin-top: 3px;
+    border-radius: 0 5px 5px 0;
+    transition: 0.2s ease-in-out; }
+    #l-btn ul li:hover {
+      width: 50px;
+      padding-left: 20px; }
+    #l-btn ul li a {
+      color: palette(white, base); }
+
 .video-holder {
   display: none;
   z-index: 10; }

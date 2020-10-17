@@ -298,3 +298,29 @@ button#m-nav {
 		}
 	}
 }
+
+#l-btn {
+	position: fixed;
+	left: 0;
+	top: 25%;
+	width: 40px;
+	z-index: 99;
+
+	ul li {
+		padding: 10px;
+		width: 40px;
+		background-color: palette(pink, base);
+		margin-top: 3px;
+		border-radius: 0 5px 5px 0;
+		transition: 0.2s ease-in-out;
+
+		&:hover {
+			width: 50px;
+			padding-left: 20px;
+		}
+
+		a {
+			color: palette(white, base);
+		}
+	}
+}

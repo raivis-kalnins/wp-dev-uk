@@ -28,6 +28,27 @@
 			<?php endif; ?>
 			<a href="https://www.facebook.com/pg/OJ-Cars-1844906585770684/about/?ref=page_internal" class="soc fb" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 		</header>
+		<div style="display:none" class="fancybox-hidden">
+			<div id="enquiry-form">
+				<span id="close-form"></span>
+				<i>Your enquiry</i>
+				<?php echo do_shortcode('[contact-form-7 id="1032" title="Enquiry"]');?>
+			</div>
+		</div>
+		<div style="display:none" class="fancybox-hidden">
+			<div id="callback-form">
+				<span id="close-form"></span>
+				<i>Callback</i>
+				<?php echo do_shortcode('[contact-form-7 id="1031" title="Callback"]');?>
+				<input type="time" name="time" value="" id="callbacktime" class="form-control" placeholder="--:--" maxlength="5" onKeyPress="formatTime(this)" />
+			</div>
+		</div>
+		<div id="l-btn">
+			<ul>
+				<li><a href="#enquiry-form" class="fancybox-inline btn"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+				<li><a href="#callback-form" class="fancybox-inline btn"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
 		<?php if(is_front_page()) : ?>
 			<div id="fullpage"><?php //Start - Full page ?>
 		<?php endif; ?>
