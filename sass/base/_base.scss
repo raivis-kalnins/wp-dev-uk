@@ -606,6 +606,7 @@ a:hover {
 				.owl-item {
 
 					.post-item {
+						transition: all 2s ease-in-out;
 
 						.item {
 							position: relative;

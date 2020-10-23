@@ -1,6 +1,9 @@
 [class*="button"] {
 	text-align: center;
 }
+.fa-2x {
+    font-size: 1.6em;
+}
 button, .btn {
 	border-radius: 0;
 	font-family: $font-btn;
@@ -307,20 +310,34 @@ button#m-nav {
 	z-index: 99;
 
 	ul li {
-		padding: 10px;
-		width: 40px;
-		background-color: palette(pink, base);
-		margin-top: 3px;
-		border-radius: 0 5px 5px 0;
-		transition: 0.2s ease-in-out;
-
-		&:hover {
-			width: 50px;
-			padding-left: 20px;
-		}
+		margin-top: 7px;
 
 		a {
-			color: palette(white, base);
+			width: 40px;
+			background-color: #142d5d;
+			border: #fff solid 1px;
+			border-left: 0;
+			border-radius: 0 5px 5px 0;
+			box-shadow: 2px 2px 7px rgba(255,255,255,.3);
+			transition: all 0.2s ease-in-out;
+			padding: 7px 12px;
+			color: white;
+
+			&:hover {
+				width: 50px;
+				padding-left: 20px;
+				transform: scale(1.01);
+				border-color: #e63f12;
+				color: #e63f12;
+				background-color: #b2b2b2;
+				background-image: -webkit-gradient(linear,right top,left bottom,from(transparent),to(#b2b2b2));
+				background-image: -webkit-linear-gradient(to bottom,transparent,#b2b2b2);
+				background-image: -moz-linear-gradient(to bottom,transparent,#b2b2b2);
+				background-image: -ms-linear-gradient(to bottom,transparent,#b2b2b2);
+				background-image: -o-linear-gradient(to bottom,transparent,#b2b2b2);
+				background-image: linear-gradient(to bottom,transparent,#b2b2b2);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='transparent',endColorStr='#b2b2b2',gradientType='1');
+			}
 		}
 	}
 }

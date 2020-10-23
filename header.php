@@ -47,6 +47,7 @@
 			<ul>
 				<li><a href="#enquiry-form" class="fancybox-inline btn"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
 				<li><a href="#callback-form" class="fancybox-inline btn"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+				<li><a href="#store" class="fancybox-inline btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>
 		<?php if(is_front_page()) : ?>
