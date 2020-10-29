@@ -74,11 +74,24 @@
 			<?php
 			add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 32 );
 			$args = array( 'post_type' => 'shop', 'posts_per_page' => 3 );
-			$loop = new WP_Query($args); 
-			while ($loop->have_posts()): $loop->the_post(); ?>
+			$loop = new WP_Query($args);
+			while ($loop->have_posts()): $loop->the_post();
+				$bg_shop = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
+				$price = get_field('price'); ?>
 				<div class="post-item col">
-					<a href="<?php the_permalink(); ?>" class="item--img"><?php the_post_thumbnail(); ?></a>
-					<a href="<?php the_permalink(); ?>" class="item--title"><h3><?php the_title();?></h3></a>
+					<div class="item-wrap" style="background-image:url( 
+							<?php
+								if ( $bg_shop ) {
+									echo $bg_shop; }
+									$post = get_post( $post_id );
+									$slug = $post->post_name;
+								?>
+							)">
+						<div class="item--price">Price: <b>€ <?php echo $price; ?></b></div>
+						<a href="<?php the_permalink(); ?>" class="item--title"><h3><?php the_title();?></h3></a>
+						<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
+						<a href="<?php the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a>
+					</div>
 				</div>
 			<?php endwhile; wp_reset_query(); ?>
 		</div>
