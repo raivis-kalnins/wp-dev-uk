@@ -32,22 +32,28 @@
 			<div id="enquiry-form">
 				<span id="close-form"></span>
 				<i>Your enquiry</i>
-				<?php echo do_shortcode('[contact-form-7 id="1032" title="Enquiry"]');?>
+				<?php echo do_shortcode('[contact-form-7 id="254" title="Contact form EN"]');?>
 			</div>
 		</div>
 		<div style="display:none" class="fancybox-hidden">
 			<div id="callback-form">
 				<span id="close-form"></span>
 				<i>Callback</i>
-				<?php echo do_shortcode('[contact-form-7 id="1031" title="Callback"]');?>
+				<?php echo do_shortcode('[contact-form-7 id="253" title="Callback EN"]');?>
 				<input type="time" name="time" value="" id="callbacktime" class="form-control" placeholder="--:--" maxlength="5" onKeyPress="formatTime(this)" />
 			</div>
 		</div>
 		<div id="l-btn">
 			<ul>
-				<li><a href="#enquiry-form" class="fancybox-inline btn"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-				<li><a href="#callback-form" class="fancybox-inline btn"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-				<li><a href="#store" class="fancybox-inline btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+				<li><a data-fancybox data-src="#enquiry-form" href="javascript:;" class="fancybox-inline btn"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+				<li><a data-fancybox data-src="#callback-form" href="javascript:;" class="fancybox-inline btn"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+				<li>
+					<div class="btn-cart button modal-button cart-top">
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+						<button type="button" class="btn-cart button modal-button" data-toggle="modal" data-target="modal"><span class="total-count"></span></button>
+						<button type="button"  class="clear-cart"></button>
+					</div>
+				</li>
 			</ul>
 		</div>
 		<?php if(is_front_page()) : ?>

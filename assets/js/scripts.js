@@ -190,14 +190,73 @@ function initialise() {
 	window.addEventListener("resize", function(){
 		mob_menu();
 	}, true);
+
 	$('body').on('click','#m-nav', function() {
 		$(this).addClass('clicked');
 		$(".mob-menu").addClass("on-toggle");
 	});
+
 	$('body').on('click','#m-nav.clicked, .mob-menu', function() {
 		$('#m-nav').removeClass('clicked');
 		$(".mob-menu").removeClass("on-toggle");
 	});
+	/* Modal */
+	$(".modal-button").click(function() {
+		$("#modal-cart").addClass("is-active");
+	});
+
+	$(".modal-button").click(function() {
+		$("html").addClass("modal-win");
+	});
+
+	$(".modal-close").click(function() {
+		$("#modal-cart").removeClass("is-active");
+		$("html").removeClass("modal-win");
+	});
+
+	$(".modal-order").click(function() {
+		var products = $(".table.show-cart").find('tr').each(function () {
+			//var tds = $(this).find('td'), product = tds.eq(0).text(), Quantity = tds.find('.item-count').val(), Price = tds.eq(4).text();
+			//product + ' Q: ' + Quantity+ ' P: ' + Price + ') & ';
+			//console.log(prod);
+		}).text();
+		var total_price = $(".total-price").text();
+		$('.text-products input').val("My basket: " + products + " || " + total_price);
+		$(".show-cart.table, .total-price, .modal-order").hide();
+		$("#shop-form-pop").show();
+	});
+		// Menu Plus
+		$(".plus a").click(function() {
+			$(".menu-plus").toggleClass("menu__open");
+		});
+	
+		// Add tags Contact Form
+		$("span.your-name, span.your-email, span.your-tel, span.your-message").append("<i />");
+	
+		// Change time input 
+		$("input#callbacktime").change(function() {
+			var val = $(this).val();
+			$('input#time03').val(val);
+		});
+		
+		// Only numbers
+		function validateNumber(event) {
+			var key = window.event ? event.keyCode : event.which;
+			if (event.keyCode === 8 || event.keyCode === 46) {
+					return true;
+			} else if ( key < 48 || key > 57 ) {
+					return false;
+			} else {
+					return true;
+			}
+		}
+	
+		$('#callbacktime, #tel3').keypress(validateNumber);
+	
+		$('body').on('click','div.wpcf7-mail-sent-ok', function() {
+			location.reload();
+		});
+
 	$(".owl-intro img, .owl-carousel-posts img, #posts-list article img").each(function(i, elem) {
 		var img = $(elem);
 		var div = $("<div />").css({"background-image": "url(" + img.attr("src") + ")"});
@@ -422,3 +481,209 @@ function initGoogleMaps() {
 	});
 }
 initGoogleMaps();
+
+// ************************************************
+// Shopping Cart API
+// ************************************************
+
+var shoppingCart = (function() {
+	// =============================
+	// Private methods and propeties
+	// =============================
+	cart = [];
+	
+	// Constructor
+	function Item(name, price, count) {
+	this.name = name;
+	this.price = price;
+	this.count = count;
+	}
+	
+	// Save cart
+	function saveCart() {
+		sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+	}
+	
+	// Load cart
+	function loadCart() {
+		cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+	}
+
+	if (sessionStorage.getItem("shoppingCart") != null) {
+		loadCart();
+	}
+	
+
+	// =============================
+	// Public methods and propeties
+	// =============================
+	var obj = {};
+	
+	// Add to cart
+	obj.addItemToCart = function(name, price, count) {
+	for(var item in cart) {
+		if(cart[item].name === name) {
+		cart[item].count ++;
+		saveCart();
+		return;
+		}
+	}
+	var item = new Item(name, price, count);
+	cart.push(item);
+	saveCart();
+	}
+	// Set count from item
+	obj.setCountForItem = function(name, count) {
+	for(var i in cart) {
+		if (cart[i].name === name) {
+		cart[i].count = count;
+		break;
+		}
+	}
+	};
+	// Remove item from cart
+	obj.removeItemFromCart = function(name) {
+		for(var item in cart) {
+		if(cart[item].name === name) {
+			cart[item].count --;
+			if(cart[item].count === 0) {
+			cart.splice(item, 1);
+			}
+			break;
+		}
+	}
+	saveCart();
+	}
+
+	// Remove all items from cart
+	obj.removeItemFromCartAll = function(name) {
+	for(var item in cart) {
+		if(cart[item].name === name) {
+		cart.splice(item, 1);
+		break;
+		}
+	}
+	saveCart();
+	}
+
+	// Clear cart
+	obj.clearCart = function() {
+		cart = [];
+		saveCart();
+	}
+
+	// Count cart 
+	obj.totalCount = function() {
+	var totalCount = 0;
+	for(var item in cart) {
+		totalCount += cart[item].count;
+	}
+	return totalCount;
+	}
+
+	// Total cart
+	obj.totalCart = function() {
+	var totalCart = 0;
+	for(var item in cart) {
+		totalCart += cart[item].price * cart[item].count;
+	}
+	return Number(totalCart.toFixed(2));
+	}
+
+	// List cart
+	obj.listCart = function() {
+	var cartCopy = [];
+	for(i in cart) {
+		item = cart[i];
+		itemCopy = {};
+		for(p in item) {
+		itemCopy[p] = item[p];
+
+		}
+		itemCopy.total = Number(item.price * item.count).toFixed(2);
+		cartCopy.push(itemCopy)
+	}
+	return cartCopy;
+	}
+
+	return obj;
+})();
+
+
+// *****************************************
+// Triggers / Events
+// ***************************************** 
+// Add item
+$('.add-to-cart').click(function(event) {
+	event.preventDefault();
+	var name = $(this).data('name');
+	var price = Number($(this).data('price'));
+	shoppingCart.addItemToCart(name, price, 1);
+	displayCart();
+});
+
+// Clear items
+$('.clear-cart, #shop-form-pop .wpcf7-submit').click(function() {
+	shoppingCart.clearCart();
+	displayCart();
+	console.log('clicked');
+});
+
+
+function displayCart() {
+	var cartArray = shoppingCart.listCart();
+	var output = "";
+	for(var i in cartArray) {
+	var title = cartArray[i].name.replace(/-/g, ' ');
+	output += "<tr>"
+		+ "<td class='item-name'>" + title + "</td>" 
+		+ "<td>€ " + cartArray[i].price + "</td>"
+		+ "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
+		+ "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+		+ "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
+		+ "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + "></button></td>"
+		+ " = " 
+		+ "<td>€ " + cartArray[i].total + "</td>" 
+		+  "</tr>";
+	}
+	$('.show-cart').html(output);
+	$('.total-cart').html(shoppingCart.totalCart());
+	$('.total-count').html(shoppingCart.totalCount());
+	if ( shoppingCart.totalCount() >=1 ) {
+		$('.total-count, .clear-cart').removeClass('hidden');
+	} else {
+		$('.total-count, .clear-cart').addClass('hidden');
+	}
+}
+
+// Delete item button
+
+$('.show-cart').on("click", ".delete-item", function(event) {
+	var name = $(this).data('name')
+	shoppingCart.removeItemFromCartAll(name);
+	displayCart();
+});
+
+// -1
+$('.show-cart').on("click", ".minus-item", function(event) {
+	var name = $(this).data('name')
+	shoppingCart.removeItemFromCart(name);
+	displayCart();
+});
+
+// +1
+$('.show-cart').on("click", ".plus-item", function(event) {
+	var name = $(this).data('name')
+	shoppingCart.addItemToCart(name);
+	displayCart();
+});
+
+// Item count input
+$('.show-cart').on("change", ".item-count", function(event) {
+	var name = $(this).data('name');
+	var count = Number($(this).val());
+	shoppingCart.setCountForItem(name, count);
+	displayCart();
+});
+
+displayCart();

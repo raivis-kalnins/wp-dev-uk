@@ -90,7 +90,7 @@
 						<div class="item--price">Price: <b>€ <?php echo $price; ?></b></div>
 						<a href="<?php the_permalink(); ?>" class="item--title"><h3><?php the_title();?></h3></a>
 						<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
-						<a href="<?php the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a>
+						<!-- <a href="<?php// the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a> -->
 					</div>
 				</div>
 			<?php endwhile; wp_reset_query(); ?>
