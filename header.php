@@ -48,8 +48,8 @@
 				<li><a data-fancybox data-src="#enquiry-form" href="javascript:;" class="fancybox-inline btn"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
 				<li><a data-fancybox data-src="#callback-form" href="javascript:;" class="fancybox-inline btn"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
 				<li>
-					<div class="btn-cart button modal-button cart-top">
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					<div class="btn-cart button cart-top">
+						<i class="fa fa-shopping-cart modal-button" aria-hidden="true"></i>
 						<button type="button" class="btn-cart button modal-button" data-toggle="modal" data-target="modal"><span class="total-count"></span></button>
 						<button type="button"  class="clear-cart"></button>
 					</div>

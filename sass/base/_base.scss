@@ -290,8 +290,8 @@ a:hover {
 				top: calc(0.6em - 3px);
 
 				@media (max-width: $breakpoint-phone-l) {
-					width: 35px;
-					margin-left: -45px;
+					width: 0;
+					margin-left: 0;
 				}
 			}
 
@@ -306,7 +306,7 @@ a:hover {
 				top: calc(0.6em - 3px);
 
 				@media (max-width: $breakpoint-phone-l) {
-					width: 35px;
+					width: 0;
 				}
 			}
 		}
@@ -1059,11 +1059,12 @@ a:hover {
 
 			.modal-close {
 				position: absolute;
-				background: transparent url(../img/i/close-x.png) center / cover no-repeat;
+				background: transparent url(../img/i/close-x.png) center / cover no-repeat !important;
 				width: 40px;
 				height: 40px;
 				right: 40px;
 				z-index: 3;
+				cursor: pointer;
 
 				&::before,
 				&::after {
@@ -1083,7 +1084,7 @@ a:hover {
 
 				h2 {
 					text-transform: uppercase;
-					padding-left: 35px;
+					padding-left: 0;
 					color: white;
 				}
 			}
@@ -1486,8 +1487,10 @@ input#callbacktime {
 	border: 0;
 	text-align: center;
 	position: absolute;
-	right: 30px;
-	top: 70px;
+	right: 0;
+    top: 67px;
+    color: white;
+    font-size: 1em;
 }
 
 #time-3,
@@ -1526,13 +1529,32 @@ input[type='time']::-webkit-calendar-picker-indicator{
 	border-radius: 100%;
 }
 
+.fancybox-slide>div {
+	background: transparent !important;
+}
+
+.fancybox-close-small {
+	position: absolute;
+	background: transparent url(../img/i/close-x.png) center / cover no-repeat !important;
+	width: 30px;
+	height: 30px;
+	right: 0;
+	z-index: 3;
+
+	&::before,
+	&::after {
+		display: none;
+	}
+}
+
 /* Form 7 style */
 form.wpcf7-form {
 	position: relative;
+	margin: 10px auto;
 	width: 100%;
 	max-width: 300px;
 	padding-top: 10px;
-	float: right;
+	float: none;
 	color: white;
 	font-size: 12px;
 
@@ -1554,7 +1576,8 @@ form.wpcf7-form {
 	}
 
 	p {
-		line-height: 12px;
+		line-height: 1em;
+		margin-bottom: 4vh;
 	}
 
 	span {
@@ -1564,17 +1587,17 @@ form.wpcf7-form {
 		&.your-tel,
 		&.your-message {
 
-			&::before {
-				content: "";
-				left: 0;
-				position: absolute;
-				mask-position: center;
-				mask-repeat: no-repeat;
-				background-color: white;
-				mask-size: 100%;
-				width: 14px;
-				height: 20px;
-			}
+			// &::before {
+			// 	content: "";
+			// 	left: 0;
+			// 	position: absolute;
+			// 	mask-position: center;
+			// 	mask-repeat: no-repeat;
+			// 	background-color: white;
+			// 	mask-size: 100%;
+			// 	width: 14px;
+			// 	height: 20px;
+			// }
 
 			&:hover::before {
 				background-color: grey;
@@ -1628,8 +1651,8 @@ form.wpcf7-form {
 
 		i {
 			position: absolute;
-			left: 36px;
-			top: -16px;
+			left: 0;
+			top: -12px;
 			line-height: 12px;
 
 			&::after {
@@ -1648,7 +1671,7 @@ form.wpcf7-form {
 		&[name="your-email"],
 		&[name="your-tel"] {
 			position: relative;
-			padding-left: 35px;
+			padding-left: 0;
 		}
 
 		&:focus ~ i::after {
@@ -1664,7 +1687,7 @@ form.wpcf7-form {
 
 		&[name="your-message"] {
 			position: relative;
-			padding-left: 35px;
+			padding-left: 0;
 		}
 
 		&::placeholder {
@@ -1677,26 +1700,33 @@ form.wpcf7-form {
 	}
 
 	.wpcf7-submit {
+		border-radius: 0;
+		font-family: "Roboto Light";
+		font-size: 1em;
+		padding: 10px 20px;
+		letter-spacing: .2em;
 		text-transform: uppercase;
-		text-align: center;
-		position: relative;
+		-webkit-transition: all .3s ease-out;
+		transition: all .3s ease-out;
+		border: 1px solid white;
 		float: right;
-		font-weight: 400;
-		color: white;
-		width: fit-content;
-		max-width: 220px;
-		display: block;
-		padding: 3px 20px;
-		margin: 0;
-		border: green solid 2px;
-		border-radius: 8px;
-		background-color: grey;
-		transition: all 0.3s ease-out;
 		cursor: pointer;
 
 		&:hover {
-			background-color: grey;
-			color: white;
+			opacity: 0.7;
+
+			&:after {
+				content: '';
+				width: 40px;
+				height: 100%;
+				background-color: #e63f12;
+				position: absolute;
+				clip-path: polygon(0 0,0 0,100% 100%,100% 0%);
+				top: 0;
+				right: -40px;
+				opacity: .7;
+				transition: all .3s ease-in-out;
+			}
 		}
 	}
 }
