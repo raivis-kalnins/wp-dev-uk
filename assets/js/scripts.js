@@ -438,7 +438,11 @@ function initialise() {
 		slideShow: false
 	});
 
+<<<<<<< HEAD
 	$("body").on("click","div.wpcf7-mail-sent-ok", function() {
+=======
+	$('body').on('click','div.wpcf7-mail-sent-ok', function() {
+>>>>>>> f148d94c1cd0f0b1fc91a339a5908acf976d7b77
 		setTimeout(function(){
 			location.reload();
 		}, 500);
@@ -614,7 +618,11 @@ var shoppingCart = (function() {
 // Triggers / Events
 // ***************************************** 
 // Add item
+<<<<<<< HEAD
 $("body").on("click", ".add-to-cart", function(event) { 
+=======
+$(".add-to-cart").click(function(event) {
+>>>>>>> f148d94c1cd0f0b1fc91a339a5908acf976d7b77
 	event.preventDefault();
 	var name = $(this).data("name");
 	var price = Number($(this).data("price"));
@@ -623,7 +631,11 @@ $("body").on("click", ".add-to-cart", function(event) {
 });
 
 // Clear items
+<<<<<<< HEAD
 $("body").on("click", ".clear-cart, #shop-form-pop .wpcf7-submit, .modal-closey", function() { 
+=======
+$(".clear-cart, #shop-form-pop .wpcf7-submit").click(function() {
+>>>>>>> f148d94c1cd0f0b1fc91a339a5908acf976d7b77
 	shoppingCart.clearCart();
 	displayCart();
 	//console.log('clicked');
