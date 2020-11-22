@@ -49,38 +49,33 @@ function initialise() {
 		$(".show-cart.table, .total-price, .modal-order").hide();
 		$("#shop-form-pop").show();
 	});
-		// Menu Plus
-		$(".plus a").click(function() {
-			$(".menu-plus").toggleClass("menu__open");
-		});
-	
-		// Add tags Contact Form
-		$("span.your-name, span.your-email, span.your-tel, span.your-message").append("<i />");
-	
-		// Change time input 
-		$("input#callbacktime").change(function() {
-			var val = $(this).val();
-			$('input#time03').val(val);
-		});
-		
-		// Only numbers
-		function validateNumber(event) {
-			var key = window.event ? event.keyCode : event.which;
-			if (event.keyCode === 8 || event.keyCode === 46) {
-					return true;
-			} else if ( key < 48 || key > 57 ) {
-					return false;
-			} else {
-					return true;
-			}
-		}
-	
-		$('#callbacktime, #tel3').keypress(validateNumber);
-	
-		$('body').on('click','div.wpcf7-mail-sent-ok', function() {
-			location.reload();
-		});
+	// Menu Plus
+	$(".plus a").click(function() {
+		$(".menu-plus").toggleClass("menu__open");
+	});
 
+	// Add tags Contact Form
+	$("span.your-name, span.your-email, span.your-tel, span.your-message").append("<i />");
+
+	// Change time input 
+	$("input#callbacktime").change(function() {
+		var val = $(this).val();
+		$('input#time03').val(val);
+	});
+	
+	// Only numbers
+	function validateNumber(event) {
+		var key = window.event ? event.keyCode : event.which;
+		if (event.keyCode === 8 || event.keyCode === 46) {
+				return true;
+		} else if ( key < 48 || key > 57 ) {
+				return false;
+		} else {
+				return true;
+		}
+	}
+
+	$("#callbacktime, #tel3").keypress(validateNumber);
 	$(".owl-intro img, .owl-carousel-posts img, #posts-list article img").each(function(i, elem) {
 		var img = $(elem);
 		var div = $("<div />").css({"background-image": "url(" + img.attr("src") + ")"});
@@ -262,9 +257,15 @@ function initialise() {
 
 	$.fancybox.defaults.animationEffect = "fade";
 
-	$('[data-fancybox]').fancybox({
+	$("[data-fancybox]").fancybox({
 		fullScreen: false,
 		slideShow: false
+	});
+
+	$("body").on("click","div.wpcf7-mail-sent-ok", function() {
+		setTimeout(function(){
+			location.reload();
+		}, 500);
 	});
 
 	return false;
@@ -296,7 +297,7 @@ function initGoogleMaps() {
 			title: 'O&Jcars - 50 Barras Green, Coventry, CV2 4LY',
 			icon: image
 	});
-	jQuery('.su-tabs-nav span').click(function() {
+	$('.su-tabs-nav span').click(function() {
 		setTimeout(function(){
 			lastCenter=map.getCenter();
 			google.maps.event.trigger(map, "resize");
@@ -337,7 +338,6 @@ var shoppingCart = (function() {
 		loadCart();
 	}
 	
-
 	// =============================
 	// Public methods and propeties
 	// =============================
@@ -358,12 +358,12 @@ var shoppingCart = (function() {
 	}
 	// Set count from item
 	obj.setCountForItem = function(name, count) {
-	for(var i in cart) {
-		if (cart[i].name === name) {
-		cart[i].count = count;
-		break;
+		for(var i in cart) {
+			if (cart[i].name === name) {
+				cart[i].count = count;
+			break;
+			}
 		}
-	}
 	};
 	// Remove item from cart
 	obj.removeItemFromCart = function(name) {
@@ -371,7 +371,7 @@ var shoppingCart = (function() {
 		if(cart[item].name === name) {
 			cart[item].count --;
 			if(cart[item].count === 0) {
-			cart.splice(item, 1);
+				cart.splice(item, 1);
 			}
 			break;
 		}
@@ -438,19 +438,19 @@ var shoppingCart = (function() {
 // Triggers / Events
 // ***************************************** 
 // Add item
-$('.add-to-cart').click(function(event) {
+$("body").on("click", ".add-to-cart", function(event) { 
 	event.preventDefault();
-	var name = $(this).data('name');
-	var price = Number($(this).data('price'));
+	var name = $(this).data("name");
+	var price = Number($(this).data("price"));
 	shoppingCart.addItemToCart(name, price, 1);
 	displayCart();
 });
 
 // Clear items
-$('.clear-cart, #shop-form-pop .wpcf7-submit').click(function() {
+$("body").on("click", ".clear-cart, #shop-form-pop .wpcf7-submit, .modal-closey", function() { 
 	shoppingCart.clearCart();
 	displayCart();
-	console.log('clicked');
+	//console.log('clicked');
 });
 
 
@@ -461,53 +461,58 @@ function displayCart() {
 	var title = cartArray[i].name.replace(/-/g, ' ');
 	output += "<tr>"
 		+ "<td class='item-name'>" + title + "</td>" 
-		+ "<td>€ " + cartArray[i].price + "</td>"
+		+ "<td>£ " + cartArray[i].price + "</td>"
 		+ "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
 		+ "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
 		+ "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
 		+ "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + "></button></td>"
 		+ " = " 
-		+ "<td>€ " + cartArray[i].total + "</td>" 
+		+ "<td>£ " + cartArray[i].total + "</td>" 
 		+  "</tr>";
 	}
-	$('.show-cart').html(output);
-	$('.total-cart').html(shoppingCart.totalCart());
-	$('.total-count').html(shoppingCart.totalCount());
+	$(".show-cart").html(output);
+	$(".total-cart").html(shoppingCart.totalCart());
+	$(".total-count").html(shoppingCart.totalCount());
 	if ( shoppingCart.totalCount() >=1 ) {
-		$('.total-count, .clear-cart').removeClass('hidden');
+		$(".total-count, .clear-cart").removeClass("hidden");
 	} else {
-		$('.total-count, .clear-cart').addClass('hidden');
+		$(".total-count, .clear-cart").addClass("hidden");
 	}
 }
 
 // Delete item button
-
-$('.show-cart').on("click", ".delete-item", function(event) {
-	var name = $(this).data('name')
+$("body").on("click",".delete-item", function(event) {
+	var name = $(this).data("name")
 	shoppingCart.removeItemFromCartAll(name);
 	displayCart();
 });
 
 // -1
-$('.show-cart').on("click", ".minus-item", function(event) {
-	var name = $(this).data('name')
+$("body").on("click",".minus-item", function(event) {
+	var name = $(this).data("name")
 	shoppingCart.removeItemFromCart(name);
 	displayCart();
 });
 
 // +1
-$('.show-cart').on("click", ".plus-item", function(event) {
-	var name = $(this).data('name')
+$("body").on("click",".plus-item", function(event) {
+	var name = $(this).data("name")
 	shoppingCart.addItemToCart(name);
 	displayCart();
 });
 
 // Item count input
-$('.show-cart').on("change", ".item-count", function(event) {
-	var name = $(this).data('name');
+$("body").on("change",".item-count", function(event) {
+	var name = $(this).data("name");
 	var count = Number($(this).val());
 	shoppingCart.setCountForItem(name, count);
 	displayCart();
+});
+
+$("body").on("click",".fancybox-close-small", function() {
+	setTimeout(function () {
+		location.reload();
+	}, 200);
 });
 
 displayCart();

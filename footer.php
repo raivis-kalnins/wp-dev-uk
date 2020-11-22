@@ -4,7 +4,7 @@
 					<div class="row">
 						<div class="col">
 							<div class="email fa fa-envelope">
-								<i class="getemail" data-part1="hello" data-part2="ojcars" data-part3="co.uk">hello<i class="email"></i></i>
+								<i class="getemail" data-part1="hello" data-part2="ojcars" data-part3="uk">hello<i class="email"></i></i>
 							</div>
 							<div class="call">
 								<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;<a href="tel:00441604622491" target="_blank">+44(0)7742&nbsp;800761</a>
@@ -57,13 +57,5 @@
 				</div>
 			</div>
 		</div>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151333821-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-151333821-1');
-		</script>
 	</body>
 </html>
