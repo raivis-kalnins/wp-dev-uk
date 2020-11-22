@@ -1024,10 +1024,22 @@ a:hover {
 		}
 	}
 }
-.modal-win #modal-cart.is-active {
-	opacity: 1;
-	display: block;
+.modal-win {
+
+	#modal-cart {
+		
+		&.is-active {
+			opacity: 1;
+			display: block;
+		}
+
+		.modal-dialog {
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+	}
 }
+
 .modal {
 	background-color: rgba($color-grey, 0.95);
 	overflow: hidden;
@@ -1086,6 +1098,11 @@ a:hover {
 					text-transform: uppercase;
 					padding-left: 0;
 					color: white;
+
+					@media (max-width: 800px) {
+						font-size: 1.2em;
+						line-height: 1em;
+					}
 				}
 			}
 
@@ -1204,7 +1221,7 @@ a:hover {
 	z-index: 3;
 
 	@media (max-width: 800px) {
-		right: 30px;
+		//right: 30px;
 	}
 
 	.button {
@@ -1553,7 +1570,7 @@ form.wpcf7-form {
 	margin: 10px auto;
 	width: 100%;
 	max-width: 300px;
-	padding-top: 10px;
+	padding: 10px;
 	float: none;
 	color: white;
 	font-size: 12px;

@@ -807,6 +807,10 @@ a:hover {
   opacity: 1;
   display: block; }
 
+.modal-win #modal-cart .modal-dialog {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
 .modal {
   background-color: rgba(87, 87, 86, 0.95);
   overflow: hidden;
@@ -851,6 +855,10 @@ a:hover {
       text-transform: uppercase;
       padding-left: 0;
       color: white; }
+      @media (max-width: 800px) {
+        .modal .modal-dialog .modal-content .modal-header h2 {
+          font-size: 1.2em;
+          line-height: 1em; } }
     .modal .modal-dialog .modal-content .modal-body table.show-cart {
       margin: 0 auto;
       margin-top: 100px;
@@ -930,9 +938,6 @@ a:hover {
 .cart-top {
   position: relative;
   z-index: 3; }
-  @media (max-width: 800px) {
-    .cart-top {
-      right: 30px; } }
   .cart-top .button {
     background-color: transparent;
     border: 0;
@@ -1231,7 +1236,7 @@ form.wpcf7-form {
   margin: 10px auto;
   width: 100%;
   max-width: 300px;
-  padding-top: 10px;
+  padding: 10px;
   float: none;
   color: white;
   font-size: 12px; }
