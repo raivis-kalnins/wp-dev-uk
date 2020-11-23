@@ -17,12 +17,13 @@
 		<link href="<?php echo get_template_directory_uri(); ?>/assets/img/i/favicon.ico" rel="shortcut icon">
 		<link href="<?php echo get_template_directory_uri(); ?>/assets/img/i/touch.png" rel="apple-touch-icon-precomposed">
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXEWYSC94C"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151333821-1"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-XXEWYSC94C');
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-151333821-1');
 		</script>
 		<?php wp_head(); ?>
 	</head>

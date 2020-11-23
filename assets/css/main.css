@@ -807,6 +807,13 @@ a:hover {
   opacity: 1;
   display: block; }
 
+.modal-win #modal-cart .modal-dialog {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.modal-win #modal-cart .modal-body {
+  overflow: auto; }
+
 .modal {
   background-color: rgba(87, 87, 86, 0.95);
   overflow: hidden;
@@ -851,6 +858,10 @@ a:hover {
       text-transform: uppercase;
       padding-left: 0;
       color: white; }
+      @media (max-width: 800px) {
+        .modal .modal-dialog .modal-content .modal-header h2 {
+          font-size: 1.2em;
+          line-height: 1em; } }
     .modal .modal-dialog .modal-content .modal-body table.show-cart {
       margin: 0 auto;
       margin-top: 100px;
@@ -860,24 +871,14 @@ a:hover {
       .modal .modal-dialog .modal-content .modal-body table.show-cart button {
         cursor: pointer; }
         .modal .modal-dialog .modal-content .modal-body table.show-cart button.delete-item {
-          position: relative;
-          width: 20px;
-          height: 20px;
           background-color: transparent;
           text-transform: uppercase;
-          font-weight: 400;
+          font-weight: 700;
           border: 0;
-          color: white;
-          overflow: hidden; }
-          .modal .modal-dialog .modal-content .modal-body table.show-cart button.delete-item::after {
-            content: "-";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            font-size: 32px;
-            line-height: 16px; }
+          color: #fff;
+          overflow: hidden;
+          padding-top: 0;
+          color: red; }
       .modal .modal-dialog .modal-content .modal-body table.show-cart .input-group {
         position: relative; }
         .modal .modal-dialog .modal-content .modal-body table.show-cart .input-group button.input-group-addon {
@@ -895,7 +896,8 @@ a:hover {
               font-size: 14px;
               top: 0; } }
           .modal .modal-dialog .modal-content .modal-body table.show-cart .input-group button.input-group-addon.minus-item {
-            left: 0; }
+            right: -30px;
+            font-weight: 700; }
           .modal .modal-dialog .modal-content .modal-body table.show-cart .input-group button.input-group-addon.plus-item {
             right: 0;
             width: 17px; }
@@ -930,9 +932,6 @@ a:hover {
 .cart-top {
   position: relative;
   z-index: 3; }
-  @media (max-width: 800px) {
-    .cart-top {
-      right: 30px; } }
   .cart-top .button {
     background-color: transparent;
     border: 0;
@@ -1231,7 +1230,7 @@ form.wpcf7-form {
   margin: 10px auto;
   width: 100%;
   max-width: 300px;
-  padding-top: 10px;
+  padding: 10px;
   float: none;
   color: white;
   font-size: 12px; }

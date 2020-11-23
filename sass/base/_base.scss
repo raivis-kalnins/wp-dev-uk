@@ -1024,10 +1024,26 @@ a:hover {
 		}
 	}
 }
-.modal-win #modal-cart.is-active {
-	opacity: 1;
-	display: block;
+.modal-win {
+
+	#modal-cart {
+		
+		&.is-active {
+			opacity: 1;
+			display: block;
+		}
+
+		.modal-dialog {
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+
+		.modal-body {
+			overflow: auto;
+		}
+	}
 }
+
 .modal {
 	background-color: rgba($color-grey, 0.95);
 	overflow: hidden;
@@ -1086,6 +1102,11 @@ a:hover {
 					text-transform: uppercase;
 					padding-left: 0;
 					color: white;
+
+					@media (max-width: 800px) {
+						font-size: 1.2em;
+						line-height: 1em;
+					}
 				}
 			}
 
@@ -1102,26 +1123,14 @@ a:hover {
 						cursor: pointer;
 
 						&.delete-item {
-							position: relative;
-							width: 20px;
-							height: 20px;
 							background-color: transparent;
 							text-transform: uppercase;
-							font-weight: 400;
+							font-weight: 700;
 							border: 0;
-							color:white;
+							color: #fff;
 							overflow: hidden;
-
-							&::after {
-								content: "-";
-								position: absolute;
-								top: 0;
-								left: 0;
-								width: 20px;
-								height: 20px;
-								font-size: 32px;
-								line-height: 16px;
-							}
+							padding-top: 0;
+							color: red;
 						}
 					}
 
@@ -1145,7 +1154,8 @@ a:hover {
 							}
 
 							&.minus-item {
-								left: 0;
+								right: -30px;
+								font-weight: 700;
 							}
 
 							&.plus-item {
@@ -1204,7 +1214,7 @@ a:hover {
 	z-index: 3;
 
 	@media (max-width: 800px) {
-		right: 30px;
+		//right: 30px;
 	}
 
 	.button {
@@ -1553,7 +1563,7 @@ form.wpcf7-form {
 	margin: 10px auto;
 	width: 100%;
 	max-width: 300px;
-	padding-top: 10px;
+	padding: 10px;
 	float: none;
 	color: white;
 	font-size: 12px;

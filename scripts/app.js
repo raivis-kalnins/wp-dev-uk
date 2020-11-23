@@ -282,19 +282,19 @@ function initGoogleMaps() {
 			zoom: 15,
 			draggable: true,
 			animation: google.maps.Animation.DROP,
-			center: new google.maps.LatLng(52.4158983,-1.4851309), // area location
+			center: new google.maps.LatLng(52.4158633,-1.4850157), // area location
 			styles:[{"stylers":[{"saturation":-100},{"gamma":1}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"saturation":50},{"gamma":0},{"hue":"#50a5d1"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#333333"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"weight":0.5},{"color":"#333333"}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"gamma":1},{"saturation":50}]}]};
 	var mapElement = document.getElementById('gmap_ojcars');
 	var map = new google.maps.Map(mapElement, mapOptions);
 	var image = {
 		url: 'wp-content/themes/wp-dev-uk/assets/img/i/map-marker.png',
 		origin: new google.maps.Point(0, 0),
-		anchor: new google.maps.Point(17, 34)
+		anchor: new google.maps.Point(-28, 34)
 	};
 	var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(52.4158983,-1.4851309),
+			position: new google.maps.LatLng(52.4158633,-1.4850157),
 			map: map,
-			title: 'O&Jcars - 50 Barras Green, Coventry, CV2 4LY',
+			title: 'O&Jcars - 50B Barras Green, Coventry, CV2 4LY',
 			icon: image
 	});
 	$('.su-tabs-nav span').click(function() {
@@ -465,7 +465,7 @@ function displayCart() {
 		+ "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
 		+ "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
 		+ "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
-		+ "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + "></button></td>"
+		+ "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
 		+ " = " 
 		+ "<td>£ " + cartArray[i].total + "</td>" 
 		+  "</tr>";
