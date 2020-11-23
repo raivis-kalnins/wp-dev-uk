@@ -811,9 +811,12 @@ a:hover {
   overflow-x: hidden;
   overflow-y: auto; }
 
+<<<<<<< HEAD
 .modal-win #modal-cart .modal-body {
   overflow: auto; }
 
+=======
+>>>>>>> 948c53fac2026715506bd4e8f5371cf224281699
 .modal {
   background-color: rgba(87, 87, 86, 0.95);
   overflow: hidden;
